@@ -2,17 +2,17 @@ import '../css/Navbar.css';
 
 function Navbar() {
     return (
-        <nav className="customnav navbar navbar-expand-lg navbar-light">
-            <div className="container-fluid navtext">
-                    <a className="navbar-brand">Linita</a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
+        <nav class="customnav navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid navtext">
+                    <a class="navbar-brand" href="#">Linita</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <div className="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navbarNav">
-                        <ul className="navbar-nav">
-                            <li className="nav-item ">
-                                <a className="nav-link active" aria-current="page">Home</a>
+                    <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link">Stories</a>

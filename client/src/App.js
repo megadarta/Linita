@@ -1,16 +1,22 @@
-
 import './App.css';
+import Navbar from './component/Navbar.js';
+import Lapor from './component/Lapor.js';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="tes" style={{ display: "flex", width: "100%", height: "100%"  }}>
-      <div className="item" style={{ backgroundColor: "black", width: "100vw", height: "100%" }}>
-
-      </div>
-      <div style={{ backgroundColor: "red",  width: "100%", height: "100%" }}>
-
-      </div>
-    </div>
+    <Router>
+       <Navbar />
+    <Switch>
+      <Route path="/action">
+        <Lapor />
+      </Route>
+    </Switch>
+    </Router>
   );
 }
 
