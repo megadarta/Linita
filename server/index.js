@@ -1,6 +1,19 @@
-const express = require ('express');
+const express = require('express');
+const bodyParser = require('body-parser');
+require('dotenv').config();
+const cors = require('cors');
+const { CLIENT } = require('./config');
 
 const app = express();
+
+const corsOption = {
+    origin: CLIENT,
+    credentials: true
+};
+
+app.use(cors(corsOption));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', (req,res) => {
     res.json({
