@@ -1,26 +1,32 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 require('dotenv').config();
 const cors = require('cors');
-const { CLIENT } = require('./config');
-
+const session = require('express-session');
+const sessionSetting = require('./configs/session-config');
+const corsOption = require('./configs/cors-config');
+const root = require('./routes/root')();
+const mongoose = require('mongoose');
+const passport = require('passport');
 const app = express();
 
-const corsOption = {
-    origin: CLIENT,
-    credentials: true
-};
+mongoose.connect(process.env.MONGO_URL, {useNewUrlParser: true, useUnifiedTopology: true});
 
+//Cors
 app.use(cors(corsOption));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('/', (req,res) => {
-    res.json({
-        mg: "mega"
-    });
+//Body parser
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-});
+//Session
+app.use(session(sessionSetting));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+//Routes 
+app.use(root);
+
 
 app.listen(process.env.PORT || 3001, () => {
     console.log(`Example app listening at http://localhost:${process.env.PORT || 3001}`);
