@@ -1,0 +1,10 @@
+.Body-cara-lapor{
+    /* background-image: url(bg.png); */
+    background-color: red;
+}
+.custom-cara-lapor{
+    margin: 100px 100px 0 100px;
+}
+.card{
+    margin: 10px;
+}
