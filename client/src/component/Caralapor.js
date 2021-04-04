@@ -6,7 +6,7 @@ function Caralapor() {
             <div>
                 <b>CARA LAPOR</b>
             </div>
-            <div className="d-flex  justify-content-lg-center flex-column flex-lg-row">
+            <div className="d-flex  justify-content-lg-center flex-column flex-lg-row align-items-center">
             <div class="card" style={{width: "18rem"}}>
                 <img class="card-img-top" src="logo192.png" alt="Card image cap"></img>
                     <div class="card-body">

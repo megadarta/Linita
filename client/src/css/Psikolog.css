@@ -1,0 +1,27 @@
+.body-psikolog{
+    background-image: url(./asset/GambarLapor.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 50px;
+    height: 50vw;
+}
+.konten-psikolog{
+    width: 30vw;
+    margin-left: 7vw;
+    height: 100%;
+}
+.konten-psikolog h1{
+    font-size: 3vw;
+}
+.konten-psikolog h6{
+    font-size: 1.5vw;
+}
+.button-psikolog{
+    margin-top: 1vw;
+    font-size: 1.5vw;
+}
+.btn-color{
+    background-color: #EC6F00;
+    color: white;
+}
+

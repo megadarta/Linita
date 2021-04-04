@@ -16,22 +16,23 @@ import {
 function App() {
   return (
     <Router>
-       <Navbar />
-    <Switch>
-      <Route path="/action">
-        <Lapor />
-        <Caralapor />
-        <Psikolog />
-        <Caralapor />
-      </Route>
-      <Route path="/login">
-        <Login />
-      </Route>
-      <Route path="/register">
-        <Register />
-      </Route>
-    </Switch>
-      <Footer />
+      <Switch>
+        <Route path="/action">
+          <Navbar />
+          <Lapor />
+          <Caralapor />
+          <Psikolog />
+          <Carakonsultasi />
+          <Footer />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/register">
+          <Register />
+        </Route>
+      </Switch>
+
     </Router>
   );
 }

@@ -1,6 +1,13 @@
-.customnav{
-    background-color: white;
-}
+/* .customnav{
+    background-color: black;
+} */
+.nav-link{
+    color: white;
+} 
 .navtext{
     margin: 0 50px 0 50px;
+}
+.btn-login{
+    color: white;
+    outline-color: white;
 }

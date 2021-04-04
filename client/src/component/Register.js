@@ -2,32 +2,28 @@ import '../css/Register.css';
 
 function Register() {
   return (
-    <div className="custom-login d-flex flex-column flex-lg-row">
-      <div className="d-flex justify-content-center">
-        <img className="img-login" src="./asset/woman.png"></img>
-      </div>
-      <div className="px-5 align-self-center justify-content-center mt-4 ml-5">
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></input>
-            <small id="emailHelp" class="form-text text-muted">Masukkan email atau Username yang sudah terdaftarkan.</small>
+    <div className="custom-register d-flex justify-content-center">
+      <div className="align-self-center ">
+        <h3 className="text-center">Create An Account</h3>
+        <div className="classlogo text-center">
+          <img src="../logo192.png" class="rounded-left logo-register "></img>
+        </div>
+        <form method="post" action="" class="register-form mb-3">
+          <div class="input-container">
+            <input type="email" class="input" name="email" placeholder="Email" />
           </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></input>
+          <div class="input-container">
+            <input type="password" id="register-password" class="input" name="password" placeholder="Password" />
+            <i id="show-password" class="fa fa-eye"></i>
           </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Ulangi password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ulangi Password"></input>
+          <div class="input-container">
+            <input type="password" id="register-password" class="input" name="password" placeholder="Current Password" />
+            <i id="show-password" class="fa fa-eye"></i>
           </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1"></input>
-          </div>
-          <small id="regis" class="form-text text-muted">Sudab punya akun ?</small><a href="login"> Login </a><br></br>
-          <button type="submit" class="btn btn-primary mt-4">Submit</button>
-         
+          <button type="submit" class="btn mt-4 button-register">REGISTER</button>
         </form>
+
+        <small id="regis" className="form-text text-muted">Sudah punya akun ?</small><a href="login" className="regis-register"> Login </a><br></br>
       </div>
 
 

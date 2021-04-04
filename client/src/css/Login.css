@@ -1,6 +1,39 @@
 .custom-login{
-    margin: 100px 100px 0 100px;
+    /* margin: 100px 100px 0 100px; */
+    height: 100vh;
+    width: 100vw;
 }
-.img-login{
-    height: 445px;
+.login-form .input-container {
+	border-bottom: 1px solid #CCCCCC;
+    margin-top: 15px;
+    font-size: 20px;
+    color: #9e9e9e;
+	padding-bottom: 5px;
+}
+.login-form .input {
+	border: 0;
+	width: 350px;
+}
+.button-login{
+    background-color: #EC6F00;
+    color: white;
+    width: 350px;
+}
+.logo-login{
+    width: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+.classlogo{
+    width: 350px;
+}
+.regis-login{
+    color: #EC6F00;
+    font-weight: bold;
+    text-decoration: none;
+}
+.button-login:hover {
+    box-shadow:  2px 5px 10px 0 rgba(250, 217, 188, 1);
+    color: white;
 }

@@ -4,7 +4,7 @@ function Carakonsultasi() {
     return (
         <div className="custom-cara-lapor flex-column">
             <div>
-                <b>CARA LAPOR</b>
+                <b>CARA KONSULTASI</b>
             </div>
             <div className="d-flex  justify-content-between">
             <div class="card" style={{width: "18rem"}}>
