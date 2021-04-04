@@ -12,10 +12,13 @@ const passportAuth = (user) => {
         done(null, foundUser);
     });
 
-    passport.use(new LocalStrategy(
-        async (username, password, done) => {
+    passport.use(new LocalStrategy({
+            usernameField: 'email',
+            passwordField: 'password'
+        },
+        async (email, password, done) => {
             try {
-                const foundUser = await user.findOne({ username });
+                const foundUser = await user.findOne({ email });
 
                 if(!foundUser) return done(null, false);
 

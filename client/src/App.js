@@ -10,12 +10,12 @@ import {
 function App() {
   return (
     <Router>
-       <Navbar />
-    <Switch>
-      <Route path="/action">
-        <Lapor />
-      </Route>
-    </Switch>
+      <Navbar />
+      <Switch>
+        <Route path="/action">
+          <Lapor />
+        </Route>
+      </Switch>
     </Router>
   );
 }
