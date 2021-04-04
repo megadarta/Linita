@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body, html, #root, .App {
+  width: 100%; 
+  height: 100%;
+}
+
+@media (max-width: 1000px) {
+  .tes {
+    flex-direction: column;
+  }
+
+  .item {
+    width: 100%;
+  }
+}
