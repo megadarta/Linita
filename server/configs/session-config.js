@@ -6,7 +6,7 @@ const sessionSetting = {
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({ mongoUrl: process.env.MONGO_URL }),
-    cookie: { secure: IS_PROD }    
+    cookie: { secure: false }    
 }
 
 module.exports = sessionSetting;
