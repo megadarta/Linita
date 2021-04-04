@@ -10,7 +10,7 @@ class Comment extends Model {
                 author: { type: Schema.Types.ObjectId, ref: 'User' },
                 content: String,
                 commented_story: { type: Schema.Types.ObjectId, ref: "Story" },
-                loves: Number,
+                loves: { type: Number, default: 0 }
             },
 
             //Model name

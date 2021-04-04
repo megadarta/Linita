@@ -9,8 +9,11 @@ class Story extends Model {
             {
                 author: { type: Schema.Types.ObjectId, ref: 'User' },
                 content: String,
-                comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
-                loves: Number,
+                comments: { 
+                    type: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
+                    default: []
+                },
+                loves: { type: Number, default: 0 }
             },
 
             //Model name
