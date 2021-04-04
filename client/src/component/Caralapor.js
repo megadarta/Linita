@@ -3,8 +3,8 @@ import '../css/Caralapor.css';
 function Caralapor() {
     return (
         <div className="custom-cara-lapor flex-column">
-            <div>
-                <b>CARA LAPOR</b>
+            <div className="text-center">
+                <h3>CARA LAPOR</h3>
             </div>
             <div className="d-flex  justify-content-lg-center flex-column flex-lg-row align-items-center">
             <div class="card" style={{width: "18rem"}}>

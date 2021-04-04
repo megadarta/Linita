@@ -3,10 +3,10 @@ import '../css/Carakonsultasi.css';
 function Carakonsultasi() {
     return (
         <div className="custom-cara-lapor flex-column">
-            <div>
-                <b>CARA KONSULTASI</b>
+            <div className="text-center">
+                <h3>CARA KONSULTASI</h3>
             </div>
-            <div className="d-flex  justify-content-between">
+            <div className="d-flex  justify-content-lg-center flex-column flex-lg-row align-items-center">
             <div class="card" style={{width: "18rem"}}>
                 <img class="card-img-top" src="logo192.png" alt="Card image cap"></img>
                     <div class="card-body">
