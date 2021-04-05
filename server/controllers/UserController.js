@@ -9,10 +9,15 @@ class UserController {
         try {
             const encryptedPassword = user.encryptPassword(body.password);
 
-            //edit document's password to the encrypted one
+            //Edit document's password to the encrypted one
             const insertedDocument = user.editDocument(body, 'password', encryptedPassword);
 
             const createdUser = await user.save(insertedDocument);
+
+            //Save registered user to session
+            req.login(createdUser, (err, sessionUser) => {
+                if(err) return res.status(500);
+            });
 
             res.json(createdUser);
         } catch(e) {
