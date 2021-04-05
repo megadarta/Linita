@@ -3,15 +3,13 @@ const router = express.Router();
 const UserController = require('../controllers/UserController');
 
 const root = () => {
-    router.get('/', (req,res) => {
-        if(!req.isAuthenticated()) return res.json({ message: "Not Authenticated" });
-
-        res.json(req.user);
-    });
+    router.get('/', UserController.checkAuthentication);
 
     router.post('/register', UserController.register);
 
-    router.post('/login', UserController.authenticateLocal(), UserController.login);
+    router.post('/login', UserController.authenticateLocal(), UserController.checkAuthentication);
+
+    router.delete('/logout', UserController.logout);
     
     return router;
 }
