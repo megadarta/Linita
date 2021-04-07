@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.39b448ae.chunk.css",
+    "main.css": "/static/css/main.d718159a.chunk.css",
     "main.js": "/static/js/main.c01960b0.chunk.js",
     "main.js.map": "/static/js/main.c01960b0.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ed7f067c.js",
@@ -10,7 +10,7 @@
     "static/js/3.cbf22cf0.chunk.js": "/static/js/3.cbf22cf0.chunk.js",
     "static/js/3.cbf22cf0.chunk.js.map": "/static/js/3.cbf22cf0.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.39b448ae.chunk.css.map": "/static/css/main.39b448ae.chunk.css.map",
+    "static/css/main.d718159a.chunk.css.map": "/static/css/main.d718159a.chunk.css.map",
     "static/js/2.50d41eef.chunk.js.LICENSE.txt": "/static/js/2.50d41eef.chunk.js.LICENSE.txt",
     "static/media/Psikolog.css": "/static/media/GambarLapor.6647010f.png",
     "static/media/Lapor.css": "/static/media/GambarPsikolog.e9331bf8.png"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.ed7f067c.js",
     "static/js/2.50d41eef.chunk.js",
-    "static/css/main.39b448ae.chunk.css",
+    "static/css/main.d718159a.chunk.css",
     "static/js/main.c01960b0.chunk.js"
   ]
 }
