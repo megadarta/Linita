@@ -5,8 +5,16 @@
 .custom-cara-lapor{
     margin: 100px 100px 0 100px;
 }
-.card{
-    margin: 10px;
+.card-lapor{
+    margin: 20px;
+    width: 18rem;
+}
+.img-card-lapor{
+    padding: 80px;
+    
+}
+.text-card-lapor{
+    font-size: 14px;   
 }
 .card:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);

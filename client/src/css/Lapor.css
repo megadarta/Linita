@@ -5,11 +5,14 @@
     background-position: center center;
     height: 50vw;
 }
-
+.judul-konten{
+    font-family: 'Bebas Neue', cursive;
+}
 .konten-lapor{
     width: 30vw;
     margin-right: 7vw;
     height: 100%;
+    font-family: 'Roboto', sans-serif;
 }
 .button-lapor{
     margin-top: 1vw;
@@ -19,7 +22,7 @@
 .konten-lapor h1{
     font-size: 3vw;
 }
-.konten-lapor h6{
+.lapor-desc{
     font-size: 1.5vw;
 }
 
@@ -27,4 +30,3 @@
     background-color: #EC6F00;
     color: white;
 }
-

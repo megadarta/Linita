@@ -7,13 +7,12 @@ function Psikolog() {
         <div className="konten-psikolog">
             {/* title */}
             <h1>
-              <b>
-                Lorem ipsum dolor sit amet. 
-              </b>
+              KONSULTASI GRATIS DAN MUDAH
+              DENGAN ORANG YANG BERPENGALAMAN.
             </h1>
 
             {/* description */}
-            <p className="psikolog-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id sapien diam. Nam consectetur arcu ut justo rhoncus, ac pellentesque eros dapibus. Pellentesque sollicitudin laoreet posuere. Vestibulum iaculis quam a dui posuere, in lacinia augue rutrum. Proin nec dignissim purus. Integer eleifend odio sagittis leo auctor, non interdum tortor malesuada.</p>
+            <p className="psikolog-desc">Apabila anda cemas, depresi, trauma, histeria atau tekanan psikologis yang mengganggu. Jangan takut ataupun ragu  segera minta bantuan dan pendampingan dengan konsultasi bersama orang yang berpengalaman.</p>
             <button type="button" class="btn btn-color button-psikolog">KONSULTASI</button>
         </div>
     </div>

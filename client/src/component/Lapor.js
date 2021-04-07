@@ -6,14 +6,12 @@ function Lapor() {
     <div className="custom-lapor">
         <div className="konten-lapor">
             {/* title */}
-            <h1>
-              <b>
-                Lorem ipsum dolor sit amet. 
-              </b>
+            <h1 className="judul-konten">
+              Darurat pelecehan seksual, laporkan sekarang juga!
             </h1>
 
             {/* description */}
-            <p className="lapor-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id sapien diam. Nam consectetur arcu ut justo rhoncus, ac pellentesque eros dapibus. Pellentesque sollicitudin laoreet posuere. Vestibulum iaculis quam a dui posuere, in lacinia augue rutrum. Proin nec dignissim purus. Integer eleifend odio sagittis leo auctor, non interdum tortor malesuada.</p>
+            <p className="lapor-desc">Bantulah kami mengeliminasi segala bentuk kekerasan terhadap perempuan dan anak perempuan pada ruang publik dan privat, termasuk perdagangan seksual dan bentuk eksploitasi lainnya. Pelecehan seksual bukanlah hal yang biasa dan bisa dibiarkan. Kami bersatu mendukung anda, Jangan takut dan segera laporkan! melindungi negeri berasal dari diri sendiri.</p>
             <button type="button" class="btn btn-color button-lapor">LAPORKAN</button>
         </div>
     </div>

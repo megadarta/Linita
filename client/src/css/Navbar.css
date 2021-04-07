@@ -2,7 +2,7 @@
     background-color: black;
 } */
 .nav-link{
-    color: white;
+    color: white!important;
 } 
 .navtext{
     margin: 0 50px 0 50px;
