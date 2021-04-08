@@ -4,10 +4,20 @@
 .nav-link{
     color: white!important;
 } 
+.nav-link:hover{
+    color: grey!important;
+} 
 .navtext{
     margin: 0 50px 0 50px;
 }
 .btn-login{
     color: white;
     outline-color: white;
+}
+a:hover{
+    color: white;
+}
+a{
+    color: white;
+    text-decoration: none;
 }

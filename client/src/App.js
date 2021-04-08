@@ -12,13 +12,30 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { server } from './server.js';
 
 function App() {
+  const [autentikasi, setAutentikasi] = useState();
+
+  useEffect(() => {
+    fetch(server, {
+      credentials: 'include',
+      method: 'GET'
+    })
+    .then(isi => isi.json())
+    .then(
+      data => {
+        setAutentikasi(data);
+      }
+    )
+  }, [setAutentikasi]);
+
   return (
     <Router>
       <Switch>
         <Route path="/action">
-          <Navbar />
+          <Navbar autentikasi={autentikasi} mega="cantik" />
           <Lapor />
           <Caralapor />
           <Psikolog />

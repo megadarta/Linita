@@ -1,6 +1,6 @@
 import '../css/Navbar.css';
 
-function Navbar() {
+function Navbar(props) {
     return (
         <nav class="customnav navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid navtext">
@@ -24,7 +24,10 @@ function Navbar() {
                             <a class="nav-link" href="#">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="btn btn-outline-secondary btn-login">LOGIN</button>
+                            {
+                               props.autentikasi?.auth == true ?  <button type="button" class="btn btn-outline-secondary btn-login"><a href="login">LOGOUT</a></button> :  <button type="button" class="btn btn-outline-secondary btn-login"><a href="login">LOGIN</a></button>
+                            }
+                           
                         </li>
                     </ul>
                 </div>
