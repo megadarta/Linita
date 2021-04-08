@@ -1,3 +1,35 @@
 .card:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
+
+.img-card-konsultasi {
+    padding: 15px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.custom-cara-konsultasi {
+    margin: 150px  0;
+}
+
+.card-konsul{
+    width: 14rem;
+    margin: 20px;
+    border: none;
+}
+.text-card-konsul{
+    font-weight: bold;   
+}
+
+.card-konsul:hover {
+    transition: 0.2s;
+    transform: translateY(-10px);
+}
+
+@media(max-width: 673px) {
+    .card-konsul{
+        text-align: center;
+        margin: 0;
+        width: 100%;
+    }
+}

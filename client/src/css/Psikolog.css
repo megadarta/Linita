@@ -2,7 +2,6 @@
     background-image: url(./asset/GambarLapor.png);
     background-size: cover;
     background-repeat: no-repeat;
-    margin-top: 50px;
     height: 50vw;
 }
 .konten-psikolog{
@@ -14,21 +13,15 @@
     font-size: 3vw;
 }
 .psikolog-desc{
-    font-size: 1.5vw;
+    font-size: 1.1vw;
+    margin: 3vw 0px 1.5vw;
 }
 .button-psikolog{
-    margin-top: 1vw;
     font-size: 1.2vw;
-    padding: 3px 20px 3px 20px;
+    padding: 5px 3vw;
+    border-radius: 0;
 }
 .btn-color{
     background-color: #EC6F00;
     color: white;
-}
-
-.card-konsul{
-    margin: 20px;
-}
-.text-card-konsul{
-    font-weight: bold;   
 }

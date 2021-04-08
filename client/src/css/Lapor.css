@@ -3,30 +3,38 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    height: 50vw;
+    height: 46vw;
 }
+
 .judul-konten{
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Bebas Neue', sans-serif;
 }
 .konten-lapor{
-    width: 30vw;
+    width: 40vw;
     margin-right: 7vw;
     height: 100%;
-    font-family: 'Roboto', sans-serif;
 }
 .button-lapor{
     margin-top: 1vw;
     font-size: 1.2vw;
-    padding: 3px 20px 3px 20px;
+    padding: 5px 3vw;
+    border-radius: 0;
 }
+
 .konten-lapor h1{
-    font-size: 3vw;
+    font-size: 3.5vw;
 }
 .lapor-desc{
-    font-size: 1.5vw;
+    margin: 3vw 0px 1.5vw;
+    font-size: 1.1vw;
 }
 
 .btn-color{
     background-color: #EC6F00;
+    color: white;
+}
+
+.btn-color:hover {
+    background-color: rgb(190, 108, 70);
     color: white;
 }

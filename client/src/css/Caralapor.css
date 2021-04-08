@@ -2,20 +2,40 @@
     /* background-image: url(bg.png); */
     background-color: red;
 }
-.custom-cara-lapor{
-    margin: 100px 100px 0 100px;
+
+.custom-cara-lapor {
+    margin: 150px  0;
 }
+
 .card-lapor{
     margin: 20px;
     width: 18rem;
+    border: none;
 }
+
 .img-card-lapor{
-    padding: 80px;
-    
+    padding: 15px;
+    height: 80px;
+    object-fit: contain;
 }
-.text-card-lapor{
-    font-size: 14px;   
+
+.card-lapor:hover {
+    transition: 0.2s;
+    transform: translateY(-10px);
 }
+
+.text-card-lapor {
+    font-size: 14px;
+}
+
 .card:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+@media(max-width: 673px) {
+    .card-lapor{
+        text-align: center;
+        margin: 0;
+        width: 100%;
+    }
 }

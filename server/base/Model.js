@@ -13,12 +13,13 @@ class Model {
         this.Model = mongoose.model(modelName, this.schema);
     }
 
-    //Saving document
-    async save(document) {
-        const newDocument = new this.Model(document);
+    //Make new document
+    makeDocument = (document) => new this.Model(document);
 
+    //Saving document
+    save = async (document) => {
         try {
-            const createdDocument = await newDocument.save();
+            const createdDocument = await document.save();
 
             return createdDocument;
         } catch(e) {
@@ -27,7 +28,7 @@ class Model {
     }
 
     //Getting document by query
-    async findOne(query) {
+    findOne = async (query) => {
         try {
             const foundDocument = await this.Model.findOne(query);
 
@@ -38,7 +39,7 @@ class Model {
     }
 
     //Getting document by id
-    async findById(id) {
+    findById = async (id) => {
         try {
             const foundDocument = await this.Model.findById(id);
 
@@ -49,13 +50,23 @@ class Model {
     }
 
     //edit a document then return the new one
-    editDocument(document, key, value) {
+    editDocument = (document, key, value) => {
         const editedDocument = {
             ...document,
             [key]: value
         }
 
         return editedDocument;
+    }
+
+    populate = async (document, ref) => {
+        try {
+            const populatedDocument = await this.Model.populate(document, { path: ref });
+
+            return populatedDocument;
+        } catch(e) {
+            throw new Error(e);
+        }
     }
 }
 
