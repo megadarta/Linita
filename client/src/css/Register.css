@@ -33,6 +33,11 @@
     font-weight: bold;
     text-decoration: none;
 }
+
+.regis-register:hover {
+    color: black;
+}
+
 .button-register:hover {
     box-shadow:  2px 5px 10px 0 rgba(250, 217, 188, 1);
     color: white;

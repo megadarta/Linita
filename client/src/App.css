@@ -28,6 +28,10 @@
   color: #61dafb;
 }
 
+.form-control:focus {
+  border-color: #EC6F00;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

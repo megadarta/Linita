@@ -13,7 +13,7 @@ function Lapor() {
             {/* description */}
             <p className="lapor-desc">Bantulah kami mengeliminasi segala bentuk kekerasan terhadap perempuan dan anak perempuan pada ruang publik dan privat, termasuk perdagangan seksual dan bentuk eksploitasi lainnya. Pelecehan seksual bukanlah hal yang biasa dan bisa dibiarkan. Kami bersatu mendukung anda, Jangan takut dan segera laporkan! melindungi negeri berasal dari diri sendiri.</p>
             <a href="https://www.lapor.go.id/" target="_blank">
-              <button type="button" class="btn btn-color button-lapor">
+              <button type="button" class="btn btn-color button-lapor shadow-none">
                 LAPORKAN
               </button>
             </a>

@@ -9,13 +9,13 @@
 .judul-konten{
     font-family: 'Bebas Neue', sans-serif;
 }
+
 .konten-lapor{
     width: 40vw;
     margin-right: 7vw;
     height: 100%;
 }
 .button-lapor{
-    margin-top: 1vw;
     font-size: 1.2vw;
     padding: 5px 3vw;
     border-radius: 0;
@@ -26,7 +26,7 @@
 }
 .lapor-desc{
     margin: 3vw 0px 1.5vw;
-    font-size: 1.1vw;
+    font-size: 14px;
 }
 
 .btn-color{
@@ -35,6 +35,36 @@
 }
 
 .btn-color:hover {
-    background-color: rgb(190, 108, 70);
+    box-shadow:  2px 5px 10px 0 rgba(250, 217, 188, 1);
     color: white;
+}
+
+@media(max-width: 900px) {
+    .body-lapor {
+        display: flex;
+        justify-content: center!important;
+        background-image: url(./asset/mobile-lapor.png);
+        height: 415px;
+    }
+
+    .konten-lapor h1{
+        font-size: 31px;
+    }
+
+    .konten-lapor {
+        padding: 0 30px;
+        width: auto;
+        margin-right: 0;
+    }
+
+    .button-lapor{
+        font-size: 16px;
+        padding: 5px 46px;
+        border-radius: 0;
+    }
+
+    .lapor-desc{
+        margin: 46px 0px 23px;
+        font-size: 14px;
+    }
 }

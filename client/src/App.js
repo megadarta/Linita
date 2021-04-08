@@ -13,6 +13,7 @@ import {
   Route,
 } from "react-router-dom";
 import 'animate.css';
+import '@fortawesome/fontawesome-free/js/all.js';
 
 function App() {
   return (

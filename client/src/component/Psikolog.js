@@ -13,7 +13,9 @@ function Psikolog() {
 
           {/* description */}
           <p className="psikolog-desc">Apabila anda cemas, depresi, trauma, histeria atau tekanan psikologis yang mengganggu. Jangan takut ataupun ragu  segera minta bantuan dan pendampingan dengan konsultasi bersama orang yang berpengalaman.</p>
-          <button type="button" class="btn btn-color button-psikolog">KONSULTASI</button>
+          <a href="https://api.whatsapp.com/send?phone=+6285546697238" target="_blank">
+            <button type="button" class="btn btn-color button-psikolog shadow-none">KONSULTASI</button>
+          </a>
         </div>
       </div>
     </div>
