@@ -7,6 +7,8 @@ import Carakonsultasi from './component/Carakonsultasi.js';
 import Psikolog from './component/Psikolog.js';
 import Login from './component/Login.js';
 import Register from './component/Register.js';
+import Story from './component/Cerita';
+import Testing from './component/Testing';
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,9 +20,9 @@ import '@fortawesome/fontawesome-free/js/all.js';
 function App() {
   return (
     <Router>
+      <Navbar />
       <Switch>
         <Route path="/action">
-          <Navbar />
           <Lapor />
           <Caralapor />
           <Psikolog />
@@ -32,6 +34,12 @@ function App() {
         </Route>
         <Route path="/register">
           <Register />
+        </Route>
+        <Route path="/story">
+          <Story />
+        </Route>
+        <Route path="/testing">
+          <Testing />
         </Route>
       </Switch>
 
