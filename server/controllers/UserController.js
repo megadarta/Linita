@@ -4,13 +4,13 @@ const user = new User();
 require('../authentications/passportAuth')(user);
 
 class UserController {
-    static checkAuthentication(req, res) {
+    static checkAuthentication = (req, res) => {
         if(!req.isAuthenticated()) return res.json({ auth: false });
 
         res.json({ auth: true, user: req.user });
     }
 
-    static async register(req, res) {
+    static register = async (req, res) => {
         const { body } = req;
         console.log(body);
 
@@ -20,7 +20,9 @@ class UserController {
             //Edit document's password to the encrypted one
             const insertedDocument = user.editDocument(body, 'password', encryptedPassword);
 
-            const createdUser = await user.save(insertedDocument);
+            const newDocument = user.makeDocument(insertedDocument);
+            
+            const createdUser = await user.save(newDocument);
 
             //Save registered user to session
             req.login(createdUser, (err, sessionUser) => {
@@ -34,14 +36,14 @@ class UserController {
         }
     }
 
-    static async logout(req, res) {
+    static logout = async (req, res) => {
         await req.logout();
 
         //check authentication
         res.redirect('/');
     }
 
-    static authenticateLocal() {
+    static authenticateLocal = () => {
         return passport.authenticate('local');
     } 
 }

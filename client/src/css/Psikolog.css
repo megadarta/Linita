@@ -2,7 +2,7 @@
     background-image: url(./asset/GambarLapor.png);
     background-size: cover;
     background-repeat: no-repeat;
-    margin-top: 50px;
+    background-position: center center;
     height: 50vw;
 }
 .konten-psikolog{
@@ -14,21 +14,46 @@
     font-size: 3vw;
 }
 .psikolog-desc{
-    font-size: 1.5vw;
+    font-size: 14px;
+    margin: 3vw 0px 1.5vw;
 }
 .button-psikolog{
-    margin-top: 1vw;
     font-size: 1.2vw;
-    padding: 3px 20px 3px 20px;
+    padding: 5px 3vw;
+    border-radius: 0;
 }
+
 .btn-color{
     background-color: #EC6F00;
     color: white;
 }
 
-.card-konsul{
-    margin: 20px;
-}
-.text-card-konsul{
-    font-weight: bold;   
+@media(max-width: 900px) {
+    .body-psikolog {
+        display: flex;
+        justify-content: center!important;
+        background-image: url(./asset/mobile-konsul.png);
+        height: 415px;
+    }
+
+    .konten-psikolog h1{
+        font-size: 31px;
+    }
+
+    .konten-psikolog {
+        padding: 0 30px;
+        width: auto;
+        margin-left: 0;
+    }
+
+    .button-psikolog{
+        font-size: 16px;
+        padding: 5px 46px;
+        border-radius: 0;
+    }
+
+    .psikolog-desc{
+        margin: 46px 0px 23px;
+        font-size: 14px;
+    }
 }

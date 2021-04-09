@@ -5,6 +5,7 @@ const session = require('express-session');
 const sessionSetting = require('./configs/session-config');
 const corsOption = require('./configs/cors-config');
 const root = require('./routes/root')();
+const story = require('./routes/story')();
 const mongoose = require('mongoose');
 const passport = require('passport');
 const app = express();
@@ -26,6 +27,7 @@ app.use(passport.session());
 
 //Routes 
 app.use(root);
+app.use('/story', story);
 
 
 app.listen(process.env.PORT || 3001, () => {

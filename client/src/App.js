@@ -14,6 +14,8 @@ import {
 } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { server } from './server.js';
+import 'animate.css';
+import '@fortawesome/fontawesome-free/js/all.js';
 
 function App() {
   const [autentikasi, setAutentikasi] = useState();
