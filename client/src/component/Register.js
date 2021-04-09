@@ -47,7 +47,7 @@ function Register() {
             }
           </div>
           <div className="form-floating">
-            <input onChange={e => setConPassword(e.target.value) type={showconfirmationPass ? "text" : "password"} name="confirm-password" className="form-control custom-input shadow-none" id="confirm-password" placeholder="retype your password" />
+            <input onChange={e => setConPassword(e.target.value)} type={showconfirmationPass ? "text" : "password"} name="confirm-password" className="form-control custom-input shadow-none" id="confirm-password" placeholder="retype your password" />
             <label for="confirm-password">Confirm Password</label>
             {
               showconfirmationPass
