@@ -1,0 +1,50 @@
+.artikel-section {
+    padding: 100px 200px;
+}
+
+.title-cerita {
+    font-family: 'Bebas Neue';
+    font-size: 60px;
+}
+
+.body-cerita {
+    white-space: pre-line;
+}
+
+.tanggal-cerita {
+    color: #EC6F00;
+}
+
+.like-button {
+    border-radius: 500px;
+    border: 2px solid black;
+}
+
+.jumlah-like {
+    background-color: #E3E3E3;
+    border-radius: 39px;
+}
+
+.custom-komentar {
+    background-color: #F4F4F4;
+    padding: 0 200px;
+    width: 100%;
+}
+
+.komentar-box {
+    border-bottom: 1px solid #737373;
+}
+
+.btn-black {
+    background-color: black;
+    border-radius: 0;
+    color: white;
+}
+
+.btn-black:hover {
+    color: white;
+}
+
+.komentar {
+    border-bottom: 1px solid #737373;
+}

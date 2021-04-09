@@ -1,9 +1,12 @@
 .body-lapor{
+    height: 46vw;
+}
+
+.img-lapor {
     background-image: url(./asset/GambarPsikolog.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    height: 46vw;
 }
 
 .judul-konten{
@@ -43,8 +46,11 @@
     .body-lapor {
         display: flex;
         justify-content: center!important;
-        background-image: url(./asset/mobile-lapor.png);
         height: 415px;
+    }
+
+    .img-lapor {
+        background-image: url(./asset/mobile-lapor.png);
     }
 
     .konten-lapor h1{

@@ -1,12 +1,6 @@
 .card:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
-<<<<<<< HEAD
-.card-konsul{
-    height: 25vw;
-    width: 20vw;
-}
-=======
 
 .img-card-konsultasi {
     padding: 15px;
@@ -39,4 +33,3 @@
         width: 100%;
     }
 }
->>>>>>> 584113a9e32fa2351abe3dd9207f1d4bc5533690

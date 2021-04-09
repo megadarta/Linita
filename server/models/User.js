@@ -9,6 +9,7 @@ class User extends Model {
             //Schema
             {
                 username: String,
+                fullname: String,
                 password: String,
                 email: String,
                 stories: { 

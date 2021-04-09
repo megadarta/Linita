@@ -14,7 +14,8 @@ class Story extends Model {
                     type: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
                     default: []
                 },
-                loves: { type: Number, default: 0 }
+                loves: { type: Number, default: 0 },
+                anonimity: String
             },
 
             //Model name

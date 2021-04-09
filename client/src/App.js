@@ -7,6 +7,8 @@ import Carakonsultasi from './component/Carakonsultasi.js';
 import Psikolog from './component/Psikolog.js';
 import Login from './component/Login.js';
 import Register from './component/Register.js';
+import Story from './component/Cerita';
+import Testing from './component/Testing';
 import {
   BrowserRouter as Router,
   Switch,
@@ -35,9 +37,9 @@ function App() {
 
   return (
     <Router>
+      <Navbar autentikasi={autentikasi} mega="cantik"/>
       <Switch>
         <Route path="/action">
-          <Navbar autentikasi={autentikasi} mega="cantik" />
           <Lapor />
           <Caralapor />
           <Psikolog />
@@ -49,6 +51,12 @@ function App() {
         </Route>
         <Route path="/register">
           <Register />
+        </Route>
+        <Route path="/story">
+          <Story />
+        </Route>
+        <Route path="/testing">
+          <Testing />
         </Route>
       </Switch>
 

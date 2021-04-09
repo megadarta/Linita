@@ -9,34 +9,34 @@ function Carakonsultasi() {
 
             <div className="container-fluid">
                 <div className="row justify-content-center">
-                    <div class="card card-konsul">
-                        <img class="card-img-top img-card-konsultasi" loading="lazy" src="./asset/location.png" alt="Card image cap"></img>
-                        <div class="card-body">
-                            <p class="card-text text-card-konsul text-center">Kamu bisa melakukan konseling di mana saja kamu berada.</p>
+                    <div className="card card-konsul">
+                        <img className="card-img-top img-card-konsultasi" loading="lazy" src="./asset/location.png" alt="Card image cap"></img>
+                        <div className="card-body">
+                            <p className="card-text text-card-konsul text-center">Kamu bisa melakukan konseling di mana saja kamu berada.</p>
                         </div>
                     </div>
-                    <div class="card card-konsul">
-                        <img class="card-img-top img-card-konsultasi" loading="lazy" src="./asset/clock.png" alt="Card image cap"></img>
-                        <div class="card-body">
-                            <p class="card-text text-card-konsul text-center">Waktu layanan konsultasi yang fleksibel.</p>
+                    <div className="card card-konsul">
+                        <img className="card-img-top img-card-konsultasi" loading="lazy" src="./asset/clock.png" alt="Card image cap"></img>
+                        <div className="card-body">
+                            <p className="card-text text-card-konsul text-center">Waktu layanan konsultasi yang fleksibel.</p>
                         </div>
                     </div>
-                    <div class="card card-konsul">
-                        <img class="card-img-top img-card-konsultasi" loading="lazy" src="./asset/verified.png" alt="Card image cap"></img>
-                        <div class="card-body">
-                            <p class="card-text text-card-konsul text-center">Layanan konsultasi dengan psikolog atau psikiater berkompeten dan berpengalaman.</p>
+                    <div className="card card-konsul">
+                        <img className="card-img-top img-card-konsultasi" loading="lazy" src="./asset/verified.png" alt="Card image cap"></img>
+                        <div className="card-body">
+                            <p className="card-text text-card-konsul text-center">Layanan konsultasi dengan psikolog atau psikiater berkompeten dan berpengalaman.</p>
                         </div>
                     </div>
-                    <div class="card card-konsul">
-                        <img class="card-img-top img-card-konsultasi" loading="lazy" src="./asset/problem-solving.png" alt="Card image cap"></img>
-                        <div class="card-body">
-                            <p class="card-text text-card-konsul text-center">Membantu menyelesaikan masalahmu dengan solusi yang solutif.</p>
+                    <div className="card card-konsul">
+                        <img className="card-img-top img-card-konsultasi" loading="lazy" src="./asset/problem-solving.png" alt="Card image cap"></img>
+                        <div className="card-body">
+                            <p className="card-text text-card-konsul text-center">Membantu menyelesaikan masalahmu dengan solusi yang solutif.</p>
                         </div>
                     </div>
-                    <div class="card card-konsul">
-                        <img class="card-img-top img-card-konsultasi" loading="lazy" src="./asset/heartbeat.png" alt="Card image cap"></img>
-                        <div class="card-body">
-                            <p class="card-text text-card-konsul text-center">DIjamin anda akan jauh merasa lebih baik secara mental.</p>
+                    <div className="card card-konsul">
+                        <img className="card-img-top img-card-konsultasi" loading="lazy" src="./asset/heartbeat.png" alt="Card image cap"></img>
+                        <div className="card-body">
+                            <p className="card-text text-card-konsul text-center">DIjamin anda akan jauh merasa lebih baik secara mental.</p>
                         </div>
                     </div>
                 </div>

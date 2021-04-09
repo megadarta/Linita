@@ -1,10 +1,14 @@
 .body-psikolog{
+    height: 50vw;
+}
+
+.img-psikolog {
     background-image: url(./asset/GambarLapor.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    height: 50vw;
 }
+
 .konten-psikolog{
     width: 50vw;
     margin-left: 7vw;
@@ -32,8 +36,11 @@
     .body-psikolog {
         display: flex;
         justify-content: center!important;
-        background-image: url(./asset/mobile-konsul.png);
         height: 415px;
+    }
+
+    .img-psikolog {
+        background-image: url(./asset/mobile-konsul.png);
     }
 
     .konten-psikolog h1{
