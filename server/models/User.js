@@ -27,6 +27,10 @@ class User extends Model {
         );
     }
 
+    register = () => {
+
+    }
+    
     encryptPassword(password) {
         const hash = bcrypt.hashSync(password, 10);
 

@@ -21,7 +21,8 @@ function Register() {
         credentials: "include",
         body: JSON.stringify({ username, email, password})
       })
-      .then(isi => isi.json()).then(isi => console.log(isi.auth, isi.user))
+      .then(isi => isi.json())
+      .then(isi => console.log(isi.auth, isi.user))
     }
   }
 

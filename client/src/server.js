@@ -1,3 +1,3 @@
-const server = 'http://localhost:3001/';
+const server = 'https://linita.herokuapp.com/';
 
 export {server};
