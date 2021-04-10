@@ -16,38 +16,7 @@ class Model {
     //Make new document
     makeDocument = (document) => new this.Model(document);
 
-    //Saving document
-    save = async (document) => {
-        try {
-            const createdDocument = await document.save();
-
-            return createdDocument;
-        } catch(e) {
-            throw new Error(e);
-        }
-    }
-
-    //Getting document by query
-    findOne = async (query) => {
-        try {
-            const foundDocument = await this.Model.findOne(query);
-
-            return foundDocument;
-        } catch(e) {
-            throw new Error(e);
-        }
-    }
-
-    //Getting document by id
-    findById = async (id) => {
-        try {
-            const foundDocument = await this.Model.findById(id);
-
-            return foundDocument;
-        } catch(e) {
-            throw new Error(e);
-        }
-    }
+    getModel = () => this.Model;
 
     //edit a document then return the new one
     editDocument = (document, key, value) => {
@@ -57,16 +26,6 @@ class Model {
         }
 
         return editedDocument;
-    }
-
-    populate = async (document, ref) => {
-        try {
-            const populatedDocument = await this.Model.populate(document, { path: ref });
-
-            return populatedDocument;
-        } catch(e) {
-            throw new Error(e);
-        }
     }
 }
 
