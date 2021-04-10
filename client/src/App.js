@@ -30,6 +30,7 @@ function App() {
     .then(isi => isi.json())
     .then(
       data => {
+        console.log(data);
         setAutentikasi(data);
       }
     )
