@@ -1,6 +1,17 @@
 import '../css/Navbar.css';
+import {server} from '../server.js';
+import { useHistory } from 'react-router';
 
 function Navbar(props) {
+    const history = useHistory();
+
+    function buttonlogout(e){
+        e.preventDefault();
+        fetch(server + 'logout', {
+            method: 'DELETE',
+            credentials: "include"
+        }).then(data => history.push("/login"))
+    }
     return (
         <nav className="customnav navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid navtext">
@@ -25,9 +36,9 @@ function Navbar(props) {
                         </li>
                         <li class="nav-item">
                             {
-                               props.autentikasi?.auth == true ?  <button type="button" class="btn btn-outline-secondary btn-login"><a href="login">LOGOUT</a></button> :  <button type="button" class="btn btn-outline-secondary btn-login"><a href="login">LOGIN</a></button>
+                                props.autentikasi?.auth == true ? <button type="button" class="btn btn-outline-secondary btn-login"><a href="login" onClick={buttonlogout}>LOGOUT</a></button> : <button type="button" class="btn btn-outline-secondary btn-login"><a href="login">LOGIN</a></button>
                             }
-                           
+
                         </li>
                     </ul>
                 </div>

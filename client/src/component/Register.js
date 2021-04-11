@@ -1,6 +1,7 @@
 import '../css/Register.css';
 import React, { useState } from 'react';
 import {server} from '../server.js';
+import { useHistory } from 'react-router';
 
 function Register() {
   const [email, setEmail] = useState();
@@ -9,6 +10,7 @@ function Register() {
   const [showPassword, setShowPassword] = useState(false);
   const username = email;
   const [showconfirmationPass, setShowconfirmationPass] = useState(false);
+  const history = useHistory();
   
   function register(e) {
     e.preventDefault();
@@ -21,7 +23,11 @@ function Register() {
         credentials: "include",
         body: JSON.stringify({ username, email, password})
       })
-      .then(isi => isi.json()).then(isi => console.log(isi.auth, isi.user))
+      .then(isi => isi.json()).then(isi => {
+        if(isi.auth==true){
+          history.push('/');
+        } 
+      })
     }
   }
 

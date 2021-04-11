@@ -6,9 +6,12 @@ import Footer from './component/Footer.js';
 import Carakonsultasi from './component/Carakonsultasi.js';
 import Psikolog from './component/Psikolog.js';
 import Login from './component/Login.js';
+import Home from './component/Home.js';
 import Register from './component/Register.js';
 import Story from './component/Cerita';
 import Testing from './component/Testing';
+import ListStory from './component/ListStory.js'
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -39,6 +42,12 @@ function App() {
     <Router>
       <Navbar autentikasi={autentikasi} mega="cantik"/>
       <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/list-story">
+          <ListStory />
+        </Route>
         <Route path="/action">
           <Lapor />
           <Caralapor />

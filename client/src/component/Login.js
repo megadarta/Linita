@@ -1,24 +1,32 @@
-import { useState } from 'react';
+import {server} from '../server.js';
 import '../css/Login.css';
 import React, { useState } from 'react';
+import { useHistory } from 'react-router';
 
 function Login() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [showPassword, setShowPassword] = useState(false);
-  
+  const history = useHistory();
+
   function login(e){
     e.preventDefault();
-    fetch('https://linita-unity.netlify.app/login', {
+    fetch(server + 'login', {
       
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
+      credentials: "include",
       body: JSON.stringify({email, password})
     })
-
+    .then(isi => isi.json()).then(isi => {
+      if(isi.auth==true){
+        history.push('/');
+      }
+    })
   }
+
   return (
     <div className="custom-login d-flex justify-content-center align-items-center">
       <div className="">
