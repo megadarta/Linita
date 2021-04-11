@@ -10,7 +10,9 @@ import Home from './component/Home.js';
 import Register from './component/Register.js';
 import Story from './component/Cerita';
 import Testing from './component/Testing';
-import ListStory from './component/ListStory.js'
+import ListStory from './component/ListStory.js';
+import Herostories from './component/Herostories.js';
+import Cardcerita from './component/Cardcerita.js';
 
 import {
   BrowserRouter as Router,
@@ -57,6 +59,11 @@ function App() {
         </Route>
         <Route path="/login">
           <Login />
+        </Route>
+        <Route path="/hero-story">
+          <Herostories />
+          <Cardcerita />
+          <Footer />
         </Route>
         <Route path="/register">
           <Register />

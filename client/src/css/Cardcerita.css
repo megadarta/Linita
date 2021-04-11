@@ -1,0 +1,51 @@
+.card:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.custom-card-cerita {
+  margin: 10vw 0;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+
+.card
+{
+  border: 2px solid black;
+}
+
+.card-cerita{
+  width: 19rem;
+  margin: 20px 12px 0px 12px;
+  padding: 30px;
+}
+
+.text-card-cerita{
+  font-family: bebas neue;
+  font-size: 2rem;
+  font-weight: regular;
+}
+
+.card-cerita:hover {
+  transition: 0.2s;
+  transform: translateY(-5px);
+}
+
+.text-card-penulis{
+  font-family: Roboto;
+  font-weight: bold;
+}
+.text-card-create{
+  font-size: 10px;
+  margin-top: -7px;
+}
+.text-card-tanggal{
+  color: #EC6F00;
+}
+/* @media(max-width: 673px) {
+  .card-cerita{
+      text-align: center;
+      margin: 0;
+      width: 100%;
+  }
+} */

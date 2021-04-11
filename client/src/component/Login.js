@@ -1,7 +1,7 @@
-import {server} from '../server.js';
 import '../css/Login.css';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
+import {server} from '../server.js';
 
 function Login() {
   const [email, setEmail] = useState();
