@@ -1,0 +1,39 @@
+.card:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.custom-card-cerita {
+  margin: 10vw 0;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.card
+{
+  border: 2px solid black;
+}
+
+.card-cerita{
+  width: 20rem;
+  margin: 15px;
+  padding: 10px;
+}
+
+.text-card-cerita{
+  font-family: bebas neue;
+  font-size: 2rem;
+  font-weight: regular;
+}
+
+.card-cerita:hover {
+  transition: 0.2s;
+  transform: translateY(-5px);
+}
+
+@media(max-width: 673px) {
+  .card-cerita{
+      text-align: center;
+      margin: 0;
+      width: 100%;
+  }
+}
