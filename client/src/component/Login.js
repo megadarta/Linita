@@ -16,8 +16,8 @@ function Login() {
       },
       body: JSON.stringify({email, password})
     })
-
   }
+
   return (
     <div className="custom-login d-flex justify-content-center align-items-center">
       <div className="">

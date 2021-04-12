@@ -42,6 +42,14 @@
     color: white;
 }
 
+.animate__delay-1s {
+    --animate-delay: 0.1s;
+}
+
+.animate__delay-2s {
+    --animate-delay: 0.15s;
+}
+
 @media(max-width: 900px) {
     .body-lapor {
         display: flex;
