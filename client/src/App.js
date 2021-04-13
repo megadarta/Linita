@@ -6,9 +6,13 @@ import Footer from './component/Footer.js';
 import Carakonsultasi from './component/Carakonsultasi.js';
 import Psikolog from './component/Psikolog.js';
 import Login from './component/Login.js';
+import Home from './component/Home.js';
 import Register from './component/Register.js';
 import Story from './component/Cerita';
 import Testing from './component/Testing';
+import ListStory from './component/ListStory.js';
+import LayoutCerita from './component/LayoutCerita.js';
+import PreLoader from './component/PreLoader.js';
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,7 +25,7 @@ import '@fortawesome/fontawesome-free/js/all.js';
 
 function App() {
   const [autentikasi, setAutentikasi] = useState();
-
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     fetch(server, {
       credentials: 'include',
@@ -30,16 +34,26 @@ function App() {
     .then(isi => isi.json())
     .then(
       data => {
-        console.log(data);
         setAutentikasi(data);
+        setLoading(false);
       }
     )
-  }, [setAutentikasi]);
+  }, [setAutentikasi, setLoading]);
 
   return (
     <Router>
-      <Navbar autentikasi={autentikasi} mega="cantik"/>
+      <Navbar autentikasi={autentikasi} loading={loading} mega="cantik"/>
+      { loading 
+      ? 
+      <PreLoader /> 
+      :  
       <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/list-story">
+          <ListStory />
+        </Route>
         <Route path="/action">
           <Lapor />
           <Caralapor />
@@ -49,6 +63,10 @@ function App() {
         </Route>
         <Route path="/login">
           <Login />
+        </Route>
+        <Route path="/stories">
+          <LayoutCerita />
+          <Footer />
         </Route>
         <Route path="/register">
           <Register />
@@ -60,7 +78,7 @@ function App() {
           <Testing />
         </Route>
       </Switch>
-
+      }
     </Router>
   );
 }

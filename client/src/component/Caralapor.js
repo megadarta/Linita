@@ -26,7 +26,7 @@ function Caralapor() {
             <div className="text-center mb-5">
                 <h3>Cara Melapor Kejahatan Seksual</h3>
             </div>
-            <div className={ isIntersect && "animate__animated animate__fadeInRight animate__delay-2s" }>
+            <div className={ isIntersect ? "animate__animated animate__fadeInRight animate__delay-2s" : undefined }>
                 <div className="container-fluid">
                     <div className="row justify-content-center">
                         <div className="card card-lapor">

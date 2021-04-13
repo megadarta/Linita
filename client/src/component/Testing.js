@@ -26,10 +26,7 @@ const Testing = () => {
         <div>
             <form onSubmit={submit} method="POST">
                 <input type="text" className="form-control" placeholder="Judul" name="title" onChange={handleCerita}></input>
-                {/* <textarea className="form-control" onKeyDown={allowTab} onChange={handleCerita} name="content" placeholder="Ungkapkan keluh kesahmu"></textarea> */}
-                <div contentEditable="true" name="content" onChange={handleCerita}>
-
-                </div>
+                <textarea className="form-control" onKeyDown={allowTab} onChange={handleCerita} name="content" placeholder="Ungkapkan keluh kesahmu"></textarea>
                 <input type="submit" value="Ceritakan"></input>
             </form>
 

@@ -1,5 +1,4 @@
 .body-lapor{
-    height: 46vw;
 }
 
 .img-lapor {
@@ -18,6 +17,11 @@
     margin-right: 7vw;
     height: 100%;
 }
+
+.custom-lapor {
+    padding: 190px 0;
+}
+
 .button-lapor{
     font-size: 1.2vw;
     padding: 5px 3vw;
