@@ -1,0 +1,42 @@
+.text-judul{
+    margin-top: 100px;
+    height: 70px;
+    font-size: 50px;
+    font-family: Bebas Neue;
+    width: 65vw;
+    border: 1px solid black;
+    border-radius: 0;
+}
+.text-judul::placeholder{
+    font-family: Bebas Neue;
+    font-size: 50px;
+    padding: 10px;
+}
+.text-isi{
+    height: 400px;
+    width: 65vw;
+    border-radius: 0;
+}
+.btn-tulis-cerita{
+    width: 65vw;
+}
+.btn-kirim, .btn-kirim:hover{
+    font-size: 15px;
+    font-family: 'Roboto';
+    width: 100px;
+    border-radius: 0;
+    background-color: #EC6F00;
+    color: white;
+}
+.btn-kembali {
+    font-size: 15px;
+    font-family: 'Roboto';
+    width: 100px;
+    border-radius: 0;
+    background-color: white;
+    color: black;
+    box-shadow: black;
+    border-radius: 2px;
+    border-color: black;
+}
+
