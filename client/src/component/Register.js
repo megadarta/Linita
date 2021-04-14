@@ -41,11 +41,11 @@ function Register() {
         <form method="post" action="" onSubmit={register} className="register-form mb-3">
         <div className="form-floating mb-3">
             <input onChange={e => setEmail(e.target.value)} type="email" name="email" className="form-control custom-input shadow-none" id="email" placeholder="name@example.com" />
-            <label for="email">Email address</label>
+            <label htmlFor="email">Email address</label>
           </div>
           <div className="form-floating mb-3">
             <input onChange={e => setPassword(e.target.value)} type={showPassword ? "text" : "password"} name="password" className="form-control custom-input shadow-none" id="password" placeholder="your password" />
-            <label for="password">Password</label>
+            <label htmlFor="password">Password</label>
             {
               showPassword
                 ? <div className="show-hide-password" onClick={(e) => { setShowPassword(false) }}><i className="far fa-eye"></i></div>
@@ -54,7 +54,7 @@ function Register() {
           </div>
           <div className="form-floating">
             <input onChange={e => setConPassword(e.target.value)} type={showconfirmationPass ? "text" : "password"} name="confirm-password" className="form-control custom-input shadow-none" id="confirm-password" placeholder="retype your password" />
-            <label for="confirm-password">Confirm Password</label>
+            <label htmlFor="confirm-password">Confirm Password</label>
             {
               showconfirmationPass
                 ? <div className="show-hide-password" onClick={(e) => { setShowconfirmationPass(false) }}><i className="far fa-eye"></i></div>

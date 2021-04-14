@@ -34,14 +34,14 @@ function Login() {
         <div className="classlogo text-center">
           <img src="../logo192.png" className="rounded-left logo-login "></img>
         </div>
-        <form  onSubmit={login}  method="post" action="" className="login-form mb-3">
+        <form  onSubmit={login}  method="post" className="login-form mb-3">
           <div className="form-floating mb-3">
             <input onChange={e => setEmail(e.target.value)} type="email" name="email" className="form-control custom-input shadow-none" id="email" placeholder="name@example.com" />
-            <label for="email">Email address</label>
+            <label htmlFor="email">Email address</label>
           </div>
           <div className="form-floating">
             <input onChange={e => setPassword(e.target.value)} type={showPassword ? "text" : "password"} name="password" className="form-control custom-input shadow-none" id="password" placeholder="your password" />
-            <label for="password">Password</label>
+            <label htmlFor="password">Password</label>
             {
               showPassword
                 ? <div className="show-hide-password" onClick={(e) => { setShowPassword(false) }}><i className="far fa-eye"></i></div>

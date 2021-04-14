@@ -1,6 +1,6 @@
 // import '../css/Herostories.css';
 
-function Herostories() {
+function BannerCerita() {
 return (
     <div className="custom-psikolog">
     <div className="konten-psikolog">
@@ -20,4 +20,4 @@ return (
 );
 }
 
-export default Herostories;
+export default BannerCerita;

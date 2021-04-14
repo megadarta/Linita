@@ -4,7 +4,7 @@ const user = new User();
 require('../authentications/passportAuth')(user);
 
 class UserController {
-    static checkAuthentication = (req, res) => {
+    static checkAuthentication = (req, res) => {        
         if(!req.isAuthenticated()) return res.json({ auth: false });
 
         res.json({ auth: true, user: req.user });
@@ -14,14 +14,7 @@ class UserController {
         const { body } = req;
 
         try {
-            const encryptedPassword = user.encryptPassword(body.password);
-
-            //Edit document's password to the encrypted one
-            const insertedDocument = user.editDocument(body, 'password', encryptedPassword);
-
-            const newDocument = user.makeDocument(insertedDocument);
-            
-            const createdUser = await user.save(newDocument);
+            const createdUser = await user.register(body);
 
             //Save registered user to session
             req.login(createdUser, (err, sessionUser) => {

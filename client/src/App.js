@@ -11,9 +11,8 @@ import Register from './component/Register.js';
 import Story from './component/Cerita';
 import Testing from './component/Testing';
 import ListStory from './component/ListStory.js';
-import Herostories from './component/Herostories.js';
-import Cardcerita from './component/Cardcerita.js';
-
+import LayoutCerita from './component/LayoutCerita.js';
+import PreLoader from './component/PreLoader.js';
 import {
   BrowserRouter as Router,
   Switch,
@@ -26,7 +25,7 @@ import '@fortawesome/fontawesome-free/js/all.js';
 
 function App() {
   const [autentikasi, setAutentikasi] = useState();
-
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     fetch(server, {
       credentials: 'include',
@@ -36,13 +35,18 @@ function App() {
     .then(
       data => {
         setAutentikasi(data);
+        setLoading(false);
       }
     )
-  }, [setAutentikasi]);
+  }, [setAutentikasi, setLoading]);
 
   return (
     <Router>
-      <Navbar autentikasi={autentikasi} mega="cantik"/>
+      <Navbar autentikasi={autentikasi} loading={loading} mega="cantik"/>
+      { loading 
+      ? 
+      <PreLoader /> 
+      :  
       <Switch>
         <Route exact path="/">
           <Home />
@@ -60,9 +64,8 @@ function App() {
         <Route path="/login">
           <Login />
         </Route>
-        <Route path="/hero-story">
-          <Herostories />
-          <Cardcerita />
+        <Route path="/stories">
+          <LayoutCerita />
           <Footer />
         </Route>
         <Route path="/register">
@@ -75,7 +78,7 @@ function App() {
           <Testing />
         </Route>
       </Switch>
-
+      }
     </Router>
   );
 }

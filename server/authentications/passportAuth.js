@@ -2,12 +2,14 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 
 const passportAuth = (user) => {
+    const UserModel = user.getModel();
+
     passport.serializeUser((user, done) => {
         done(null, user._id);
     });
 
     passport.deserializeUser( async (id, done) => {
-        const foundUser = await user.findById(id);
+        const foundUser = await UserModel.findById(id);
 
         done(null, foundUser);
     });
@@ -18,8 +20,9 @@ const passportAuth = (user) => {
         },
         async (email, password, done) => {
             try {
-                const foundUser = await user.findOne({ email });
 
+                const foundUser = await UserModel.findOne({ email });
+                
                 if(!foundUser) return done(null, false);
 
                 //check if password is correct

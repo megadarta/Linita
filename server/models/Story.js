@@ -26,10 +26,10 @@ class Story extends Model {
     postStory = async (body) => {
         const document = this.makeDocument(body);
 
-        const postedStory = await this.save(document);
+        const postedStory = await document.save();
 
         //populate author field
-        const populatedStory = await this.populate(postedStory, 'author');
+        const populatedStory = await  await this.Model.populate(postedStory, { path: 'author' });
 
         return populatedStory;
     }
@@ -38,7 +38,7 @@ class Story extends Model {
         //add story to author document
         story.author.stories.push(story._id);
 
-        const postedUser = await this.save(story.author);
+        const postedUser = await story.author.save();
 
         return postedUser;
     }
