@@ -1,0 +1,47 @@
+.img-banner-cerita {
+    background-image: url(./asset/BannerStory.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.konten-banner-cerita{
+    width: 40vw;
+    margin-right: 7vw;
+    height: 100%;
+    padding: 50px 0;
+}
+
+.konten-banner-cerita h1{
+    font-size: 3vw;
+}
+.banner-cerita-desc{
+    margin: 3vw 0px 1.5vw;
+    font-size: 14px;
+}
+
+@media(max-width: 900px) {
+    .img-banner-cerita {
+        background-image: url(./asset/mobile-lapor.png);
+    }
+
+    .custom-banner-cerita {
+        display: flex;
+        justify-content: center!important;
+    }
+
+    .konten-banner-cerita h1{
+        font-size: 31px;
+    }
+
+    .konten-banner-cerita {
+        padding: 50px 30px;
+        width: auto;
+        margin-right: 0;
+    }
+
+    .banner-cerita-desc{
+        margin: 46px 0px 23px;
+        font-size: 14px;
+    }
+}

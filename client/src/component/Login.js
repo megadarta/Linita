@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 import {server} from '../server.js';
 
-function Login() {
+function Login(props) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [showPassword, setShowPassword] = useState(false);
@@ -11,8 +11,8 @@ function Login() {
 
   function login(e){
     e.preventDefault();
+    props.setLoading(true);
     fetch(server + 'login', {
-      
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -20,10 +20,16 @@ function Login() {
       credentials: "include",
       body: JSON.stringify({email, password})
     })
-    .then(isi => isi.json()).then(isi => {
-      if(isi.auth==true){
+    .then(response => {
+      return response.json(); 
+    })
+    .then(data => {
+      if(data.auth===true){
         history.push('/');
       }
+
+      props.setAutentikasi(data.auth);
+      props.setLoading(false);
     })
   }
 
