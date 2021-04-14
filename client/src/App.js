@@ -24,8 +24,9 @@ import 'animate.css';
 import '@fortawesome/fontawesome-free/js/all.js';
 
 function App() {
-  const [autentikasi, setAutentikasi] = useState();
+  const [autentikasi, setAutentikasi] = useState(false);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     fetch(server, {
       credentials: 'include',
@@ -34,15 +35,16 @@ function App() {
     .then(isi => isi.json())
     .then(
       data => {
+        console.log(data);
         setAutentikasi(data);
         setLoading(false);
       }
     )
-  }, [setAutentikasi, setLoading]);
+  }, []);
 
   return (
     <Router>
-      <Navbar autentikasi={autentikasi} loading={loading} mega="cantik"/>
+      <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} mega="cantik"/>
       { loading 
       ? 
       <PreLoader /> 
@@ -62,14 +64,14 @@ function App() {
           <Footer />
         </Route>
         <Route path="/login">
-          <Login />
+          <Login setAutentikasi={setAutentikasi} setLoading={setLoading} />
         </Route>
         <Route path="/stories">
           <LayoutCerita />
           <Footer />
         </Route>
         <Route path="/register">
-          <Register />
+          <Register setAutentikasi={setAutentikasi} setLoading={setLoading} />
         </Route>
         <Route path="/story">
           <Story />
