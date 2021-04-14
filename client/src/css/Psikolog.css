@@ -1,5 +1,4 @@
 .body-psikolog{
-    height: 50vw;
 }
 
 .img-psikolog {
@@ -7,6 +6,10 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+}
+
+.custom-psikolog {
+    padding: 250px 0;
 }
 
 .konten-psikolog{

@@ -20,6 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 //Session
+app.set('trust proxy', 1);
 app.use(session(sessionSetting));
 
 app.use(passport.initialize());

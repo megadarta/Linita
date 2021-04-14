@@ -26,17 +26,21 @@ function Lapor() {
       <div className="custom-lapor">
           <div className="konten-lapor">
               {/* title */}
-              <h1 className="judul-konten">
-                Darurat pelecehan seksual, <br />laporkan sekarang juga!
-              </h1>
+              <div className={ isIntersect ? "animate__animated animate__fadeIn animate__slow animate__delay-1s" : undefined }>
+                <h1 className="judul-konten">
+                  Darurat pelecehan seksual, <br />laporkan sekarang juga!
+                </h1>
+              </div>
 
               {/* description */}
-              <p className="lapor-desc">Bantulah kami mengeliminasi segala bentuk kekerasan terhadap perempuan dan anak perempuan pada ruang publik dan privat, termasuk perdagangan seksual dan bentuk eksploitasi lainnya. Pelecehan seksual bukanlah hal yang biasa dan bisa dibiarkan. Kami bersatu mendukung anda, Jangan takut dan segera laporkan! melindungi negeri berasal dari diri sendiri.</p>
-              <a href="https://www.lapor.go.id/" target="_blank">
-                <button type="button" className="btn btn-color button-lapor shadow-none">
-                  LAPORKAN
-                </button>
-              </a>
+              <div className={ isIntersect ? "animate__animated animate__fadeIn animate__slow animate__delay-2s" : undefined }>
+                <p className="lapor-desc">Bantulah kami mengeliminasi segala bentuk kekerasan terhadap perempuan dan anak perempuan pada ruang publik dan privat, termasuk perdagangan seksual dan bentuk eksploitasi lainnya. Pelecehan seksual bukanlah hal yang biasa dan bisa dibiarkan. Kami bersatu mendukung anda, Jangan takut dan segera laporkan! melindungi negeri berasal dari diri sendiri.</p>
+                <a href="https://www.lapor.go.id/" target="_blank">
+                  <button type="button" className="btn btn-color button-lapor shadow-none">
+                    LAPORKAN
+                  </button>
+                </a>
+              </div>
           </div>
       </div>
     </div>

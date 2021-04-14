@@ -11,9 +11,8 @@ import Register from './component/Register.js';
 import Story from './component/Cerita';
 import Testing from './component/Testing';
 import ListStory from './component/ListStory.js';
-import Herostories from './component/Herostories.js';
-import Cardcerita from './component/Cardcerita.js';
-
+import LayoutCerita from './component/LayoutCerita.js';
+import PreLoader from './component/PreLoader.js';
 import {
   BrowserRouter as Router,
   Switch,
@@ -25,7 +24,8 @@ import 'animate.css';
 import '@fortawesome/fontawesome-free/js/all.js';
 
 function App() {
-  const [autentikasi, setAutentikasi] = useState();
+  const [autentikasi, setAutentikasi] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch(server, {
@@ -35,14 +35,20 @@ function App() {
     .then(isi => isi.json())
     .then(
       data => {
+        console.log(data);
         setAutentikasi(data);
+        setLoading(false);
       }
     )
-  }, [setAutentikasi]);
+  }, []);
 
   return (
     <Router>
-      <Navbar autentikasi={autentikasi} mega="cantik"/>
+      <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} mega="cantik"/>
+      { loading 
+      ? 
+      <PreLoader /> 
+      :  
       <Switch>
         <Route exact path="/">
           <Home />
@@ -58,15 +64,14 @@ function App() {
           <Footer />
         </Route>
         <Route path="/login">
-          <Login />
+          <Login setAutentikasi={setAutentikasi} setLoading={setLoading} />
         </Route>
-        <Route path="/hero-story">
-          <Herostories />
-          <Cardcerita />
+        <Route path="/stories">
+          <LayoutCerita />
           <Footer />
         </Route>
         <Route path="/register">
-          <Register />
+          <Register setAutentikasi={setAutentikasi} setLoading={setLoading} />
         </Route>
         <Route path="/story">
           <Story />
@@ -75,7 +80,7 @@ function App() {
           <Testing />
         </Route>
       </Switch>
-
+      }
     </Router>
   );
 }
