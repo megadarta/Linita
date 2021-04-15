@@ -23,11 +23,7 @@ import { useEffect, useState } from 'react';
 import { server } from './server.js';
 import 'animate.css';
 import '@fortawesome/fontawesome-free/js/all.js';
-<<<<<<< HEAD
 import TulisCerita from './component/TulisCerita.js';
-=======
-import Popup from './component/PopupForm';
->>>>>>> origin/dev-bayu
 
 function App() {
   const [autentikasi, setAutentikasi] = useState(false);
@@ -85,14 +81,12 @@ function App() {
         <Route path="/testing">
           <Testing />
         </Route>
-<<<<<<< HEAD
         <Route path="/buat-cerita">
           <TulisCerita />
           <Footer />
-=======
+        </Route>
         <Route path="/testing2">
           <PopupForm />
->>>>>>> origin/dev-bayu
         </Route>
       </Switch>
       }
