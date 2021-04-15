@@ -23,8 +23,9 @@ function Register() {
         credentials: "include",
         body: JSON.stringify({ username, email, password})
       })
-      .then(isi => isi.json()).then(isi => {
-        if(isi.auth==true){
+      .then(response => response.json())
+      .then(data => {
+        if(data.auth==true){
           history.push('/');
         } 
       })
