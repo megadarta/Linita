@@ -22,6 +22,7 @@ import { useEffect, useState } from 'react';
 import { server } from './server.js';
 import 'animate.css';
 import '@fortawesome/fontawesome-free/js/all.js';
+import TulisCerita from './component/TulisCerita.js';
 
 function App() {
   const [autentikasi, setAutentikasi] = useState(false);
@@ -78,6 +79,10 @@ function App() {
         </Route>
         <Route path="/testing">
           <Testing />
+        </Route>
+        <Route path="/buat-cerita">
+          <TulisCerita />
+          <Footer />
         </Route>
       </Switch>
       }
