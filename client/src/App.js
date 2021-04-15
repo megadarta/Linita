@@ -13,6 +13,7 @@ import Testing from './component/Testing';
 import ListStory from './component/ListStory.js';
 import LayoutCerita from './component/LayoutCerita.js';
 import PreLoader from './component/PreLoader.js';
+import PopupForm from './component/PopupForm.js';
 import {
   BrowserRouter as Router,
   Switch,
@@ -22,6 +23,7 @@ import { useEffect, useState } from 'react';
 import { server } from './server.js';
 import 'animate.css';
 import '@fortawesome/fontawesome-free/js/all.js';
+import Popup from './component/PopupForm';
 
 function App() {
   const [autentikasi, setAutentikasi] = useState(false);
@@ -78,6 +80,9 @@ function App() {
         </Route>
         <Route path="/testing">
           <Testing />
+        </Route>
+        <Route path="/testing2">
+          <PopupForm />
         </Route>
       </Switch>
       }

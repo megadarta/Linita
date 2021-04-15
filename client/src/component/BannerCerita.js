@@ -12,7 +12,7 @@ function BannerCerita() {
         {/* description */}
         <p className="banner-cerita-desc">Kisah kejahatan seksual yang pernah anda alami akan menjadi edukasi kepada pembaca agar selalu waspada terhadap berbagai macam tindakan pelecehan. Disinilah, anda dapat bercerita tanpa mempublikasikan identitas anda.</p>
         <a href="https://api.whatsapp.com/send?phone=+6285546697238" target="_blank">
-          <button type="button" className="btn btn-color button-psikolog shadow-none">SAYA INGIN BERCERITA</button>
+          <button type="button" className="btn btn-color button-cerita shadow-none">SAYA INGIN BERCERITA</button>
         </a>
       </div>
     </div>

@@ -15,9 +15,19 @@
 .konten-banner-cerita h1{
     font-size: 3vw;
 }
+
+.button-cerita {
+    font-size: 1vw;
+    font-weight: 600;
+    padding: 7px 3vw;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 0;
+}
+
 .banner-cerita-desc{
-    margin: 3vw 0px 1.5vw;
-    font-size: 14px;
+    margin: 1vw 0px 2vw;
+    font-size: 18px;
 }
 
 @media(max-width: 900px) {
