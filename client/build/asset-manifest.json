@@ -22,7 +22,12 @@
     "static/js/runtime-main.2947d4c6.js",
     "static/css/2.a1596f27.chunk.css",
     "static/js/2.502c4499.chunk.js",
+<<<<<<< HEAD
     "static/css/main.c32569ba.chunk.css",
     "static/js/main.709f65da.chunk.js"
+=======
+    "static/css/main.dc08ce46.chunk.css",
+    "static/js/main.df03cecc.chunk.js"
+>>>>>>> f0c27f4d31768c522a83de6bcb96e357a7b5fb6a
   ]
 }
