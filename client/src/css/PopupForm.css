@@ -3,6 +3,7 @@
 *::after {
   box-sizing: border-box;
 }
+
 body{
 	font-family: 'Roboto';
 	font-weight: 400;
@@ -50,6 +51,7 @@ p{
   -ms-flex-pack: center;
   justify-content: center;
 }
+
 .full-height{
   min-height: 100vh;
 }
@@ -201,6 +203,7 @@ label {
   font-size: 14px;
   font-weight: 800;
 }
+
 ::placeholder {
   font-size: 14px;
 }
