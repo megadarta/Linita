@@ -5,8 +5,8 @@ function PopupForm() {
 	<div class="section full-height">
         <input class="modal-btn" type="checkbox" id="modal-btn" name="modal-btn"/>
             <label for="modal-btn">TULIS CERITA<i class="uil uil-expand-arrows"></i></label>
-                <div class="modal">		
-                    <div class="modal-wrap">
+                <div class="modal overflow-auto">		
+                    <div class="modal-wrap" >
                         <h3 class="judul">ATURAN DAN KETENTUAN CERITA</h3>
                         <div class="title">I. Ketentuan Umum Bagi Pengguna :</div>
                         <p>1. Pengguna dengan ini menyatakan bahwa pengguna adalah subjek hukum yang cakap dan mampu untuk mengikatkan diri dalam perjanjian.
@@ -55,8 +55,8 @@ function PopupForm() {
                                 <input type="radio" class="form-pilihan" name="option" value="no"></input>		  
                                 <a for="anonymous">Tidak diizinkan, samarkan nama saya.</a><br></br>  	
                             </div>
-                            <div class="container rules-button">
-                            <button type="submit" className="btn-color btn-rules">Submit</button>	
+                            <div class="container rules-button d-flex justify-content-center">
+                            <button type="submit" className="btn-color btn-rules">SUBMIT</button>	
                             </div>
                         </div>
                     </div>	

@@ -36,7 +36,7 @@ p{
 .title {
   font-weight: 700;
   font-size: 14px;
-  padding: 0px 50px 0 50px;
+  padding: 0px 5vw 0 5vw;
 }
 
 .section{
@@ -179,7 +179,7 @@ p{
 }
 
 .modal-wrap p {
-  padding: 0px 50px 0 50px;
+  padding: 0px 5vw 0 5vw;
 }
 .modal-btn:checked ~ .modal .modal-wrap{
   opacity: 1;
@@ -211,12 +211,16 @@ label {
 }
 
 .btn-rules {
-  font-size: 1vw;
-  padding: 4px 3vw;
+  font-size: 14px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   border: none;
-  margin-top: 20px;
-  size: 300px;
+  font-weight: 500;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  width: 20vw;
   text-align: center;
+  letter-spacing: 1px;
 }
 
 @media screen and (max-width: 900px) {
