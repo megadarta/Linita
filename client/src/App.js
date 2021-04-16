@@ -14,6 +14,7 @@ import ListStory from './component/ListStory.js';
 import LayoutCerita from './component/LayoutCerita.js';
 import PreLoader from './component/PreLoader.js';
 import PopupForm from './component/PopupForm.js';
+import ModalCerita from './component/ModalCerita.js';
 import {
   BrowserRouter as Router,
   Switch,
@@ -67,6 +68,9 @@ function App() {
         </Route>
         <Route path="/login">
           <Login setAutentikasi={setAutentikasi} setLoading={setLoading} />
+        </Route>
+        <Route path="/testing3">
+          <ModalCerita />
         </Route>
         <Route path="/stories">
           <LayoutCerita />

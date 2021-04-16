@@ -4,19 +4,6 @@
   box-sizing: border-box;
 }
 
-body{
-	font-family: 'Roboto';
-	font-weight: 400;
-	font-size: 15px;
-	line-height: 1.7;
-	color: #1f2029;
-  	background-color: #fff;
-  overflow: hidden;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 101%;
-}
-
 .judul {
   text-align: center;
   padding: 50px 30px 20px 30px;
@@ -25,7 +12,7 @@ body{
   font-weight: 800;
 }
 
-p{
+.deskripsi{
 	font-family: 'Roboto';
 	font-weight: 400;
 	font-size: 14px;
@@ -105,19 +92,19 @@ p{
 .modal-btn:checked + label:after,
 .modal-btn:not(:checked) + label:after{
   position: fixed;
-  top: 30px;
-  right: 30px;
+  top: 20px;
+  left: 50px;
   z-index: 110;
-  width: 50px;
+  width: 100px;
   height: 30px;
   text-align: center;
   line-height: 30px;
   font-size: 18px;
   background-color: #ffffff;
   color: #000000;
-  content: '\00d7' 50px; 
+  /* content: '\00d7' 50px;  */
+  content : "Kembali";
   font-weight: 500;
-  box-shadow: 0 12px 25px 0 rgba(16,39,112,.25);
   transition: all 200ms linear;
   opacity: 0;
   pointer-events: none;
@@ -125,7 +112,7 @@ p{
 }
 .modal-btn:checked + label:hover:after,
 .modal-btn:not(:checked) + label:hover:after{
-    background-color: #EC6F00;
+    background-color: #000000;
     color: #ffffff;
 }
 .modal-btn:checked + label:after{
@@ -133,7 +120,8 @@ p{
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
-  content: '\00d7'; 
+  /* content: '\00d7';  */
+  content : "Kembali";
 }
 .modal{
   position: fixed;
@@ -180,7 +168,7 @@ p{
   transition: opacity 250ms 250ms ease, transform 300ms 250ms ease;
 }
 
-.modal-wrap p {
+.modal-wrap .deskripsi {
   padding: 0px 5vw 0 5vw;
 }
 .modal-btn:checked ~ .modal .modal-wrap{
@@ -198,7 +186,7 @@ p{
   padding: 10px 5vw 0 5vw;
 }
 
-label {
+.judulform {
   font-family: 'Roboto';
   font-size: 14px;
   font-weight: 800;
