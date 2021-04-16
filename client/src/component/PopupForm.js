@@ -9,7 +9,7 @@ function PopupForm() {
                     <div class="modal-wrap" >
                         <h3 class="judul">ATURAN DAN KETENTUAN CERITA</h3>
                         <div class="title">I. Ketentuan Umum Bagi Pengguna :</div>
-                        <p>1. Pengguna dengan ini menyatakan bahwa pengguna adalah subjek hukum yang cakap dan mampu untuk mengikatkan diri dalam perjanjian.
+                        <p class="deskripsi">1. Pengguna dengan ini menyatakan bahwa pengguna adalah subjek hukum yang cakap dan mampu untuk mengikatkan diri dalam perjanjian.
                             <br></br>
                             2. Setiap pengguna sepakat untuk tidak menyebarluaskan berita atau informasi yang tidak benar (hoaks) di dalam platform Linita
                             <br></br>
@@ -31,7 +31,7 @@ function PopupForm() {
                             <br></br>
                         </p>
                         <div class="title">II. Tanggung Jawab Kami :</div>
-                          <p>
+                          <p class="deskripsi">
                             1. Kewajiban kami hanyalah sebatas penyediaan platform linita.
                             <br></br>
                             2. Bentuk kerugian yang dikarenakan tindakan dari pengguna yang melanggar ketentuan ini menjadi tanggung jawab pengguna.
@@ -41,15 +41,15 @@ function PopupForm() {
                           </p>
                         <div>
                             <div class="form-group">
-                                <label for="exampleInputName">NAMA LENGKAP*</label><br></br>
+                                <label class="judulform" for="exampleInputName">NAMA LENGKAP*</label><br></br>
                                 <input type="name" class="form-control" id="InputName" placeholder="Nama lengkap sesuai KK / KTP"></input>
                                 </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">NIK*</label><br></br>
+                                <label class="judulform" for="exampleInputEmail1">NIK*</label><br></br>
                                 <input type="email" class="form-control" id="InputNIK" placeholder="NIK sesuai KK / KTP"></input>
                                 </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">IZINKAN ORANG LAIN MENGETAHUI NAMA ANDA*</label><br></br>
+                                <label class="judulform" for="exampleInputPassword1">IZINKAN ORANG LAIN MENGETAHUI NAMA ANDA*</label><br></br>
                                 <input type="radio" class="form-pilihan" name="option" value="yes"></input>		  
                                 <a for="showname">Ya, Izinkan.</a><br></br>        	
                                 <input type="radio" class="form-pilihan" name="option" value="no"></input>		  
