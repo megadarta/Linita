@@ -4,8 +4,8 @@
     font-size: 50px;
     font-family: Bebas Neue;
     width: 65vw;
-    border: 1px solid black;
-    border-radius: 0;
+    border: none;
+
 }
 .text-judul::placeholder{
     font-family: Bebas Neue;
@@ -15,7 +15,7 @@
 .text-isi{
     height: 400px;
     width: 65vw;
-    border-radius: 0;
+    border: none;
 }
 .btn-tulis-cerita{
     width: 65vw;
@@ -23,7 +23,7 @@
 .btn-kirim, .btn-kirim:hover{
     font-size: 15px;
     font-family: 'Roboto';
-    width: 100px;
+    width: 300px;
     border-radius: 0;
     background-color: #EC6F00;
     color: white;
@@ -40,3 +40,25 @@
     border-color: black;
 }
 
+.pilihan-anonim{
+    width: 65vw;
+}
+.check-anonim{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+}
+.radio-anonim{
+    height: 12px;
+    width: 12px;
+}
+.judul-anonim{
+    font-weight: bold;
+    font-size: 13px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.div-judul-anonim{
+    margin-bottom: -10px;
+}
+.baris-batas{
+        border: 1px solid black;
+}
