@@ -163,9 +163,16 @@
   font-size: 14px;
 }
 
-.option a {
+.form-pilihan {
   font-weight: 500;
+  margin-top: 5px;
   font-size: 14px;
+  color: #000000;
+}
+
+.form-pilihan a {
+  font-size: 15px;
+  margin-left: 5px;
 }
 
 .btn-rules {

@@ -30,7 +30,6 @@ function PopupForm() {
                             <br></br>
                             Setiap penggunaan yang melanggar ketentuan di atas dapat mengakibatkan, antara lain, penghentian hak Pengguna untuk menggunakan paltform Linita serta pelaporan terhadap pihak yang berwenang .  
                             <br></br>
-                            <br></br>
                         </p>
                         <div class="title">II. Tanggung Jawab Kami :</div>
                           <p class="deskripsi">
@@ -51,14 +50,19 @@ function PopupForm() {
                                 <input type="email" class="form-control" id="InputNIK" placeholder="NIK sesuai KK / KTP"></input>
                                 </div>
                             <div class="form-group">
-                                <label class="judulform" for="exampleInputPassword1">IZINKAN ORANG LAIN MENGETAHUI NAMA ANDA*</label><br></br>
-                                <input type="radio" class="form-pilihan" name="option" value="yes"></input>		  
-                                <a for="showname">Ya, Izinkan.</a><br></br>        	
-                                <input type="radio" class="form-pilihan" name="option" value="no"></input>		  
-                                <a for="anonymous">Tidak diizinkan, samarkan nama saya.</a><br></br>  	
+                                <label class="judulform" for="exampleInputPassword1">IZINKAN ORANG LAIN MENGETAHUI NAMA ANDA*</label>
+                                <br></br>
+                                <label class="container form-pilihan">
+                                <input type="radio" checked="checked" name="form-pilihan"></input><a>Ya, Izinkan.</a>
+                                <span class="checkmark"></span>
+                                </label>
+                                <label class="container form-pilihan">
+                                <input type="radio" checked="checked" name="form-pilihan"></input><a>Tidak diizinkan, samarkan nama saya.</a>
+                                <span class="checkmark"></span>
+                                </label>
                             </div>
                             <div class="container rules-button d-flex justify-content-center">
-                            <button href="ListStory" type="submit" className="btn-color btn-rules">SUBMIT</button>
+                            <button href="/stories" type="submit" className="btn-color btn-rules">SUBMIT</button>
                             </div>
                         </div>
                     </div>	
