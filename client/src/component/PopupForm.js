@@ -4,8 +4,10 @@ function PopupForm() {
     return (
 	<div class="section full-height">
         <input class="modal-btn" type="checkbox" id="modal-btn" name="modal-btn"/>
-            <label for="modal-btn">TULIS CERITA<i class="uil uil-expand-arrows"></i></label>
-                <div class="modal overflow-auto">		
+            <label for="modal-btn">TULIS CERITA</label>
+                <div class="modal overflow-auto">	
+                <div class="container PopUp">
+                    <a class="btn-kembali" href="/stories">kembali</a>
                     <div class="modal-wrap" >
                         <h3 class="judul">ATURAN DAN KETENTUAN CERITA</h3>
                         <div class="title">I. Ketentuan Umum Bagi Pengguna :</div>
@@ -56,11 +58,12 @@ function PopupForm() {
                                 <a for="anonymous">Tidak diizinkan, samarkan nama saya.</a><br></br>  	
                             </div>
                             <div class="container rules-button d-flex justify-content-center">
-                            <button type="submit" className="btn-color btn-rules">SUBMIT</button>	
+                            <button href="ListStory" type="submit" className="btn-color btn-rules">SUBMIT</button>
                             </div>
                         </div>
                     </div>	
                 </div> 
+                </div>
     </div>
     );
 } 
