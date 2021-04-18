@@ -40,7 +40,10 @@ function Navbar(props) {
                             <a className="nav-link" href="/stories">Cerita</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link me-lg-3" href="/action">Mulai Beraksi</a>
+                            <a className="nav-link" href="/action">Mulai Beraksi</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link me-lg-5" href="/article">Artikel</a>
                         </li>
                         <li class="nav-item">
                             {   props.loading

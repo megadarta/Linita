@@ -11,14 +11,15 @@
     height: 80px;
 }
 .fb-texttop{
-    font-size: 15px;
+    font-size: 16px;
     color: white;
     font-weight: bold;
     font-family: 'Roboto';
+    letter-spacing: 3px;
 }
 .fb-textbottom{
     color: white;
-    font-size: 12px;
+    font-size: 14px;
     margin-top: -15px;
     font-family: 'Roboto';
 }

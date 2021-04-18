@@ -43,11 +43,11 @@ function PopupForm() {
                         <div>
                             <div class="form-group">
                                 <label class="judulform" for="exampleInputName">NAMA LENGKAP*</label><br></br>
-                                <input type="name" class="form-control" id="InputName" placeholder="Nama lengkap sesuai KK / KTP"></input>
+                                <input type="text" class="form-control" id="InputName" placeholder="Nama lengkap sesuai KK / KTP"></input>
                                 </div>
                             <div class="form-group">
                                 <label class="judulform" for="exampleInputEmail1">NIK*</label><br></br>
-                                <input type="email" class="form-control" id="InputNIK" placeholder="NIK sesuai KK / KTP"></input>
+                                <input type="text" class="form-control" id="InputNIK" placeholder="NIK sesuai KK / KTP"></input>
                                 </div>
                             <div class="form-group">
                                 <label class="judulform" for="exampleInputPassword1">IZINKAN ORANG LAIN MENGETAHUI NAMA ANDA*</label>
@@ -62,7 +62,7 @@ function PopupForm() {
                                 </label>
                             </div>
                             <div class="container rules-button d-flex justify-content-center">
-                            <button href="/stories" type="submit" className="btn-color btn-rules">SUBMIT</button>
+                            <a href="/testing2" type="submit" className="btn-color btn-rules">SUBMIT</a>
                             </div>
                         </div>
                     </div>	

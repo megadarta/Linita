@@ -1,8 +1,11 @@
-/* .customnav{
-    background-color: black;
-} */
+.bg-dark {
+    height: 70px;
+}
 .nav-link{
     color: white!important;
+    font-size: 16px;
+    font-weight: 400;
+    margin-right: 30px;
 } 
 .nav-link:hover{
     color: grey!important;
@@ -11,11 +14,13 @@
     margin: 0 50px 0 50px;
 }
 .btn-login{
-    padding: 2px 30px;
+    padding: 5px 40px;
     border-radius: 0;
     position: relative;
     color: white;
     border-color: white;
+    border-width: 2px;
+    font-size: 14px;
 }
 
 .button--loading::after {
@@ -50,4 +55,21 @@ a:hover{
 a{
     color: white;
     text-decoration: none;
+}
+
+@media(max-width: 900px) {
+    .bg-dark {
+        height: auto;
+    }
+
+    .nav-link{
+        font-weight: 400;
+        font: 1em sans-serif;
+        margin:auto;
+        margin-top: 0.6vw;
+    } 
+    .btn-login {
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+    }
 }
