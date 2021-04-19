@@ -1,0 +1,21 @@
+.konten-atas {
+    padding-left: 0;
+}
+
+.konten-kiri {
+    position: relative;
+  }
+  .background {
+    position: relative;
+    padding: 0 0;
+    width: 600px;
+    height: 93vh;
+    background-color: #000000;
+  }
+  .image2 {
+    position: absolute;
+    margin-left: 20vw;
+    margin-top: 8vh;
+    top: 30px;
+    left: 30px;
+  }
