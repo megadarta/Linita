@@ -24,9 +24,9 @@ function Navbar(props) {
         });
     }
     return (
-        <nav className="customnav navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="customnav navbar navbar-expand-lg navbar-dark">
             <div className="container-fluid navtext">
-                <a className="navbar-brand" href="#">Linita</a>
+                <img src="asset/Logo Linita.png" width="120vw" class="navbar-brand"></img>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>

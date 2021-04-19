@@ -1,11 +1,13 @@
-.bg-dark {
+.navbar {
     height: 70px;
+    background-color: black;
 }
+
 .nav-link{
     color: white!important;
     font-size: 16px;
     font-weight: 400;
-    margin-right: 30px;
+    margin-right: 25px;
 } 
 .nav-link:hover{
     color: grey!important;
@@ -58,7 +60,7 @@ a{
 }
 
 @media(max-width: 900px) {
-    .bg-dark {
+    .navbar {
         height: auto;
     }
 

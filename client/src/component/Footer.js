@@ -11,9 +11,9 @@ function Footer() {
           </div>
           <div className="ft-text d-flex mt-3 justify-content-between">
             <a href="" className="ft-text-href">Home</a>
-            <a href="" className="ft-text-href">Stories</a>
-            <a href="" className="ft-text-href">What You Can Do</a>
-            <a href="" className="ft-text-href">Article</a>
+            <a href="" className="ft-text-href">Cerita</a>
+            <a href="" className="ft-text-href">Mulai Beraksi</a>
+            <a href="" className="ft-text-href">Artikel</a>
           </div>
       </div>
       <div className="footer-bottom d-flex flex-column align-items-center">
