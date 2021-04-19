@@ -1,4 +1,4 @@
-CLIENT='http://localhost:3000';
+CLIENT='https://linita-unity.netlify.app/';
 IS_PROD=process.env.NODE_ENV === 'production' ? true : false;
 
 module.exports = { CLIENT, IS_PROD };

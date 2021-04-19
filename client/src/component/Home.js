@@ -1,8 +1,9 @@
 import '../css/Home.css';
+import CarouselHome from './CarouselHome.js';
 
 function Home() {
     return (
-        <a>mmm</a>
+vgvgh
     );
 }
 
