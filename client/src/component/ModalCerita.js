@@ -1,8 +1,17 @@
 import { useState } from "react";
+// import server from 'server.js';
 
 const ModalCerita = () => {
     const [showModal, setShowModal] = useState(true);
+    const [nama, setNama] = useState();
+    const [nik, setNik] = useState();
 
+    function submit(e){
+        e.preventDefault();
+
+        console.log(nama);
+        console.log(nik);
+    }
     return (
         <div>
             <div className={"modal fade" + (showModal && "show d-block")} id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -46,29 +55,20 @@ const ModalCerita = () => {
                             <br></br>
                           </p>
                         <div>
+                        <form onSubmit={submit}>
                             <div class="form-group">
-                                <label class="judulform" for="exampleInputName">NAMA LENGKAP*</label><br></br>
-                                <input type="text" class="form-control" id="InputName" placeholder="Nama lengkap sesuai KK / KTP"></input>
+                                <label class="judulform" for="exampleInputName" >NAMA LENGKAP*</label><br></br>
+                                <input type="text" onChange={e => setNama(e.target.value)} class="form-control" id="InputName" placeholder="Nama lengkap sesuai KK / KTP"></input>
                                 </div>
                             <div class="form-group">
-                                <label class="judulform" for="exampleInputEmail1">NIK*</label><br></br>
-                                <input type="text" class="form-control" id="InputNIK" placeholder="NIK sesuai KK / KTP"></input>
-                                </div>
-                            <div class="form-group">
-                                <label class="judulform" for="exampleInputPassword1">IZINKAN ORANG LAIN MENGETAHUI NAMA ANDA*</label>
-                                <br></br>
-                                <label class="container form-pilihan">
-                                <input type="radio" checked="checked" name="form-pilihan"></input><a>Ya, Izinkan.</a>
-                                <span class="checkmark"></span>
-                                </label>
-                                <label class="container form-pilihan">
-                                <input type="radio" checked="checked" name="form-pilihan"></input><a>Tidak diizinkan, samarkan nama saya.</a>
-                                <span class="checkmark"></span>
-                                </label>
+                                <label class="judulform" for="exampleInputEmail1" >NIK*</label><br></br>
+                                <input type="text" onChange={e => setNik(e.target.value)} class="form-control" id="InputNIK" placeholder="NIK sesuai KK / KTP"></input>
                             </div>
+                           
                             <div class="container rules-button d-flex justify-content-center">
-                            <a href="/testing2" type="submit" className="btn-color btn-rules">SUBMIT</a>
+                            <button type="submit" className="btn-color btn-rules" data-bs-dismiss="modal" onClick={e => setShowModal(false)}>SUBMIT</button>
                             </div>
+                        </form>
                         </div>
                     </div>	
                         </div>
