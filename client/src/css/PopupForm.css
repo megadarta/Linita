@@ -110,7 +110,7 @@
   transition: all 300ms ease-in-out;
 }
 
-.btn-kembali {
+.btn-kembali-popup {
   position: fixed; 
   top: 50px;
   left: 20px;

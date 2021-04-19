@@ -1,4 +1,5 @@
 import '../css/Home.css';
+import Testimoni from './Testimoni';
 
 function Home() {
     return (
@@ -9,7 +10,10 @@ function Home() {
                 <img class="image2" src="asset/slide01.png" />
             </div>
         </div>
+        <Testimoni />
         </div>
+
+
     );
 }
 

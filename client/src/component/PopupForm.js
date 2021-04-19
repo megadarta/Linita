@@ -1,4 +1,4 @@
-// import '../css/PopupForm.css';
+import '../css/PopupForm.css';
 
 function PopupForm() {
     return (
@@ -7,7 +7,7 @@ function PopupForm() {
             <label for="modal-btn">TULIS CERITA</label>
                 <div class="modal overflow-auto">	
                 <div class="container PopUp">
-                    <a class="btn-kembali" href="/stories">kembali</a>
+                    <a class="btn-kembali-popup" href="/stories">kembali</a>
                     <div class="modal-wrap" >
                         <h3 class="judul">ATURAN DAN KETENTUAN CERITA</h3>
                         <div class="title">I. Ketentuan Umum Bagi Pengguna :</div>
@@ -62,7 +62,7 @@ function PopupForm() {
                                 </label>
                             </div>
                             <div class="container rules-button d-flex justify-content-center">
-                            <a href="/testing2" type="submit" className="btn-color btn-rules">SUBMIT</a>
+                            <a href="/buat-cerita" type="submit" className="btn-color btn-rules">SUBMIT</a>
                             </div>
                         </div>
                     </div>	
