@@ -2,14 +2,16 @@
 
 function PopupForm() {
     return (
-	<div className="section full-height">
-        <input className="modal-btn" type="checkbox" id="modal-btn" name="modal-btn"/>
-            <label for="modal-btn">TULIS CERITA<i class="uil uil-expand-arrows"></i></label>
-                <div className="modal overflow-auto">		
-                    <div className="modal-wrap" >
-                        <h3 className="judul">ATURAN DAN KETENTUAN CERITA</h3>
-                        <div className="title">I. Ketentuan Umum Bagi Pengguna :</div>
-                        <p className="deskripsi">1. Pengguna dengan ini menyatakan bahwa pengguna adalah subjek hukum yang cakap dan mampu untuk mengikatkan diri dalam perjanjian.
+	<div class="section full-height">
+        <input class="modal-btn" type="checkbox" id="modal-btn" name="modal-btn"/>
+            <label for="modal-btn">TULIS CERITA</label>
+                <div class="modal overflow-auto">	
+                <div class="container PopUp">
+                    <a class="btn-kembali" href="/stories">kembali</a>
+                    <div class="modal-wrap" >
+                        <h3 class="judul">ATURAN DAN KETENTUAN CERITA</h3>
+                        <div class="title">I. Ketentuan Umum Bagi Pengguna :</div>
+                        <p class="deskripsi">1. Pengguna dengan ini menyatakan bahwa pengguna adalah subjek hukum yang cakap dan mampu untuk mengikatkan diri dalam perjanjian.
                             <br></br>
                             2. Setiap pengguna sepakat untuk tidak menyebarluaskan berita atau informasi yang tidak benar (hoaks) di dalam platform Linita
                             <br></br>
@@ -28,7 +30,6 @@ function PopupForm() {
                             <br></br>
                             Setiap penggunaan yang melanggar ketentuan di atas dapat mengakibatkan, antara lain, penghentian hak Pengguna untuk menggunakan paltform Linita serta pelaporan terhadap pihak yang berwenang .  
                             <br></br>
-                            <br></br>
                         </p>
                         <div className="title">II. Tanggung Jawab Kami :</div>
                           <p className="deskripsi">
@@ -40,27 +41,33 @@ function PopupForm() {
                             <br></br>
                           </p>
                         <div>
-                            <div className="form-group">
-                                <label className="judulform" for="exampleInputName">NAMA LENGKAP*</label><br></br>
-                                <input type="name" className="form-control" id="InputName" placeholder="Nama lengkap sesuai KK / KTP"></input>
+                            <div class="form-group">
+                                <label class="judulform" for="exampleInputName">NAMA LENGKAP*</label><br></br>
+                                <input type="text" class="form-control" id="InputName" placeholder="Nama lengkap sesuai KK / KTP"></input>
                                 </div>
-                            <div className="form-group">
-                                <label className="judulform" for="exampleInputEmail1">NIK*</label><br></br>
-                                <input type="email" className="form-control" id="InputNIK" placeholder="NIK sesuai KK / KTP"></input>
+                            <div class="form-group">
+                                <label class="judulform" for="exampleInputEmail1">NIK*</label><br></br>
+                                <input type="text" class="form-control" id="InputNIK" placeholder="NIK sesuai KK / KTP"></input>
                                 </div>
-                            <div className="form-group">
-                                <label className="judulform" for="exampleInputPassword1">IZINKAN ORANG LAIN MENGETAHUI NAMA ANDA*</label><br></br>
-                                <input type="radio" className="form-pilihan" name="option" value="yes"></input>		  
-                                <a for="showname">Ya, Izinkan.</a><br></br>        	
-                                <input type="radio" className="form-pilihan" name="option" value="no"></input>		  
-                                <a for="anonymous">Tidak diizinkan, samarkan nama saya.</a><br></br>  	
+                            <div class="form-group">
+                                <label class="judulform" for="exampleInputPassword1">IZINKAN ORANG LAIN MENGETAHUI NAMA ANDA*</label>
+                                <br></br>
+                                <label class="container form-pilihan">
+                                <input type="radio" checked="checked" name="form-pilihan"></input><a>Ya, Izinkan.</a>
+                                <span class="checkmark"></span>
+                                </label>
+                                <label class="container form-pilihan">
+                                <input type="radio" checked="checked" name="form-pilihan"></input><a>Tidak diizinkan, samarkan nama saya.</a>
+                                <span class="checkmark"></span>
+                                </label>
                             </div>
-                            <div className="container rules-button d-flex justify-content-center">
-                            <button type="submit" className="btn-color btn-rules">SUBMIT</button>	
+                            <div class="container rules-button d-flex justify-content-center">
+                            <a href="/testing2" type="submit" className="btn-color btn-rules">SUBMIT</a>
                             </div>
                         </div>
                     </div>	
                 </div> 
+                </div>
     </div>
     );
 } 

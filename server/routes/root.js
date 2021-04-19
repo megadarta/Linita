@@ -8,7 +8,7 @@ const root = () => {
     router.post('/register', UserController.register);
 
     router.post('/login', UserController.authenticateLocal(), UserController.checkAuthentication);
-
+    
     router.delete('/logout', UserController.logout);
     
     return router;

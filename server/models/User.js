@@ -1,30 +1,10 @@
-const mongoose = require('mongoose');
 const Model = require('../base/Model');
 const bcrypt = require('bcrypt');
-const { Schema } = mongoose;
+const { userSchema } = require('./schemas/userSchema');
 
 class User extends Model {
     constructor() {
-        super(
-            //Schema
-            {
-                username: String,
-                fullname: String,
-                password: String,
-                email: String,
-                stories: { 
-                    type: [{ type: Schema.Types.ObjectId, ref: 'Story' }],
-                    default: [] 
-                },
-                comments: { 
-                    type: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
-                    default: [] 
-                }
-            },
-
-            //Model name
-            'User' 
-        );
+        super(userSchema, 'User');
     }
 
     register = async (body) => {
@@ -43,7 +23,35 @@ class User extends Model {
             throw new Error(e);
         }
     }
-    
+
+    addStory = async (story) => {
+        const { author } = story;
+
+        //add story to author document
+        author.stories.push(story._id);
+
+        const updatedUser = await author.save();
+
+        return updatedUser;
+    }
+
+    addLikedStory = async (userID, storyID) => {
+        const foundUser = await this.Model.findById(userID);
+
+        foundUser.likes.set(storyID, storyID);
+
+        return await foundUser.save();
+    }
+
+    removeLikedStory = async (userID, storyID) => {
+        const foundUser = await this.Model.findById(userID);
+
+        foundUser.likes.delete(storyID);
+
+        return await foundUser.save();
+    }
+
+
     encryptPassword(password) {
         const hash = bcrypt.hashSync(password, 10);
 

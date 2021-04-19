@@ -24,9 +24,9 @@ function Navbar(props) {
         });
     }
     return (
-        <nav className="customnav navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="customnav navbar navbar-expand-lg navbar-dark">
             <div className="container-fluid navtext">
-                <a className="navbar-brand" href="#">Linita</a>
+                <img src="asset/Logo Linita.png" width="120vw" class="navbar-brand"></img>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -40,7 +40,10 @@ function Navbar(props) {
                             <a className="nav-link" href="/stories">Cerita</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link me-lg-3" href="/action">Mulai Beraksi</a>
+                            <a className="nav-link" href="/action">Mulai Beraksi</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link me-lg-5" href="/article">Artikel</a>
                         </li>
                         <li class="nav-item">
                             {   props.loading

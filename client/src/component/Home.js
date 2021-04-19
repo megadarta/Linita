@@ -2,7 +2,11 @@ import '../css/Home.css';
 
 function Home() {
     return (
-        <a>mmm</a>
+        <div id="top">
+        <div class="container-fluid">
+            
+        </div>
+        </div>
     );
 }
 

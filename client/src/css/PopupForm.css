@@ -59,8 +59,6 @@
   transition: all 200ms linear;
   width: 240px;
   letter-spacing: 1px;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-align-items: center;
   -moz-align-items: center;
@@ -84,45 +82,7 @@
   background-color: #EC6F00;
   color: #ffffff;
 }
-.modal-btn:checked + label .uil,
-.modal-btn:not(:checked) + label .uil{
-	margin-left: 10px;
-	font-size: 18px;
-}
-.modal-btn:checked + label:after,
-.modal-btn:not(:checked) + label:after{
-  position: fixed;
-  top: 20px;
-  left: 50px;
-  z-index: 110;
-  width: 100px;
-  height: 30px;
-  text-align: center;
-  line-height: 30px;
-  font-size: 18px;
-  background-color: #ffffff;
-  color: #000000;
-  /* content: '\00d7' 50px;  */
-  content : "Kembali";
-  font-weight: 500;
-  transition: all 200ms linear;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(20px);
-}
-.modal-btn:checked + label:hover:after,
-.modal-btn:not(:checked) + label:hover:after{
-    background-color: #000000;
-    color: #ffffff;
-}
-.modal-btn:checked + label:after{
-  transition: opacity 300ms 300ms ease, transform 300ms 300ms ease, background-color 250ms linear, color 250ms linear;
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-  /* content: '\00d7';  */
-  content : "Kembali";
-}
+
 .modal{
   position: fixed;
   display: block;
@@ -139,7 +99,7 @@
   height: 100%;
   z-index: 100;
   overflow-x: hidden;
-  background-color: rgba(31,32,41,.75);
+  background-color: rgba(31, 32, 41, 0.836);
   pointer-events: none;
   opacity: 0;
   transition: opacity 250ms 700ms ease;
@@ -149,6 +109,14 @@
   opacity: 1;
   transition: all 300ms ease-in-out;
 }
+
+.btn-kembali {
+  position: fixed; 
+  top: 50px;
+  left: 20px;
+  width: 70px; 
+}
+
 .modal-wrap {
   position: relative;
   display: block;
@@ -177,9 +145,10 @@
   transition: opacity 250ms 500ms ease, transform 350ms 500ms ease;
 }
 
-.modal-btn:checked ~ .logo img {
-  	filter: brightness(100%);
-	transition: all 250ms linear;
+
+.modal-header .close {
+    padding: 1rem 1rem;
+    margin: -1rem auto -1rem -1rem;
 }
 
 .form-group {
@@ -196,9 +165,16 @@
   font-size: 14px;
 }
 
-.option a {
+.form-pilihan {
   font-weight: 500;
+  margin-top: 5px;
   font-size: 14px;
+  color: #000000;
+}
+
+.form-pilihan a {
+  font-size: 15px;
+  margin-left: 5px;
 }
 
 .btn-rules {
