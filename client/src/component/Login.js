@@ -1,6 +1,7 @@
 import '../css/Login.css';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
+import { useEffect } from 'react';
 import {server} from '../server.js';
 
 function Login(props) {
@@ -24,15 +25,13 @@ function Login(props) {
       return response.json(); 
     })
     .then(data => {
-      if(data.auth===true){
-        history.push('/');
-      }
-
       props.setAutentikasi(data.auth);
+      history.push('/');
       props.setLoading(false);
     })
   }
 
+  
   return (
     <div className="custom-login d-flex justify-content-center align-items-center">
       <div className="">

@@ -51,6 +51,12 @@ class User extends Model {
         return await foundUser.save();
     }
 
+    addComent = async (userID, commentID) => {
+        const foundUser = await this.Model.findByIdAndUpdate(userID, { $push: { comments: commentID }}, { new: true });
+
+        return foundUser;
+    }
+
 
     encryptPassword(password) {
         const hash = bcrypt.hashSync(password, 10);
