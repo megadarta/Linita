@@ -38,20 +38,15 @@ function App() {
     .then(isi => isi.json())
     .then(
       data => {
-        console.log(data);
-        setAutentikasi(data);
+        setAutentikasi(data.auth);
         setLoading(false);
       }
     )
-  }, []);
+  }, [setAutentikasi, setLoading]);
 
   return (
     <Router>
-      <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} mega="cantik"/>
-      { loading 
-      ? 
-      <PreLoader /> 
-      :  
+      <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading}/> 
       <Switch>
         <Route exact path="/">
           <Home />
@@ -67,14 +62,20 @@ function App() {
           <Footer />
         </Route>
         <Route path="/login">
-          <Login setAutentikasi={setAutentikasi} setLoading={setLoading} />
+          <Login autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} />
         </Route>
         <Route path="/testing3">
           <ModalCerita />
         </Route>
         <Route path="/stories">
-          <LayoutCerita />
-          <Footer />
+          {
+            loading 
+            ? <PreLoader />
+            : <div>
+                <LayoutCerita />
+                <Footer />
+              </div>
+          }
         </Route>
         <Route path="/register">
           <Register setAutentikasi={setAutentikasi} setLoading={setLoading} />
@@ -93,7 +94,6 @@ function App() {
           <PopupForm />
         </Route>
       </Switch>
-      }
     </Router>
   );
 }

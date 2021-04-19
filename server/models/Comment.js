@@ -5,6 +5,14 @@ class Comment extends Model {
     constructor() {
         super(commentSchema, 'Comment');
     }
+
+    postComment = async (body) => {
+        const document = this.makeDocument(body);
+
+        const postedComment = await document.save();
+
+        return postedComment;
+    }
 }
 
 module.exports = Comment;

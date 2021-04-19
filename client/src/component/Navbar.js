@@ -1,12 +1,13 @@
 import '../css/Navbar.css';
 import {server} from '../server.js';
 import { useHistory } from 'react-router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Redirect } from "react-router-dom";
 
 function Navbar(props) {
     const history = useHistory();
 
-    useEffect(() => {}, [props.setAutentikasi]);
+    useEffect(() => { }, [props.autentikasi]);
 
     function buttonlogout(e){
         e.preventDefault();
@@ -17,9 +18,8 @@ function Navbar(props) {
             credentials: "include"
         })
         .then(data => { 
-            history.push("/login"); 
-
             props.setAutentikasi(data.auth);
+            history.push("/login"); 
             props.setLoading(false);
         });
     }
@@ -50,7 +50,7 @@ function Navbar(props) {
                                     ?
                                     <button type="button" class="btn btn-outline-secondary btn-login button--loading"><div className="p-0 m-0" style={{ visibility: 'hidden' }}>LOGIN</div></button>
                                     : 
-                                    props.autentikasi?.auth == true 
+                                    props.autentikasi == true 
                                     ? 
                                     <a onClick={buttonlogout}><button type="button" class="btn btn-outline-secondary btn-login">LOGOUT</button></a>
                                     : 
