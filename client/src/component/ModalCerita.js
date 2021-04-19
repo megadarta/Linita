@@ -1,14 +1,19 @@
-// import '../css/PopupForm.css';
+import { useState } from "react";
 
-function PopupForm() {
+const ModalCerita = () => {
+    const [showModal, setShowModal] = useState(true);
+
     return (
-	<div class="section full-height">
-        <input class="modal-btn" type="checkbox" id="modal-btn" name="modal-btn"/>
-            <label for="modal-btn">TULIS CERITA</label>
-                <div class="modal overflow-auto">	
-                <div class="container PopUp">
-                    <a class="btn-kembali" href="/stories">kembali</a>
-                    <div class="modal-wrap" >
+        <div>
+            <div className={"modal fade" + (showModal && "show d-block")} id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-scrollable">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={e => setShowModal(false)}></button>
+                        </div>
+                        <div className="modal-body">
+                        <div class="modal-wrap" >
                         <h3 class="judul">ATURAN DAN KETENTUAN CERITA</h3>
                         <div class="title">I. Ketentuan Umum Bagi Pengguna :</div>
                         <p class="deskripsi">1. Pengguna dengan ini menyatakan bahwa pengguna adalah subjek hukum yang cakap dan mampu untuk mengikatkan diri dalam perjanjian.
@@ -66,10 +71,16 @@ function PopupForm() {
                             </div>
                         </div>
                     </div>	
-                </div> 
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={e => setShowModal(false)}>Close</button>
+                            <button type="button" className="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
                 </div>
-    </div>
+            </div>
+        </div>
     );
-} 
+}
 
-export default PopupForm;
+export default ModalCerita;

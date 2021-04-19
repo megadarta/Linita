@@ -1,12 +1,13 @@
 import '../css/Navbar.css';
 import {server} from '../server.js';
 import { useHistory } from 'react-router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Redirect } from "react-router-dom";
 
 function Navbar(props) {
     const history = useHistory();
 
-    useEffect(() => {}, [props.setAutentikasi]);
+    useEffect(() => { }, [props.autentikasi]);
 
     function buttonlogout(e){
         e.preventDefault();
@@ -17,16 +18,15 @@ function Navbar(props) {
             credentials: "include"
         })
         .then(data => { 
-            history.push("/login"); 
-
             props.setAutentikasi(data.auth);
+            history.push("/login"); 
             props.setLoading(false);
         });
     }
     return (
-        <nav className="customnav navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="customnav navbar navbar-expand-lg navbar-dark">
             <div className="container-fluid navtext">
-                <a className="navbar-brand" href="#">Linita</a>
+                <img src="asset/Logo Linita.png" width="120vw" class="navbar-brand"></img>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -40,14 +40,17 @@ function Navbar(props) {
                             <a className="nav-link" href="/stories">Cerita</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link me-lg-3" href="/action">Mulai Beraksi</a>
+                            <a className="nav-link" href="/action">Mulai Beraksi</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link me-lg-5" href="/article">Artikel</a>
                         </li>
                         <li class="nav-item">
                             {   props.loading
                                     ?
                                     <button type="button" class="btn btn-outline-secondary btn-login button--loading"><div className="p-0 m-0" style={{ visibility: 'hidden' }}>LOGIN</div></button>
                                     : 
-                                    props.autentikasi?.auth == true 
+                                    props.autentikasi == true 
                                     ? 
                                     <a onClick={buttonlogout}><button type="button" class="btn btn-outline-secondary btn-login">LOGOUT</button></a>
                                     : 

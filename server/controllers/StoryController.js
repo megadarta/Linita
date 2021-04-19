@@ -1,20 +1,38 @@
 const Story = require('../models/Story');
+const User = require('../models/User');
+
 const story = new Story();
+const user = new User();
 
 class StoryController {
-    static postStory = async (req, res) => {
+    static addStory = async (req, res) => {
         const { body } = req;
 
         const postedStory = await story.postStory(body);
 
-        await story.addStoryToAuthor(postedStory);
+        const postingUser = await user.addStory(postedStory);
 
-        res.json(postedStory);
+        res.json({ story: postedStory, user: postingUser });
     }
 
-    static giveLove = async (req, res) => {
-        const { id } = req.body;
-        
+    static addLike = async (req, res) => {
+        const { userID, storyID } = req.body;
+
+        const likedStory = await story.giveLike(storyID);
+
+        const likingUser = await user.addLikedStory(userID, storyID);
+
+        res.json({ story: likedStory, user: likingUser });
+    }
+
+    static unLike = async (req, res) =>  {
+        const { userID, storyID } = req.body;
+
+        const unlikedStory = await story.removeLike(storyID);
+
+        const unlikingUser = await user.removeLikedStory(userID, storyID)
+
+        res.json({ story: unlikedStory, user: unlikingUser });
     }
 }
 

@@ -3,9 +3,12 @@ const router = express.Router();
 const StoryController = require('../controllers/StoryController');
 
 const story = () => {
-    router.post('/add', StoryController.postStory);
+    router.post('/add', StoryController.addStory);
     
-    router.put('/love');
+    router.put('/like', StoryController.addLike);
+
+    router.put('/unlike', StoryController.unLike);
+
     return router;
 }
 

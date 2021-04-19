@@ -14,6 +14,7 @@ import ListStory from './component/ListStory.js';
 import LayoutCerita from './component/LayoutCerita.js';
 import PreLoader from './component/PreLoader.js';
 import PopupForm from './component/PopupForm.js';
+import ModalCerita from './component/ModalCerita.js';
 import {
   BrowserRouter as Router,
   Switch,
@@ -24,9 +25,12 @@ import { server } from './server.js';
 import 'animate.css';
 import '@fortawesome/fontawesome-free/js/all.js';
 import TulisCerita from './component/TulisCerita.js';
+<<<<<<< HEAD
 import Popup from './component/PopupForm';
 import Artikel from './component/Artikel.js';
 import ListArtikel from './component/ListArtikel.js';
+=======
+>>>>>>> 0270d1b3997bf2325b7139e4a8b4d0ee4cf3f880
 
 function App() {
   const [autentikasi, setAutentikasi] = useState(false);
@@ -40,20 +44,15 @@ function App() {
     .then(isi => isi.json())
     .then(
       data => {
-        console.log(data);
-        setAutentikasi(data);
+        setAutentikasi(data.auth);
         setLoading(false);
       }
     )
-  }, []);
+  }, [setAutentikasi, setLoading]);
 
   return (
     <Router>
-      <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} mega="cantik"/>
-      { loading 
-      ? 
-      <PreLoader /> 
-      :  
+      <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading}/> 
       <Switch>
         <Route exact path="/">
           <Home />
@@ -69,11 +68,20 @@ function App() {
           <Footer />
         </Route>
         <Route path="/login">
-          <Login setAutentikasi={setAutentikasi} setLoading={setLoading} />
+          <Login autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} />
+        </Route>
+        <Route path="/testing3">
+          <ModalCerita />
         </Route>
         <Route path="/stories">
-          <LayoutCerita />
-          <Footer />
+          {
+            loading 
+            ? <PreLoader />
+            : <div>
+                <LayoutCerita />
+                <Footer />
+              </div>
+          }
         </Route>
         <Route path="/register">
           <Register setAutentikasi={setAutentikasi} setLoading={setLoading} />
@@ -90,14 +98,16 @@ function App() {
         </Route>
         <Route path="/testing2">
           <PopupForm />
+<<<<<<< HEAD
         </Route>
         <Route path="/artikel">
           <Artikel />
           <ListArtikel />
           <Footer />
+=======
+>>>>>>> 0270d1b3997bf2325b7139e4a8b4d0ee4cf3f880
         </Route>
       </Switch>
-      }
     </Router>
   );
 }

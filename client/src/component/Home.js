@@ -3,7 +3,11 @@ import CarouselHome from './CarouselHome.js';
 
 function Home() {
     return (
-vgvgh
+        <div id="top">
+        <div class="container-fluid">
+            
+        </div>
+        </div>
     );
 }
 

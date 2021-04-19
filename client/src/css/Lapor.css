@@ -24,17 +24,24 @@
 } */
 
 .button-lapor{
-    font-size: 1.2vw;
-    padding: 5px 3vw;
+    font-size: 1vw;
+    font-weight: 500;
+    padding: 10px 3vw;
     border-radius: 0;
+}
+
+.button-lapor:hover {
+    background-color: black!important;
 }
 
 .konten-lapor h1{
     font-size: 3.5vw;
 }
 .lapor-desc{
-    margin: 3vw 0px 1.5vw;
-    font-size: 18px;
+    margin: 1vw 0px 3vw;
+    line-height: 1.2vw;
+    font-size: 1vw;
+    font-weight: 400;
 }
 
 .btn-color{
@@ -42,10 +49,6 @@
     color: white;
 }
 
-.btn-color:hover {
-    box-shadow:  2px 5px 10px 0 rgba(250, 217, 188, 1);
-    color: white;
-}
 
 .animate__delay-1s {
     --animate-delay: 0.1s;
@@ -83,7 +86,7 @@
     }
 
     .lapor-desc{
-        margin: 46px 0px 23px;
         font-size: 14px;
+        line-height: unset;
     }
 }
