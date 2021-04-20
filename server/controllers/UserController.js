@@ -29,11 +29,12 @@ class UserController {
     }
 
     static addNamaNIK = async (req, res) => {
-        const { userID, fullname, nik } = req.body;
+        const { fullname, nik } = req.body;
+        const userID = req.user._id;
 
         const updatedUser = await user.addNamaNIK(userID, fullname, nik);
 
-        res.json(updatedUser);
+        res.redirect('/');
     }
 
     static logout = async (req, res) => {

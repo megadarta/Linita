@@ -26,7 +26,7 @@ function Register(props) {
       })
       .then(response => response.json())
       .then(data => {
-        props.setAutentikasi(data.auth);
+        props.setAutentikasi(data);
         history.push('/');
         props.setLoading(false);
       })
@@ -38,7 +38,7 @@ function Register(props) {
       <div className="align-self-center ">
         <h3 className="text-center">Buat Akun</h3>
         <div className="classlogo text-center">
-          <img src="../logo192.png" className="rounded-left logo-register "></img>
+          <img src="/asset/Logo Linita.png" className=""></img>
         </div>
         <form method="post" action="" onSubmit={register} className="register-form mb-3">
         <div className="form-floating mb-3">

@@ -25,7 +25,7 @@ function Login(props) {
       return response.json(); 
     })
     .then(data => {
-      props.setAutentikasi(data.auth);
+      props.setAutentikasi(data);
       history.push('/');
       props.setLoading(false);
     })
@@ -37,7 +37,7 @@ function Login(props) {
       <div className="">
         <h3 className="text-center">Masuk Akun</h3>
         <div className="classlogo text-center">
-          <img src="../logo192.png" className="rounded-left logo-login "></img>
+          <img src="/asset/Logo Linita.png" className="rounded-left logo-login "></img>
         </div>
         <form  onSubmit={login}  method="post" className="login-form mb-3">
           <div className="form-floating mb-3">

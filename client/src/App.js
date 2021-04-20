@@ -9,12 +9,9 @@ import Login from './component/Login.js';
 import Home from './component/Home.js';
 import Register from './component/Register.js';
 import Story from './component/Cerita';
-import Testing from './component/Testing';
-import ListStory from './component/ListStory.js';
+
 import LayoutCerita from './component/LayoutCerita.js';
 import PreLoader from './component/PreLoader.js';
-import PopupForm from './component/PopupForm.js';
-import ModalCerita from './component/ModalCerita.js';
 import {
   BrowserRouter as Router,
   Switch,
@@ -25,15 +22,15 @@ import { server } from './server.js';
 import 'animate.css';
 import '@fortawesome/fontawesome-free/js/all.js';
 import TulisCerita from './component/TulisCerita.js';
-import Popup from './component/PopupForm';
 import Artikel from './component/Artikel.js';
 import ListArtikel from './component/ListArtikel.js';
 
 function App() {
-  const [autentikasi, setAutentikasi] = useState(false);
+  const [autentikasi, setAutentikasi] = useState({ auth: false });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    let isMounted = true;
     fetch(server, {
       credentials: 'include',
       method: 'GET'
@@ -41,10 +38,14 @@ function App() {
     .then(isi => isi.json())
     .then(
       data => {
-        setAutentikasi(data.auth);
-        setLoading(false);
+        if(isMounted) {
+          setAutentikasi(data);
+          setLoading(false);
+        }
       }
     )
+
+    return () => { isMounted = false }
   }, [setAutentikasi, setLoading]);
 
   return (
@@ -53,9 +54,6 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home />
-        </Route>
-        <Route exact path="/list-story">
-          <ListStory />
         </Route>
         <Route path="/action">
           <Lapor />
@@ -66,9 +64,6 @@ function App() {
         </Route>
         <Route path="/login">
           <Login autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} />
-        </Route>
-        <Route path="/testing3">
-          <ModalCerita />
         </Route>
         <Route path="/stories">
           {
@@ -83,20 +78,14 @@ function App() {
         <Route path="/register">
           <Register setAutentikasi={setAutentikasi} setLoading={setLoading} />
         </Route>
-        <Route path="/story">
-          <Story />
+        <Route path="/story/view/:id">
+          <Story autentikasi={autentikasi}/>
         </Route>
-        <Route path="/testing">
-          <Testing />
-        </Route>
-        <Route path="/buat-cerita">
-          <TulisCerita />
+        <Route path="/story/add">
+          <TulisCerita autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} />
           <Footer />
         </Route>
-        <Route path="/testing2">
-          <PopupForm />
-        </Route>
-        <Route path="/artikel">
+        <Route path="/article">
           <Artikel />
           <ListArtikel />
           <Footer />

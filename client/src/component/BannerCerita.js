@@ -11,7 +11,7 @@ function BannerCerita() {
 
         {/* description */}
         <p className="banner-cerita-desc">Kisah kejahatan seksual yang pernah anda alami akan menjadi edukasi kepada pembaca agar selalu waspada terhadap berbagai macam tindakan pelecehan. Disinilah, anda dapat bercerita tanpa mempublikasikan identitas anda.</p>
-        <a href="buat-cerita" target="_blank">
+        <a href="/story/add" target="_blank">
           <button type="button" className="btn btn-color button-psikolog shadow-none">SAYA INGIN BERCERITA</button>
         </a>
       </div>

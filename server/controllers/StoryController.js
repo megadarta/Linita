@@ -6,11 +6,20 @@ const user = new User();
 
 class StoryController {
     static addStory = async (req, res) => {
-        const { body } = req;
+        const { anonimity, title, content } = req.body;
 
-        const postedStory = await story.postStory(body);
+        const author = req.user._id;
 
-        const postingUser = await user.addStory(postedStory);
+        const document = {
+            author, 
+            anonimity, 
+            title, 
+            content
+        };
+
+        const postedStory = await story.postStory(document);
+
+        const postingUser = await user.addStory(author, postedStory);
 
         res.json({ story: postedStory, user: postingUser });
     }
@@ -33,6 +42,20 @@ class StoryController {
         const unlikingUser = await user.removeLikedStory(userID, storyID)
 
         res.json({ story: unlikedStory, user: unlikingUser });
+    }
+
+    static oneStory = async (req, res) => {
+        const { id } = req.params;
+
+        const foundStory = await story.getOne(id);
+
+        res.json(foundStory);
+    }
+
+    static allStories = async (req, res) => {
+        const stories = await story.getAll();
+
+        res.json(stories);
     }
 }
 
