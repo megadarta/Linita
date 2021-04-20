@@ -10,7 +10,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const app = express();
 
-mongoose.connect(process.env.MONGO_URL, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
 
 //Cors
 app.use(cors(corsOption));

@@ -1,6 +1,7 @@
 import '../css/Cerita.css';
 
 const Story = () => {
+
     return (
         <div className="container-fluid custom-cerita p-0">
             <div className="artikel-section">

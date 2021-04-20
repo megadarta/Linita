@@ -57,6 +57,11 @@ class User extends Model {
         return foundUser;
     }
 
+    addNamaNIK = async (userID, fullname, nik) => {
+        const updatedUser = await this.Model.findByIdAndUpdate(userID, { fullname, nik }, { new: true });
+
+        return updatedUser;
+    }
 
     encryptPassword(password) {
         const hash = bcrypt.hashSync(password, 10);

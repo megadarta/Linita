@@ -10,6 +10,8 @@ const root = () => {
     router.post('/login', UserController.authenticateLocal(), UserController.checkAuthentication);
     
     router.delete('/logout', UserController.logout);
+
+    router.put('/add-detail', UserController.addNamaNIK);
     
     return router;
 }

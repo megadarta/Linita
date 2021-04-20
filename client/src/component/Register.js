@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import {server} from '../server.js';
 import { useHistory } from 'react-router';
 
-function Register() {
+function Register(props) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [conPassword, setConPassword] = useState();
@@ -15,6 +15,7 @@ function Register() {
   function register(e) {
     e.preventDefault();
     if (conPassword == password) {
+      props.setLoading(true);
       fetch(server + 'register', {
         method: 'POST',
         headers: {
@@ -25,9 +26,9 @@ function Register() {
       })
       .then(response => response.json())
       .then(data => {
-        if(data.auth==true){
-          history.push('/');
-        } 
+        props.setAutentikasi(data.auth);
+        history.push('/');
+        props.setLoading(false);
       })
     }
   }

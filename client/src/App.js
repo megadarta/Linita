@@ -25,6 +25,9 @@ import { server } from './server.js';
 import 'animate.css';
 import '@fortawesome/fontawesome-free/js/all.js';
 import TulisCerita from './component/TulisCerita.js';
+import Popup from './component/PopupForm';
+import Artikel from './component/Artikel.js';
+import ListArtikel from './component/ListArtikel.js';
 
 function App() {
   const [autentikasi, setAutentikasi] = useState(false);
@@ -92,6 +95,11 @@ function App() {
         </Route>
         <Route path="/testing2">
           <PopupForm />
+        </Route>
+        <Route path="/artikel">
+          <Artikel />
+          <ListArtikel />
+          <Footer />
         </Route>
       </Switch>
     </Router>

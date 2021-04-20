@@ -1,6 +1,6 @@
 const local = 'http://localhost:3001/';
 const heroku = 'https://linita.herokuapp.com/';
 
-const server = heroku;
+const server = local;
 
 export { server };
