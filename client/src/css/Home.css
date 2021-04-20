@@ -1,3 +1,4 @@
+*
 .konten-atas {
     padding-left: 0;
 }
@@ -12,10 +13,45 @@
     height: 93vh;
     background-color: #000000;
   }
-  .image2 {
+  .slide {
     position: absolute;
-    margin-left: 20vw;
+    size: 100%;
+    margin-left: 15vw;
     margin-top: 8vh;
     top: 30px;
-    left: 30px;
+    left: 2vw;
+  }
+  
+
+  .judul-home {
+    font-size: 7rem;
+    font-family: 'bebas neue';
+  }
+  .desc-home{
+    font-size: 1.2rem;
+    margin-bottom: 3vw;
+    line-height: 170%
+  }
+
+  .konten-home {
+    text-align: left;
+    margin-left: 180px;
+    margin-right: 50px;
+    margin-top: 13vw;
+  }
+
+  .text-home {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: black;
+    padding-left: 0px;
+    letter-spacing: 7%;
+  }
+  .text-home:hover {
+    color: rgb(80, 80, 80);
+  }
+
+  .icon-arrow {
+    padding-bottom: 3px;
+    padding-left: 7px;
   }

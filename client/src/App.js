@@ -50,6 +50,7 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home />
+          <Footer />
         </Route>
         <Route exact path="/list-story">
           <ListStory />
