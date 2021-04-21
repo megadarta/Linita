@@ -5,9 +5,9 @@ function Footer() {
     <div className="custom-footer">
       <div className=" d-flex flex-column align-items-center footer-top">
           <div className="imageMedsos d-flex mt-4 justify-content-between">
-            <img className="waImg" src="./asset/wa.png"></img>
-            <img className="waImg" src="./asset/fb.png"></img>
-            <img className="waImg" src="./asset/ig.png"></img>
+            <img className="waImg" src="/asset/wa.png"></img>
+            <img className="waImg" src="/asset/fb.png"></img>
+            <img className="waImg" src="/asset/ig.png"></img>
           </div>
           <div className="ft-text d-flex mt-3 justify-content-between">
             <a href="" className="ft-text-href">Home</a>

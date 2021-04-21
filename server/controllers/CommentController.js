@@ -8,15 +8,29 @@ const user = new User();
 
 class CommentController {
     static addComment = async (req, res) => {
-        const { body } = req.body;
+        const { content, storyID } = req.body;
+        const userID = req.user._id;
 
-        const postedComment = await comment.postComment(body);
+        const document = {
+            user: userID,
+            story: storyID,
+            content
+        };
 
-        const commentedStory = await story.receivedComment(body.storyID, postedComment._id);
+        const postedComment = await comment.postComment(document);
 
-        const commentingUser = user.addComent(body.userID, postedComment._id);
+        const commentedStory = await story.receivedComment(storyID, postedComment._id);
 
+        const commentingUser = await user.addComent(userID, postedComment._id);
+        
         res.json({ comment: postedComment, story: commentedStory, user: commentingUser });
+    }
+
+    static getComments = async (req, res) => {
+        const { storyId } = req.params; 
+        const comments = await comment.getAllfromStory(storyId);
+
+        res.json(comments);
     }
 }
 

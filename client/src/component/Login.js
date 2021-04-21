@@ -12,23 +12,25 @@ function Login(props) {
 
   function login(e){
     e.preventDefault();
-    props.setLoading(true);
-    fetch(server + 'login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      credentials: "include",
-      body: JSON.stringify({email, password})
-    })
-    .then(response => {
-      return response.json(); 
-    })
-    .then(data => {
-      props.setAutentikasi(data.auth);
-      history.push('/');
-      props.setLoading(false);
-    })
+    if(!props.loading) {
+      props.setLoading(true);
+      fetch(server + 'login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: "include",
+        body: JSON.stringify({email, password})
+      })
+      .then(response => {
+        return response.json(); 
+      })
+      .then(data => {
+        props.setAutentikasi(data);
+        history.push('/');
+        props.setLoading(false);
+      })
+    }
   }
 
   
@@ -36,8 +38,8 @@ function Login(props) {
     <div className="custom-login d-flex justify-content-center align-items-center">
       <div className="">
         <h3 className="text-center">Masuk Akun</h3>
-        <div className="classlogo text-center">
-          <img src="../logo192.png" className="rounded-left logo-login "></img>
+        <div className="classlogo text-center my-3 mb-5">
+          <a href="/"><img src="/asset/logo-dark.png" className="logo-login"></img></a>
         </div>
         <form  onSubmit={login}  method="post" className="login-form mb-3">
           <div className="form-floating mb-3">
@@ -53,7 +55,7 @@ function Login(props) {
                 : <span className="show-hide-password" onClick={(e) => { setShowPassword(true) }}><i className="far fa-eye-slash"></i></span>
             }
           </div>
-          <button type="submit" className="btn my-5 button-login">LOGIN</button>
+          <button type="submit" className={"btn my-5 button-login " + (props.loading && "button--loading")}><span style={{visibility: props.loading ? 'hidden' : undefined}}>LOGIN</span></button>
         </form>
         <small id="regis" className="form-text text-muted">Belum punya akun ?</small><a href="/register" className="regis-login"> Register </a><br></br>
       </div>

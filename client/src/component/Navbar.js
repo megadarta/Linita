@@ -18,7 +18,7 @@ function Navbar(props) {
             credentials: "include"
         })
         .then(data => { 
-            props.setAutentikasi(data.auth);
+            props.setAutentikasi(data);
             history.push("/login"); 
             props.setLoading(false);
         });
@@ -26,7 +26,7 @@ function Navbar(props) {
     return (
         <nav className="customnav navbar navbar-expand-lg navbar-dark">
             <div className="container-fluid navtext">
-                <img href="/" src="asset/Logo Linita.png" width="120vw" class="navbar-brand"></img>
+                <img src="/asset/Logo Linita.png" width="120vw" class="navbar-brand"></img>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -50,7 +50,7 @@ function Navbar(props) {
                                     ?
                                     <button type="button" class="btn btn-outline-secondary btn-login button--loading"><div className="p-0 m-0" style={{ visibility: 'hidden' }}>LOGIN</div></button>
                                     : 
-                                    props.autentikasi == true 
+                                    props.autentikasi.auth == true 
                                     ? 
                                     <a onClick={buttonlogout}><button type="button" class="btn btn-outline-secondary btn-login">LOGOUT</button></a>
                                     : 

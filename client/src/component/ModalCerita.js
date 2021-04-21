@@ -1,7 +1,35 @@
 import { useState } from "react";
+import { server } from '../server.js';
 
-const ModalCerita = () => {
+const ModalCerita = (props) => {
     const [showModal, setShowModal] = useState(true);
+    const [nama, setNama] = useState();
+    const [nik, setNik] = useState();
+
+    function submit(e) {
+        e.preventDefault();
+
+        props.setLoading(true);
+        const body = {
+            fullname: nama,
+            nik
+        };
+
+        fetch(server + 'add-detail', {
+            method: "PUT",
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(body)
+        })
+        .then(response => response.json())
+        .then(data => {
+            props.setAutentikasi(data);
+            setShowModal(false);
+            props.setLoading(false);
+        });
+    }
 
     return (
         <div>
@@ -9,12 +37,11 @@ const ModalCerita = () => {
                 <div className="modal-dialog modal-dialog-scrollable">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={e => setShowModal(false)}></button>
+                            <h3 className="judul modal-title" id="exampleModalLabel">ATURAN DAN KETENTUAN CERITA</h3>
                         </div>
                         <div className="modal-body">
                         <div class="modal-wrap" >
-                        <h3 class="judul">ATURAN DAN KETENTUAN CERITA</h3>
                         <div class="title">I. Ketentuan Umum Bagi Pengguna :</div>
                         <p class="deskripsi">1. Pengguna dengan ini menyatakan bahwa pengguna adalah subjek hukum yang cakap dan mampu untuk mengikatkan diri dalam perjanjian.
                             <br></br>
@@ -46,35 +73,21 @@ const ModalCerita = () => {
                             <br></br>
                           </p>
                         <div>
-                            <div class="form-group">
-                                <label class="judulform" for="exampleInputName">NAMA LENGKAP*</label><br></br>
-                                <input type="text" class="form-control" id="InputName" placeholder="Nama lengkap sesuai KK / KTP"></input>
-                                </div>
-                            <div class="form-group">
-                                <label class="judulform" for="exampleInputEmail1">NIK*</label><br></br>
-                                <input type="text" class="form-control" id="InputNIK" placeholder="NIK sesuai KK / KTP"></input>
-                                </div>
-                            <div class="form-group">
-                                <label class="judulform" for="exampleInputPassword1">IZINKAN ORANG LAIN MENGETAHUI NAMA ANDA*</label>
-                                <br></br>
-                                <label class="container form-pilihan">
-                                <input type="radio" checked="checked" name="form-pilihan"></input><a>Ya, Izinkan.</a>
-                                <span class="checkmark"></span>
-                                </label>
-                                <label class="container form-pilihan">
-                                <input type="radio" checked="checked" name="form-pilihan"></input><a>Tidak diizinkan, samarkan nama saya.</a>
-                                <span class="checkmark"></span>
-                                </label>
-                            </div>
-                            <div class="container rules-button d-flex justify-content-center">
-                            <a href="/testing2" type="submit" className="btn-color btn-rules">SUBMIT</a>
-                            </div>
                         </div>
                     </div>	
                         </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={e => setShowModal(false)}>Close</button>
-                            <button type="button" className="btn btn-primary">Save changes</button>
+                        <div className="modal-footer justify-content-start">
+                            <form onSubmit={submit}>
+                                <div class="form-group">
+                                    <label className="judulform form-label" for="InputName" >NAMA LENGKAP*</label><br></br>
+                                    <input type="text" onChange={e => setNama(e.target.value)} className="form-control" id="InputName" placeholder="Nama lengkap sesuai KK / KTP"></input>
+                                    </div>
+                                <div class="form-group">
+                                    <label className="judulform form-label" for="InputNIK" >NIK*</label><br></br>
+                                    <input type="text" onChange={e => setNik(e.target.value)} className="form-control" id="InputNIK" placeholder="NIK sesuai KK / KTP"></input>
+                                </div>
+                                <input type="submit" className="btn-color btn-rules" onClick={submit} value="SUBMIT"></input> 
+                            </form>
                         </div>
                     </div>
                 </div>

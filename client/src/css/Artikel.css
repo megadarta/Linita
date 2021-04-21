@@ -1,0 +1,28 @@
+.custom-artikel{
+    padding-left: 20vw;
+    padding-right: 20vw;
+}
+.gambar-artikel{
+    width: 100%;
+} 
+.judul-artikel{
+    font-weight: bold;
+    font-size: 45px;
+}
+.sumber-gambar{
+    font-size: 12px;
+}
+.sumber-artikel{
+    margin-top: -25px;
+    font-size: 12px;
+    color: black;
+}
+.sumber-artikel:hover{
+    color: grey;
+}
+.referensi-artikel{
+    margin-bottom: -6px;
+}
+.isi-artikel{
+    white-space: pre-wrap;
+}

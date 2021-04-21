@@ -51,10 +51,11 @@
     }
 }
 
-a:hover{
+.navbar a:hover{
     color: white;
 }
-a{
+
+.navbar a{
     color: white;
     text-decoration: none;
 }

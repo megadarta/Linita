@@ -1,8 +1,12 @@
+const StoryController = require('../controllers/StoryController');
 const express = require('express');
 const router = express.Router();
-const StoryController = require('../controllers/StoryController');
 
 const story = () => {
+    router.get('/one/:id', StoryController.oneStory);
+
+    router.get('/all', StoryController.allStories);
+
     router.post('/add', StoryController.addStory);
     
     router.put('/like', StoryController.addLike);

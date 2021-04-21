@@ -24,13 +24,12 @@ class User extends Model {
         }
     }
 
-    addStory = async (story) => {
-        const { author } = story;
-
-        //add story to author document
-        author.stories.push(story._id);
-
-        const updatedUser = await author.save();
+    addStory = async (author, story) => {
+        const updatedUser = await this.Model.findByIdAndUpdate(
+            author, 
+            { $push: { stories: story._id } }, 
+            { new: true }
+        );
 
         return updatedUser;
     }
@@ -53,10 +52,15 @@ class User extends Model {
 
     addComent = async (userID, commentID) => {
         const foundUser = await this.Model.findByIdAndUpdate(userID, { $push: { comments: commentID }}, { new: true });
-
+        
         return foundUser;
     }
 
+    addNamaNIK = async (userID, fullname, nik) => {
+        const updatedUser = await this.Model.findByIdAndUpdate(userID, { fullname, nik }, { new: true });
+
+        return updatedUser;
+    }
 
     encryptPassword(password) {
         const hash = bcrypt.hashSync(password, 10);
