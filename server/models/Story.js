@@ -8,7 +8,7 @@ class Story extends Model {
 
     getAll = async () => await this.Model.find({}).populate('author');
 
-    getOne = async (id) => await this.Model.findById(id).populate('author').populate('comments');
+    getOne = async (id) => await this.Model.findById(id).populate('author');
 
     postStory = async (body) => {
         const document = this.makeDocument(body);
@@ -18,9 +18,9 @@ class Story extends Model {
         return postedStory;
     }
 
-    giveLike = async (storyID) => await this.Model.findByIdAndUpdate(storyID, { $inc : { likes: 1 } }, { new: true });
+    giveLike = async (storyID) => await this.Model.findByIdAndUpdate(storyID, { $inc : { likes: 1 } }, { new: true }).populate('author');
     
-    removeLike = async (storyID) => await this.Model.findByIdAndUpdate(storyID, { $inc : { likes: -1 } }, { new: true });
+    removeLike = async (storyID) => await this.Model.findByIdAndUpdate(storyID, { $inc : { likes: -1 } }, { new: true }).populate('author');
 
     receivedComment = async (storyID, commentID) => await this.Model.findByIdAndUpdate(
         storyID, 

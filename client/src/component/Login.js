@@ -36,8 +36,8 @@ function Login(props) {
     <div className="custom-login d-flex justify-content-center align-items-center">
       <div className="">
         <h3 className="text-center">Masuk Akun</h3>
-        <div className="classlogo text-center">
-          <img src="/asset/Logo Linita.png" className="rounded-left logo-login "></img>
+        <div className="classlogo text-center my-3 mb-5">
+          <a href="/"><img src="/asset/logo-dark.png" className="logo-login"></img></a>
         </div>
         <form  onSubmit={login}  method="post" className="login-form mb-3">
           <div className="form-floating mb-3">

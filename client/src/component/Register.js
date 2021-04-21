@@ -5,10 +5,10 @@ import { useHistory } from 'react-router';
 
 function Register(props) {
   const [email, setEmail] = useState();
+  const [username, setUsername] = useState();
   const [password, setPassword] = useState();
   const [conPassword, setConPassword] = useState();
   const [showPassword, setShowPassword] = useState(false);
-  const username = email;
   const [showconfirmationPass, setShowconfirmationPass] = useState(false);
   const history = useHistory();
   
@@ -37,13 +37,17 @@ function Register(props) {
     <div className="custom-register d-flex justify-content-center">
       <div className="align-self-center ">
         <h3 className="text-center">Buat Akun</h3>
-        <div className="classlogo text-center">
-          <img src="/asset/Logo Linita.png" className=""></img>
+        <div className="classlogo text-center my-3 mb-5">
+          <a href="/"><img src="/asset/logo-dark.png" className="logo-login"></img></a>
         </div>
         <form method="post" action="" onSubmit={register} className="register-form mb-3">
-        <div className="form-floating mb-3">
+          <div className="form-floating mb-3">
             <input onChange={e => setEmail(e.target.value)} type="email" name="email" className="form-control custom-input shadow-none" id="email" placeholder="name@example.com" />
             <label htmlFor="email">Email address</label>
+          </div>
+          <div className="form-floating mb-3">
+            <input onChange={e => setUsername(e.target.value)} type="text" name="username" className="form-control custom-input shadow-none" id="username" placeholder="your username" />
+            <label htmlFor="username">Username</label>
           </div>
           <div className="form-floating mb-3">
             <input onChange={e => setPassword(e.target.value)} type={showPassword ? "text" : "password"} name="password" className="form-control custom-input shadow-none" id="password" placeholder="your password" />

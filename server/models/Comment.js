@@ -6,7 +6,10 @@ class Comment extends Model {
         super(commentSchema, 'Comment');
     }
 
-    getAllfromStory = async (storyID) => await this.Model.find({ story: storyID }).populate('user');
+    getAllfromStory = async (storyID) => await this.Model.find(
+        { story: storyID })
+    .populate('user')
+    .sort({ 'created_at': 'desc' });
 
     postComment = async (body) => {
         const document = this.makeDocument(body);

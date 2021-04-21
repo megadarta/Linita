@@ -35,27 +35,28 @@ function App() {
       credentials: 'include',
       method: 'GET'
     })
-    .then(isi => isi.json())
-    .then(
-      data => {
-        if(isMounted) {
-          setAutentikasi(data);
-          setLoading(false);
+      .then(isi => isi.json())
+      .then(
+        data => {
+          if (isMounted) {
+            setAutentikasi(data);
+            setLoading(false);
+          }
         }
-      }
-    )
+      )
 
     return () => { isMounted = false }
   }, [setAutentikasi, setLoading]);
 
   return (
     <Router>
-      <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading}/> 
       <Switch>
         <Route exact path="/">
+          <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
           <Home />
         </Route>
         <Route path="/action">
+          <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
           <Lapor />
           <Caralapor />
           <Psikolog />
@@ -66,10 +67,12 @@ function App() {
           <Login autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} />
         </Route>
         <Route path="/stories">
+          <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
+
           {
-            loading 
-            ? <PreLoader />
-            : <div>
+            loading
+              ? <PreLoader />
+              : <div>
                 <LayoutCerita />
                 <Footer />
               </div>
@@ -79,13 +82,17 @@ function App() {
           <Register setAutentikasi={setAutentikasi} setLoading={setLoading} />
         </Route>
         <Route path="/story/view/:id">
-          <Story autentikasi={autentikasi}/>
+          <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
+          <Story autentikasi={autentikasi} setAutentikasi={setAutentikasi} />
         </Route>
         <Route path="/story/add">
+          <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
           <TulisCerita autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} />
           <Footer />
         </Route>
         <Route path="/article">
+          <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
+
           <Artikel />
           <ListArtikel />
           <Footer />
