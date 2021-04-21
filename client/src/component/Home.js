@@ -5,35 +5,39 @@ import KartuCerita from './KartuCerita';
 function Home() {
     return (
         <div id="top">
-        <div class="row container-fluid konten-atas">
-            <div class="col">
-                <div class="konten-kiri">
-                    <div class="background"></div>
-                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                        <div div class="carousel-inner">
-                            <div class="carousel-item active">
-                            <img class="d-block w-100" src="asset/slide01.png" alt="First slide"/>
+        <div className="row container-fluid konten-atas">
+            <div className="col-lg-6 contents">
+                <div className="konten-kiri d-flex justify-content-lg-end align-items-center">
+                    <div className="background animate__animated animate__fadeInLeft animate__delay-2s"></div>
+                    <div id="carouselExampleSlidesOnly" className="animate__animated animate__fadeInUp animate__delay-2s carousel custom-carousel slide carousel-fade" data-bs-pause="false" data-bs-ride="carousel">
+                        <div className="carousel-inner">
+                            <div className="carousel-item active">
+                            <img className="d-block w-100" src="asset/slide01.png" alt="First slide"/>
                             </div>
-                            <div class="carousel-item">
-                            <img class="d-block0 w-100" src="asset/slide03.png" alt="Second slide"/>
+                            <div className="carousel-item">
+                            <img className="d-block0 w-100" src="asset/slide03.png" alt="Second slide"/>
                             </div>
-                            <div class="carousel-item">
-                            <img class="d-block w-100" src="asset/slide02.png" alt="Third slide"/>
+                            <div className="carousel-item">
+                            <img className="d-block w-100" src="asset/slide02.png" alt="Third slide"/>
                             </div>
-                            <div class="carousel-item">
-                            <img class="d-block w-100" src="asset/slide04.png" alt="Fourth slide"/>
+                            <div className="carousel-item">
+                            <img className="d-block w-100" src="asset/slide04.png" alt="Fourth slide"/>
                             </div>
                         </div>
+                    </div>
+            </div>
+            </div>
+            <div className="col-lg-6 contents">
+                <div className="main-banner header-text">
+                    <div className="konten-home">
+                        <div className="animate__animated animate__fadeIn animate__delay-1s">
+                            <h2 className="judul-home">LOREM IPSUM</h2>
                         </div>
-            </div>
-            </div>
-            <div class="col">
-                <div class="main-banner header-text">
-                    <div class="konten-home">
-                        <h2 class="judul-home">LOREM IPSUM</h2>
-                        <p class="desc-home">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed justo dui, ornare in diam a, lobortis sollicitudin nulla. Vestibulum gravida fermentum magna, nec rutrum elit ullamcorper quis. Vivamus in nisl in ipsum dictum varius. Aliquam vel velit nunc.</p>
-                        <a class="text text-home" href="/stories">LIHAT CERITA MEREKA 
-                        <img class="icon-arrow" width="30px" height="auto" src="asset/right-arrow.svg"/></a>
+                        <div className="animate__animated animate__fadeIn animate__delay-2s">
+                            <p className="desc-home">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed justo dui, ornare in diam a, lobortis sollicitudin nulla. Vestibulum gravida fermentum magna, nec rutrum elit ullamcorper quis. Vivamus in nisl in ipsum dictum varius. Aliquam vel velit nunc.</p>
+                            <a className="text text-home" href="/stories">LIHAT CERITA MEREKA 
+                            <img className="icon-arrow" width="30px" height="auto" src="asset/right-arrow.svg"/></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -46,19 +50,17 @@ function Home() {
                             <KartuCerita />
                             
                             <KartuCerita />
-
-                            <KartuCerita />
                             
                         </div>
                     </div>
             </div>
-        <section class="section-action">
+        <section className="section-action">
 
         </section>
-        <section class="section-artikel">
+        <section className="section-artikel">
 
         </section>
-        <section class="section-testimoni">
+        <section className="section-testimoni">
             <Testimoni />
         </section>
         </div>

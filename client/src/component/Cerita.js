@@ -114,8 +114,8 @@ const Story = (props) => {
             <div className="artikel-section">
                 <div className="d-flex justify-content-between align-items-center">
                     <div>
-                        <h6 className="m-0">Cerita oleh { story.author?.fullname }</h6>
-                        <small>Dibuat pada <span className="tanggal-cerita">{ moment(story.created_at).fromNow() }</span></small>
+                        <h6 className="m-0">Cerita oleh { story.anonimity ? 'Anonim' : story.author?.fullname }</h6>
+                        <small>Dibuat pada <span className="tanggal-cerita">{ moment(story.created_at).format('LLLL') }</span></small>
                     </div>
                     <img src="/asset/share1.svg"></img>
                 </div>
