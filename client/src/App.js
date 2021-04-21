@@ -54,6 +54,7 @@ function App() {
         <Route exact path="/">
           <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
           <Home />
+          <Footer />
         </Route>
         <Route path="/action">
           <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />

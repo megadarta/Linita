@@ -26,7 +26,11 @@ function Navbar(props) {
     return (
         <nav className="customnav navbar navbar-expand-lg navbar-dark">
             <div className="container-fluid navtext">
+<<<<<<< HEAD
                 <img src="/asset/Logo Linita.png" width="120vw" class="navbar-brand"></img>
+=======
+                <img href="/" src="asset/Logo Linita.png" width="120vw" class="navbar-brand"></img>
+>>>>>>> e29add196056a72e6bb4189dbcdd8028c649b9dd
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
