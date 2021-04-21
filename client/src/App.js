@@ -64,22 +64,15 @@ function App() {
           <Footer />
         </Route>
         <Route path="/login">
-          <Login autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} />
+          <Login autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading}/>
         </Route>
         <Route path="/stories">
           <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
-
-          {
-            loading
-              ? <PreLoader />
-              : <div>
-                <LayoutCerita />
-                <Footer />
-              </div>
-          }
+          <LayoutCerita loading={loading} />
+          <Footer />
         </Route>
         <Route path="/register">
-          <Register setAutentikasi={setAutentikasi} setLoading={setLoading} />
+          <Register setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading}/>
         </Route>
         <Route path="/story/view/:id">
           <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />

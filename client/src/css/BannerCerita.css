@@ -30,6 +30,10 @@
     font-size: 18px;
 }
 
+.button-psikolog {
+    position: relative;
+}
+
 @media(max-width: 900px) {
     .img-banner-cerita {
         background-image: url(./asset/mobile-lapor.png);
