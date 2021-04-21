@@ -59,7 +59,7 @@ function Home() {
 
         </section>
         <section class="section-testimoni">
-        <Testimoni />
+            <Testimoni />
         </section>
         </div>
 
