@@ -7,9 +7,9 @@ function Home() {
         <div id="top">
         <div class="row container-fluid konten-atas">
             <div class="col">
-                <div class="konten-kiri">
+                <div class="konten-kiri d-flex">
                     <div class="background"></div>
-                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide align-self-center" data-ride="carousel">
                         <div div class="carousel-inner">
                             <div class="carousel-item active">
                             <img class="d-block w-100" src="asset/slide01.png" alt="First slide"/>
@@ -59,7 +59,7 @@ function Home() {
 
         </section>
         <section class="section-testimoni">
-        <Testimoni />
+            <Testimoni />
         </section>
         </div>
 

@@ -9,8 +9,8 @@
   .background {
     position: relative;
     padding: 0 0;
-    width: 600px;
-    height: 93vh;
+    width: 40vw;
+    height: 706px;
     background-color: #000000;
   }
   .slide {
@@ -34,9 +34,8 @@
   }
 
   .konten-home {
-    text-align: left;
-    margin-left: 180px;
-    margin-right: 50px;
+    margin-left: 10vw;
+    margin-right: 2vw;
     margin-top: 13vw;
   }
 
