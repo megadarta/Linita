@@ -24,6 +24,9 @@ import '@fortawesome/fontawesome-free/js/all.js';
 import TulisCerita from './component/TulisCerita.js';
 import Artikel from './component/Artikel.js';
 import ListArtikel from './component/ListArtikel.js';
+import moment from 'moment';
+import momentId from 'moment/locale/id';
+moment().locale('id', momentId);
 
 function App() {
   const [autentikasi, setAutentikasi] = useState({ auth: false });
@@ -78,6 +81,7 @@ function App() {
         <Route path="/story/view/:id">
           <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
           <Story autentikasi={autentikasi} setAutentikasi={setAutentikasi} />
+          <Footer />
         </Route>
         <Route path="/story/add">
           <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
@@ -86,7 +90,6 @@ function App() {
         </Route>
         <Route path="/article">
           <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
-
           <Artikel />
           <ListArtikel />
           <Footer />

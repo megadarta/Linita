@@ -1,13 +1,19 @@
 import { useState } from "react";
 import { server } from '../server.js';
+import '../css/ModalCerita.css';
 
 const ModalCerita = (props) => {
     const [showModal, setShowModal] = useState(true);
     const [nama, setNama] = useState();
     const [nik, setNik] = useState();
-
+    const [error, setError] = useState(null);
     function submit(e) {
         e.preventDefault();
+
+        if(!nama || !nik) {
+            setError('Pastikan anda mengisi semua data diri anda secara lengkap');
+            return;
+        }
 
         props.setLoading(true);
         const body = {
@@ -76,17 +82,18 @@ const ModalCerita = (props) => {
                         </div>
                     </div>	
                         </div>
-                        <div className="modal-footer justify-content-start">
-                            <form onSubmit={submit}>
+                        <div className="modal-footer flex-column align-items-stretch">
+                            <form onSubmit={submit} className="form-custom d-flex flex-column">
                                 <div class="form-group">
                                     <label className="judulform form-label" for="InputName" >NAMA LENGKAP*</label><br></br>
-                                    <input type="text" onChange={e => setNama(e.target.value)} className="form-control" id="InputName" placeholder="Nama lengkap sesuai KK / KTP"></input>
+                                    <input type="text" onChange={e => setNama(e.target.value)} className="form-control" id="InputName" placeholder="Nama lengkap sesuai KK / KTP" required></input>
                                     </div>
                                 <div class="form-group">
                                     <label className="judulform form-label" for="InputNIK" >NIK*</label><br></br>
-                                    <input type="text" onChange={e => setNik(e.target.value)} className="form-control" id="InputNIK" placeholder="NIK sesuai KK / KTP"></input>
+                                    <input type="text" onChange={e => setNik(e.target.value)} className="form-control" id="InputNIK" placeholder="NIK sesuai KK / KTP" required></input>
                                 </div>
-                                <input type="submit" className="btn-color btn-rules" onClick={submit} value="SUBMIT"></input> 
+                                <small className="error-text align-self-center">*{ error }</small>
+                                <input type="submit" className="btn btn-color btn-rules mb-4 mt-5" onClick={submit} value="SUBMIT"></input> 
                             </form>
                         </div>
                     </div>

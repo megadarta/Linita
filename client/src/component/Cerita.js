@@ -7,30 +7,42 @@ import moment from 'moment';
 
 const Story = (props) => {
     const [story, setStory] = useState({});
+    const [author, setAuthor] = useState(null);
     const [comments, setComments] = useState([]);
+
     const [comentInput, setCommentInput] = useState(null);
-    const [loading, setLoading] = useState(true);
+
+    const [loadingStory, setLoadingStory] = useState(true);
+    const [loadingComments, setLoadingComments] = useState(true);
+    const [loadingAuthor, setLoadingAuthor] = useState(true);
     const [loadLike, setLoadLike] = useState(false);
     const [loadComment, setLoadComment] = useState(false);
+
     const { id } = useParams();
     const commentRef = useRef(null);
 
     useEffect(() => {
-        setLoading(true);
-        fetch(server + 'story/one/' + id)
+        fetch(server + 'author/' + id)
+        .then(res => res.json())
+        .then(data => { 
+            setAuthor(data); 
+            setLoadingAuthor(false);
+        });
+
+        fetch(server + 'story/view/' + id)
         .then(res => res.json())
         .then(data => {
             setStory(data);
-            setLoading(false);
+            setLoadingStory(false);
         });
 
         fetch(server + 'comment/' + id)
         .then(res => res.json())
         .then(data => {
             setComments(data);
-            setLoading(false);
+            setLoadingComments(false);
         });
-    }, [setStory, setLoading]);
+    }, []);
 
     const submitComment = (e) => {
         e.preventDefault();
@@ -104,7 +116,7 @@ const Story = (props) => {
         }
     }
 
-    if(loading) {
+    if(loadingAuthor || loadingComments || loadingAuthor) {
         return (
             <PreLoader />
         )
@@ -114,8 +126,8 @@ const Story = (props) => {
             <div className="artikel-section">
                 <div className="d-flex justify-content-between align-items-center">
                     <div>
-                        <h6 className="m-0">Cerita oleh { story.author?.fullname }</h6>
-                        <small>Dibuat pada <span className="tanggal-cerita">{ moment(story.created_at).fromNow() }</span></small>
+                        <h6 className="m-0">Cerita oleh { story.anonimity ? 'Anonim' : author?.fullname }</h6>
+                        <small>Dibuat pada <span className="tanggal-cerita">{ moment(story.created_at).format('LLLL') }</span></small>
                     </div>
                     <img src="/asset/share1.svg"></img>
                 </div>
@@ -164,7 +176,11 @@ const Story = (props) => {
                             <div className ="py-3 komentar" key={index}>
                                 <b>{ comment.user.username }</b>
                                 <div>{ comment.content }</div>
-                                <small className="text-muted">{ moment(comment.created_at).fromNow() }</small>
+                                <div className="d-flex">
+                                    <small className="text-muted">{ comment.likes } points</small>
+                                    <small className="text-muted mx-1">.</small>
+                                    <small className="text-muted">{ moment(comment.created_at).fromNow() }</small>
+                                </div>
                             </div>
                         )
                     })

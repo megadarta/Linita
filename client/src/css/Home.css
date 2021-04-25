@@ -3,23 +3,21 @@
     padding-left: 0;
 }
 
+.custom-carousel {
+  width: 30vw;
+  position: absolute;
+  right: -50px;
+}
+
 .konten-kiri {
     position: relative;
   }
   .background {
     position: relative;
     padding: 0 0;
-    width: 40vw;
+    width: 100vw;
     height: 706px;
     background-color: #000000;
-  }
-  .slide {
-    position: absolute;
-    size: 100%;
-    margin-left: 15vw;
-    margin-top: 8vh;
-    top: 30px;
-    left: 2vw;
   }
   
 
@@ -54,3 +52,32 @@
     padding-bottom: 3px;
     padding-left: 7px;
   }
+
+@media (max-width: 992px) {
+  .custom-carousel {
+    width: 300px;
+    position: absolute;
+    right: auto;
+  }
+
+  .background {
+    position: relative;
+    padding: 0 0;
+    width: 100vw;
+    height: 300px;
+    background-color: #000000;
+  }
+
+  .konten-atas {
+    margin: 0;
+    padding: 0;
+  }
+
+  .contents {
+    padding: 0;
+  }
+
+  .konten-kiri {
+    justify-content: center!important;
+  }
+}

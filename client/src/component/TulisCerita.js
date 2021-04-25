@@ -19,7 +19,7 @@ function TulisCerita(props) {
 
         props.setLoading(true);
 
-        fetch(server + 'story/add', {
+        fetch(server + 'story/create', {
             method: "POST",
             credentials: 'include',
             headers: {
