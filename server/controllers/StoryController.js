@@ -1,20 +1,64 @@
 const Story = require('../models/Story');
+const User = require('../models/User');
+
 const story = new Story();
+const user = new User();
 
 class StoryController {
-    static postStory = async (req, res) => {
-        const { body } = req;
+    static addStory = async (req, res) => {
+        const { anonimity, title, content } = req.body;
 
-        const postedStory = await story.postStory(body);
+        const author = req.user._id;
 
-        await story.addStoryToAuthor(postedStory);
+        const document = {
+            author, 
+            anonimity, 
+            title, 
+            content
+        };
 
-        res.json(postedStory);
+        const postedStory = await story.postStory(document);
+
+        const postingUser = await user.addStory(author, postedStory);
+
+        res.json({ story: postedStory, user: postingUser });
     }
 
-    static giveLove = async (req, res) => {
-        const { id } = req.body;
-        
+    static addLike = async (req, res) => {
+        const { storyID } = req.body;
+        const userID = req.user._id;
+
+        const likedStory = await story.giveLike(storyID);
+
+        const likingUser = await user.addLikedStory(userID, storyID);
+
+        res.json({ story: likedStory, user: { auth: true, user: likingUser } });
+    }
+
+    static unLike = async (req, res) =>  {
+        const { storyID } = req.body;
+
+        const userID = req.user._id;
+
+        const unlikedStory = await story.removeLike(storyID);
+
+        const unlikingUser = await user.removeLikedStory(userID, storyID)
+
+        res.json({ story: unlikedStory, user: { auth: true, user: unlikingUser } });
+    }
+
+    static oneStory = async (req, res) => {
+        const { id } = req.params;
+
+        const foundStory = await story.getOne(id);
+
+        res.json(foundStory);
+    }
+
+    static allStories = async (req, res) => {
+        const stories = await story.getAll();
+
+        res.json(stories);
     }
 }
 

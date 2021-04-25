@@ -14,7 +14,8 @@
 }
 
 .img-card-lapor{
-    padding: 15px;
+    padding: 10px;
+    padding-top: 20px;
     height: 80px;
     object-fit: contain;
 }

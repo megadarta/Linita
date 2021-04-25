@@ -1,0 +1,201 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.judul {
+  text-align: center;
+  padding: 50px 30px 20px 30px;
+  font-family: 'Roboto';
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.deskripsi{
+	font-family: 'Roboto';
+	font-weight: 400;
+	font-size: 14px;
+	color: #000000;
+  text-align: justify;
+  white-space: normal;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 14px;
+  padding: 0px 5vw 0 5vw;
+}
+
+.section{
+  position: relative;
+  width: 100%;
+  display: block;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.full-height{
+  min-height: 100vh;
+}
+
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked){
+  position: absolute;
+  left: -9999px;
+}
+.modal-btn:checked + label,
+.modal-btn:not(:checked) + label{
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 2;
+  height: 50px;
+  transition: all 200ms linear;
+  width: 240px;
+  letter-spacing: 1px;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  text-align: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+  border: none;
+  cursor: pointer;
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: 0 12px 35px 0 rgba(16,39,112,.25);
+}
+.modal-btn:not(:checked) + label:hover{
+  background-color: #EC6F00;
+  color: #ffffff;
+}
+
+.modal{
+  position: fixed;
+  display: block;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  overflow-x: hidden;
+  background-color: rgba(31, 32, 41, 0.836);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 250ms 700ms ease;
+}
+.modal-btn:checked ~ .modal{
+  pointer-events: auto;
+  opacity: 1;
+  transition: all 300ms ease-in-out;
+}
+
+.btn-kembali-popup {
+  position: fixed; 
+  top: 50px;
+  left: 20px;
+  width: 70px; 
+}
+
+.modal-wrap {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 50vw;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  padding-bottom: 20px;
+  background-color: #fff;
+    -ms-flex-item-align: center;
+    align-self: center;
+    box-shadow: 0 12px 25px 0 rgba(199,175,189,.25);
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 250ms 250ms ease, transform 300ms 250ms ease;
+}
+
+.modal-wrap .deskripsi {
+  padding: 0px 5vw 0 5vw;
+}
+.modal-btn:checked ~ .modal .modal-wrap{
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 250ms 500ms ease, transform 350ms 500ms ease;
+}
+
+
+.modal-header .close {
+    padding: 1rem 1rem;
+    margin: -1rem auto -1rem -1rem;
+}
+
+.form-group {
+  padding: 10px 5vw 0 5vw;
+}
+
+.judulform {
+  font-family: 'Roboto';
+  font-size: 14px;
+  font-weight: 800;
+}
+
+::placeholder {
+  font-size: 14px;
+}
+
+.form-pilihan {
+  font-weight: 500;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #000000;
+}
+
+.form-pilihan a {
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+.btn-rules {
+  font-size: 14px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: none;
+  font-weight: 500;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  width: 20vw;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 900px) {
+	.modal-wrap {
+		width: calc(100% - 40px);
+		padding-bottom: 15px;
+	}
+	.modal-wrap p {
+	  padding: 15px 20px 0 20px;
+	}
+}

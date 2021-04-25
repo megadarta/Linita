@@ -1,0 +1,29 @@
+.custom-listartikel{
+    margin-top: 20px;
+    padding-left: 20vw;
+    padding-right: 20vw;
+}
+
+.gambar-card-artikel{
+    width: 100%;
+}
+
+.card-artikel-text{
+    font-family: roboto;
+    font-size: 1rem;
+    font-weight: medium;
+    padding: 10px 20px 20px 20px;
+}
+
+.card-artikel{
+    border: 2px solid black;
+    width: 12rem;
+    margin: 20px 12px 0px 12px;
+    padding: 0px;
+}
+  
+.card-artikel:hover {
+    transition: 0.2s;
+    transform: translateY(-5px);
+}
+  

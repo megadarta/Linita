@@ -9,7 +9,7 @@ const sessionSetting = {
     cookie: { 
         httpOnly: true,
         secure: IS_PROD,
-        sameSite: "none" 
+        sameSite: IS_PROD ? "none" : undefined
     }    
 }
 

@@ -1,47 +1,32 @@
-const mongoose = require('mongoose');
 const Model = require('../base/Model');
-const { Schema } = mongoose;
+const { storySchema } = require('./schemas/storySchema');
 
 class Story extends Model {
     constructor() {
-        super(
-            //Schema
-            {
-                author: { type: Schema.Types.ObjectId, ref: 'User' },
-                title: String,
-                content: String,
-                comments: { 
-                    type: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
-                    default: []
-                },
-                loves: { type: Number, default: 0 },
-                anonimity: String
-            },
-
-            //Model name
-            'Story'
-        );
+        super(storySchema, 'Story');
     }
+
+    getAll = async () => await this.Model.find({}).populate('author');
+
+    getOne = async (id) => await this.Model.findById(id).populate('author');
 
     postStory = async (body) => {
         const document = this.makeDocument(body);
 
         const postedStory = await document.save();
 
-        //populate author field
-        const populatedStory = await  await this.Model.populate(postedStory, { path: 'author' });
-
-        return populatedStory;
+        return postedStory;
     }
 
-    addStoryToAuthor = async (story) => {
-        //add story to author document
-        story.author.stories.push(story._id);
+    giveLike = async (storyID) => await this.Model.findByIdAndUpdate(storyID, { $inc : { likes: 1 } }, { new: true }).populate('author');
+    
+    removeLike = async (storyID) => await this.Model.findByIdAndUpdate(storyID, { $inc : { likes: -1 } }, { new: true }).populate('author');
 
-        const postedUser = await story.author.save();
-
-        return postedUser;
-    }
+    receivedComment = async (storyID, commentID) => await this.Model.findByIdAndUpdate(
+        storyID, 
+        { $push: { comments: commentID }}, 
+        { new: true }
+    );
 }
 
 module.exports = Story;

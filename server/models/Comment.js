@@ -1,21 +1,22 @@
-const mongoose = require('mongoose');
 const Model = require('../base/Model');
-const { Schema } = mongoose;
+const { commentSchema } = require('./schemas/commentSchema');
 
 class Comment extends Model {
     constructor() {
-        super(
-            //Schema
-            {
-                author: { type: Schema.Types.ObjectId, ref: 'User' },
-                content: String,
-                commented_story: { type: Schema.Types.ObjectId, ref: "Story" },
-                loves: { type: Number, default: 0 }
-            },
+        super(commentSchema, 'Comment');
+    }
 
-            //Model name
-            'Comment'
-        );
+    getAllfromStory = async (storyID) => await this.Model.find(
+        { story: storyID })
+    .populate('user')
+    .sort({ 'created_at': 'desc' });
+
+    postComment = async (body) => {
+        const document = this.makeDocument(body);
+
+        const postedComment = await document.save();
+
+        return postedComment;
     }
 }
 

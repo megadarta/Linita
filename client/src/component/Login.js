@@ -1,6 +1,7 @@
 import '../css/Login.css';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
+import { useEffect } from 'react';
 import {server} from '../server.js';
 
 function Login(props) {
@@ -24,21 +25,19 @@ function Login(props) {
       return response.json(); 
     })
     .then(data => {
-      if(data.auth===true){
-        history.push('/');
-      }
-
-      props.setAutentikasi(data.auth);
+      props.setAutentikasi(data);
+      history.push('/');
       props.setLoading(false);
     })
   }
 
+  
   return (
     <div className="custom-login d-flex justify-content-center align-items-center">
       <div className="">
         <h3 className="text-center">Masuk Akun</h3>
-        <div className="classlogo text-center">
-          <img src="../logo192.png" className="rounded-left logo-login "></img>
+        <div className="classlogo text-center my-3 mb-5">
+          <a href="/"><img src="/asset/logo-dark.png" className="logo-login"></img></a>
         </div>
         <form  onSubmit={login}  method="post" className="login-form mb-3">
           <div className="form-floating mb-3">

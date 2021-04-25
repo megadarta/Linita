@@ -1,7 +1,7 @@
 .custom-login{
     /* margin: 100px 100px 0 100px; */
     width: 100%;
-    height: 80vh;
+    height: 100vh;
 }
 .login-form .input-container {
 	border-bottom: 1px solid #CCCCCC;
@@ -27,10 +27,7 @@
     width: 350px;
 }
 .logo-login{
-    width: 50px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-
+    height: 80px;
 }
 .classlogo{
     width: 350px;

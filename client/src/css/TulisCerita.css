@@ -5,8 +5,12 @@
     font-family: Bebas Neue;
     width: 65vw;
     border: none;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 14338e2526cf187ff33e2c9d40d38ed6c46bcf85
 }
+
 .text-judul::placeholder{
     font-family: Bebas Neue;
     font-size: 50px;
@@ -59,6 +63,12 @@
 .div-judul-anonim{
     margin-bottom: -10px;
 }
+<<<<<<< HEAD
 .baris-batas{
         border: 1px solid black;
+=======
+.garis-buat-cerita{
+    border: 1px solid black;
+    width: 65vw;
+>>>>>>> 14338e2526cf187ff33e2c9d40d38ed6c46bcf85
 }
