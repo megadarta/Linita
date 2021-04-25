@@ -10,7 +10,7 @@ function LayoutCerita(props) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch(server + 'story/all')
+        fetch(server + 'story/')
         .then(res => res.json())
         .then(data => {
             setLoading(false);

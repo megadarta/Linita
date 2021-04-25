@@ -1,7 +1,8 @@
 const User = require('../models/User');
-const passport = require('passport');
 const user = new User();
-require('../authentications/passportAuth')(user);
+
+const passport = require('passport');
+require('../authentications/passportAuth')();
 
 class UserController {
     static checkAuthentication = (req, res) => {        
@@ -11,10 +12,16 @@ class UserController {
     }
 
     static register = async (req, res) => {
-        const { body } = req;
+        const { username, password, email } = req.body;
+
+        const document = {
+            username,
+            password,
+            email
+        }
 
         try {
-            const createdUser = await user.register(body);
+            const createdUser = await user.create(document);
 
             //Save registered user to session
             req.login(createdUser, (err, sessionUser) => {
@@ -28,13 +35,21 @@ class UserController {
         }
     }
 
-    static addNamaNIK = async (req, res) => {
+    static addDetails = async (req, res) => {
         const { fullname, nik } = req.body;
         const userID = req.user._id;
 
-        const updatedUser = await user.addNamaNIK(userID, fullname, nik);
+        const updatedUser = await user.addDetails(userID, fullname, nik);
 
         res.redirect('/');
+    }
+
+    static getAuthor = async (req, res) => {
+        const { storyID } = req.params;
+
+        const foundAuthor = await user.getOne({ stories: storyID });
+
+        res.json(foundAuthor);
     }
 
     static logout = async (req, res) => {

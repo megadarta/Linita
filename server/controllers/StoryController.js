@@ -5,7 +5,21 @@ const story = new Story();
 const user = new User();
 
 class StoryController {
-    static addStory = async (req, res) => {
+    static index = async (req, res) => {
+        const stories = await story.getAll();
+
+        res.json(stories);
+    }
+
+    static view = async (req, res) => {
+        const { id } = req.params;
+
+        const foundStory = await story.getOneById(id);
+
+        res.json(foundStory);
+    }
+
+    static create = async (req, res) => {
         const { anonimity, title, content } = req.body;
 
         const author = req.user._id;
@@ -17,14 +31,14 @@ class StoryController {
             content
         };
 
-        const postedStory = await story.postStory(document);
+        const postedStory = await story.create(document);
 
         const postingUser = await user.addStory(author, postedStory);
 
         res.json({ story: postedStory, user: postingUser });
     }
 
-    static addLike = async (req, res) => {
+    static like = async (req, res) => {
         const { storyID } = req.body;
         const userID = req.user._id;
 
@@ -45,20 +59,6 @@ class StoryController {
         const unlikingUser = await user.removeLikedStory(userID, storyID)
 
         res.json({ story: unlikedStory, user: { auth: true, user: unlikingUser } });
-    }
-
-    static oneStory = async (req, res) => {
-        const { id } = req.params;
-
-        const foundStory = await story.getOne(id);
-
-        res.json(foundStory);
-    }
-
-    static allStories = async (req, res) => {
-        const stories = await story.getAll();
-
-        res.json(stories);
     }
 }
 

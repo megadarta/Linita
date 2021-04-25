@@ -18,6 +18,11 @@ const userSchema = new Schema({
         of: { type: Schema.Types.ObjectId, ref: 'Story' },
         default: {}
     },
+    likedComments: {
+        type: Map,
+        of: { type: Schema.Types.ObjectId, ref: 'Comment' },
+        default: {}
+    },
     comments: { 
         type: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
         default: []

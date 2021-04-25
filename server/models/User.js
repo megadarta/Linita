@@ -7,14 +7,11 @@ class User extends Model {
         super(userSchema, 'User');
     }
 
-    register = async (body) => {
+    create = async (document) => {
         try {
-            const encryptedPassword = this.encryptPassword(body.password);
+            document.password = this.encryptPassword(document.password);
 
-            //Edit document's password to the encrypted one
-            const insertedDocument = this.editDocument(body, 'password', encryptedPassword);
-
-            const newDocument = this.makeDocument(insertedDocument);
+            const newDocument = this.makeDocument(document);
             
             const createdUser = await newDocument.save();
 
@@ -51,13 +48,21 @@ class User extends Model {
     }
 
     addComent = async (userID, commentID) => {
-        const foundUser = await this.Model.findByIdAndUpdate(userID, { $push: { comments: commentID }}, { new: true });
+        const foundUser = await this.Model.findByIdAndUpdate(
+            userID, 
+            { $push: { comments: commentID }}, 
+            { new: true }
+        );
         
         return foundUser;
     }
 
-    addNamaNIK = async (userID, fullname, nik) => {
-        const updatedUser = await this.Model.findByIdAndUpdate(userID, { fullname, nik }, { new: true });
+    addDetails = async (userID, fullname, nik) => {
+        const updatedUser = await this.Model.findByIdAndUpdate(
+            userID, 
+            { fullname, nik }, 
+            { new: true }
+        );
 
         return updatedUser;
     }
