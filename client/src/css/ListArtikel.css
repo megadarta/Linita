@@ -1,7 +1,6 @@
 .custom-listartikel{
-    margin-top: 20px;
-    padding-left: 20vw;
-    padding-right: 20vw;
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 .gambar-card-artikel{
@@ -17,7 +16,8 @@
 
 .card-artikel{
     border: 2px solid black;
-    width: 12rem;
+    width: 15rem;
+    height: 300px;
     margin: 20px 12px 0px 12px;
     padding: 0px;
 }
@@ -26,4 +26,12 @@
     transition: 0.2s;
     transform: translateY(-5px);
 }
-  
+.card-artikelhref{
+    text-decoration: none;
+    width: 20rem;
+    color: black;
+}
+.card-artikelhref:hover{
+    text-decoration: none;
+    color: black;
+} 

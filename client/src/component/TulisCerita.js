@@ -19,7 +19,7 @@ function TulisCerita(props) {
 
         props.setLoading(true);
 
-        fetch(server + 'story/add', {
+        fetch(server + 'story/create', {
             method: "POST",
             credentials: 'include',
             headers: {
@@ -49,6 +49,7 @@ function TulisCerita(props) {
 
             <div className="garis-buat-cerita">
                 <hr className="baris-batas"/>
+            </div>
             <div className="mt-4 mb-2 garis-buat-cerita">
                
             </div>

@@ -1,0 +1,24 @@
+.custom-beraksi{
+    background-color: black;
+    /* height: 350px; */
+}
+.judul-beraksi{
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+.text-beraksi{
+    color: white;
+    font-size: 15px;
+    padding: 50px 200px 0px 200px;
+    text-align: center;
+}
+.button-beraksi{
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    padding: 0px 100px 0px 100px;   
+    margin-bottom: 50px; 
+    margin-top: 30px;
+}

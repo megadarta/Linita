@@ -3,13 +3,13 @@ const express = require('express');
 const router = express.Router();
 
 const story = () => {
-    router.get('/one/:id', StoryController.oneStory);
+    router.get('/', StoryController.index);
 
-    router.get('/all', StoryController.allStories);
+    router.get('/view/:id', StoryController.view);
 
-    router.post('/add', StoryController.addStory);
+    router.post('/create', StoryController.create);
     
-    router.put('/like', StoryController.addLike);
+    router.put('/like', StoryController.like);
 
     router.put('/unlike', StoryController.unLike);
 

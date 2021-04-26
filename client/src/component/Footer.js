@@ -8,9 +8,7 @@ function Footer() {
             <a href="https://wa.me/+6288996031198"><img className="waImg" src="./asset/wa.png"></img></a>
             <a href="https://web.facebook.com/meyga.putrird/"><img className="waImg" src="./asset/fb.png"></img></a>
             <a href="https://www.instagram.com/megadrta/"><img className="waImg" src="./asset/ig.png"></img></a>
-            <img className="waImg" src="/asset/wa.png"></img>
-            <img className="waImg" src="/asset/fb.png"></img>
-            <img className="waImg" src="/asset/ig.png"></img>
+            
           </div>
           <div className="ft-text d-flex mt-3 justify-content-between">
             <a href="" className="ft-text-href">Home</a>

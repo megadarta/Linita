@@ -22,8 +22,13 @@ import { server } from './server.js';
 import 'animate.css';
 import '@fortawesome/fontawesome-free/js/all.js';
 import TulisCerita from './component/TulisCerita.js';
-import Artikel from './component/Artikel.js';
+import Artikel1 from './component/Artikel1.js';
 import ListArtikel from './component/ListArtikel.js';
+import moment from 'moment';
+import momentId from 'moment/locale/id';
+import Artikel2 from './component/Artikel2.js';
+import Artikel3 from './component/Artikel3';
+moment().locale('id', momentId);
 
 function App() {
   const [autentikasi, setAutentikasi] = useState({ auth: false });
@@ -54,6 +59,7 @@ function App() {
         <Route exact path="/">
           <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
           <Home />
+          <Footer />
         </Route>
         <Route path="/action">
           <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
@@ -64,26 +70,20 @@ function App() {
           <Footer />
         </Route>
         <Route path="/login">
-          <Login autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} />
+          <Login autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading}/>
         </Route>
         <Route path="/stories">
           <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
-
-          {
-            loading
-              ? <PreLoader />
-              : <div>
-                <LayoutCerita />
-                <Footer />
-              </div>
-          }
+          <LayoutCerita loading={loading} />
+          <Footer />
         </Route>
         <Route path="/register">
-          <Register setAutentikasi={setAutentikasi} setLoading={setLoading} />
+          <Register setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading}/>
         </Route>
         <Route path="/story/view/:id">
           <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
           <Story autentikasi={autentikasi} setAutentikasi={setAutentikasi} />
+          <Footer />
         </Route>
         <Route path="/story/add">
           <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
@@ -92,8 +92,25 @@ function App() {
         </Route>
         <Route path="/article">
           <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
-
-          <Artikel />
+          {/* <Artikel /> */}
+          <ListArtikel />
+          <Footer />
+        </Route>
+        <Route path="/artikel1">
+          <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
+          <Artikel1 />
+          <ListArtikel />
+          <Footer />
+        </Route>
+        <Route path="/artikel2">
+          <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
+          <Artikel2 />
+          <ListArtikel />
+          <Footer />
+        </Route>
+        <Route path="/artikel3">
+          <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
+          <Artikel3 />
           <ListArtikel />
           <Footer />
         </Route>

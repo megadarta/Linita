@@ -1,11 +1,11 @@
 import '../css/Artikel.css';
 
-function Artikel() {
+function Artikel2() {
     return (
         <div className="custom-artikel d-flex  flex-column ">
             <div className="judul-artikel mb-4 mt-4">Alami Kekerasan Saat Masih Pacaran, Perempuan Harus Berani Bertindak</div>
             <div>
-                <img className="gambar-artikel mt-2" src="./asset/artikel1.jpg"></img>
+                <img className="gambar-artikel mt-2" src="./asset/trauma.jpg"></img>
                 <p className="mt-2 sumber-gambar">Kekerasan pada perempuan/copyright: unsplash/huyen nguyen</p>
             </div>
             <div>
@@ -34,4 +34,4 @@ function Artikel() {
     );
 }
 
-export default Artikel;
+export default Artikel2;

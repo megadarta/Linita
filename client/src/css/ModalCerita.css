@@ -1,0 +1,9 @@
+.error-text {
+    position: absolute;
+    bottom: 90px;
+    color: red;
+}
+
+.form-custom {
+    position: relative;
+}

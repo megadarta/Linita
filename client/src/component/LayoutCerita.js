@@ -3,33 +3,41 @@ import KartuCerita from './KartuCerita.js';
 import BannerCerita from './BannerCerita.js';
 import { useEffect, useState } from 'react';
 import { server } from '../server.js';
+import PreLoader from './PreLoader';
 
-function LayoutCerita() {
+function LayoutCerita(props) {
     const [stories, setStories] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch(server + 'story/all')
+        fetch(server + 'story/')
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            setLoading(false);
             setStories(data);
         })
-    }, [setStories]);
+    }, [setStories, setLoading]);
 
     return (
         <div>
-            <BannerCerita />
-            <div className="custom-card-cerita flex-column">
-                <div className="container-fluid">
-                    <div className="row justify-content-center">
-                        { stories.map((story, index) => {
-                            return (
-                                <KartuCerita key={index} story={story} />
-                            )
-                        })}   
+            <BannerCerita loading={props.loading} />
+            {
+                loading 
+                ?
+                    <PreLoader />
+                :
+                <div className="custom-card-cerita flex-column">
+                    <div className="container-fluid">
+                        <div className="row justify-content-evenly">
+                            { stories.map((story, index) => {
+                                return (
+                                    <KartuCerita key={index} story={story} />
+                                )
+                            })}   
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
         </div>
     );
 }
