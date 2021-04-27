@@ -20,7 +20,7 @@ function LayoutCerita(props) {
 
     return (
         <div>
-            <BannerCerita loading={props.loading} />
+            <BannerCerita autentikasi={props.autentikasi} loading={props.loading} />
             {
                 loading 
                 ?

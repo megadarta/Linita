@@ -32,6 +32,30 @@ class CommentController {
 
         res.json(comments);
     }
+
+    static upvote = async (req, res) => {
+        const { commentID } = req.body;
+
+        const userID = req.user;
+
+        const upvotedComment = await comment.incrementLikes(commentID);
+
+        const likingUser = await user.addLikedComment(userID, commentID);
+
+        res.json({ comment: upvotedComment, user: { auth: true, user: likingUser } });
+    }
+
+    static downvote = async (req, res) => {
+        const { commentID } = req.body;
+
+        const userID = req.user;
+
+        const upvotedComment = await comment.decrementLikes(commentID);
+
+        const likingUser = await user.addDislikedComment(userID, commentID);
+
+        res.json({ comment: upvotedComment, user: { auth: true, user: likingUser } });
+    }
 }
 
 module.exports = CommentController;

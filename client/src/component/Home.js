@@ -5,8 +5,18 @@ import BannerBeraksi from './BannerBeraksi';
 import KartuArtikel3 from './KartuArtikel3';
 import KartuArtikel2 from './KartuArtikel2';
 import KartuArtikel1 from './KartuArtikel1';
+import { useEffect, useState } from 'react';
+import { server } from '../server.js';
 
 function Home() {
+    const [topStories, setTopStories] = useState([]);
+
+    useEffect(() => {
+        fetch(server + 'story/top-three')
+        .then(res => res.json())
+        .then(data => setTopStories(data));
+    }, []);
+
     return (
         <div id="top">
         <div className="row container-fluid konten-atas">
@@ -49,12 +59,9 @@ function Home() {
             <div className="custom-card-cerita flex-column">
                     <div className="container-fluid">
                         <div className="row justify-content-center">
-                            <KartuCerita />
-
-                            <KartuCerita />
-                            
-                            <KartuCerita />
-                            
+                            {
+                                topStories.map((story, index) => <KartuCerita story={story} key={index} />)
+                            }
                         </div>
                     </div>
             </div>

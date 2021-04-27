@@ -41,15 +41,15 @@ function TulisCerita(props) {
                     <ModalCerita setAutentikasi={props.setAutentikasi} setLoading={props.setLoading} />
             }
             <div>
-                <input type="text" onChange={e => setJudul(e.target.value)} class="form-control text-judul shadow-none" placeholder="JUDUL..."></input>
+                <input type="text" onChange={e => setJudul(e.target.value)} class="form-control text-judul shadow-none" placeholder="JUDUL..." required></input>
             </div>
             <div>
-                <textarea type="text" onChange={e => setCerita(e.target.value)} class="form-control mt-4 text-isi shadow-none" placeholder="Tulis Cerita Anda"></textarea>
+                <textarea type="text" onChange={e => setCerita(e.target.value)} class="form-control mt-4 text-isi shadow-none" placeholder="Tulis Cerita Anda" required></textarea>
             </div>
 
-            <div className="garis-buat-cerita">
-                <hr className="baris-batas"/>
-            </div>
+            {/* <div className="garis-buat-cerita"> */}
+                {/* <hr className="baris-batas"/> */}
+            {/* </div> */}
             <div className="mt-4 mb-2 garis-buat-cerita">
                
             </div>

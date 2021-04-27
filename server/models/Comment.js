@@ -18,6 +18,18 @@ class Comment extends Model {
 
         return postedComment;
     }
+
+    incrementLikes = async (commentID) => await this.Model.findByIdAndUpdate(
+        commentID, 
+        { $inc: { likes: 1 } }, 
+        { new: true }
+    )
+
+    decrementLikes = async (commentID) => await this.Model.findByIdAndUpdate(
+        commentID, 
+        { $inc: { likes: -1 } }, 
+        { new: true }
+    )
 }
 
 module.exports = Comment;

@@ -2,6 +2,12 @@
     padding: 100px 200px;
 }
 
+.vote {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+}
+
 .title-cerita {
     font-family: 'Bebas Neue';
     font-size: 60px;

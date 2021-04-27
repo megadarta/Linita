@@ -6,7 +6,9 @@ class Story extends Model {
         super(storySchema, 'Story');
     }
 
-    // getAll = async () => await this.Model.find().populate('author');
+    getAll = async () => await this.Model.find().populate('author');
+
+    topThree = async () => await this.Model.find().populate('author').sort({ 'likes': 'desc' }).limit(3);
 
     // getOne = async (id) => await this.Model.findById(id).populate('author');
 

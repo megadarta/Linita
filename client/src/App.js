@@ -61,7 +61,7 @@ function App() {
           <Home />
           <Footer />
         </Route>
-        <Route path="/action">
+        <Route path="/actions">
           <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
           <Lapor />
           <Caralapor />
@@ -74,7 +74,7 @@ function App() {
         </Route>
         <Route path="/stories">
           <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
-          <LayoutCerita loading={loading} />
+          <LayoutCerita autentikasi={autentikasi} loading={loading} />
           <Footer />
         </Route>
         <Route path="/register">
@@ -90,7 +90,7 @@ function App() {
           <TulisCerita autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} />
           <Footer />
         </Route>
-        <Route path="/article">
+        <Route path="/articles">
           <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
           {/* <Artikel /> */}
           <ListArtikel />

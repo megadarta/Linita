@@ -39,6 +39,26 @@ class User extends Model {
         return await foundUser.save();
     }
 
+    addLikedComment = async (userID, commentID) => {
+        const foundUser = await this.Model.findById(userID);
+
+        foundUser.likedComments.set(commentID, commentID);
+
+        foundUser.dislikedComments.delete(commentID);
+
+        return await foundUser.save();
+    }
+
+    addDislikedComment = async (userID, commentID) => {
+        const foundUser = await this.Model.findById(userID);
+
+        foundUser.dislikedComments.set(commentID, commentID);
+
+        foundUser.likedComments.delete(commentID);
+
+        return await foundUser.save();
+    }
+
     removeLikedStory = async (userID, storyID) => {
         const foundUser = await this.Model.findById(userID);
 
