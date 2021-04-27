@@ -1,9 +1,68 @@
 .error-text {
     position: absolute;
     bottom: 90px;
-    color: red;
+    color: rgb(255, 255, 255);
 }
 
-.form-custom {
-    position: relative;
+.modal {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-dialog {
+    max-width: 700px;
+}
+
+.modal-content {
+    border-radius: 0;
+    outline: 0;
+}
+
+.modal-wrap {
+    padding: 7px 3vw;
+}
+
+.modal-title {
+    font-family: 'roboto';
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.deskripsi-modal {
+    font-family: "roboto";
+    font-size: 15px;
+    font-weight: 400;
+    text-align: justify;
+
+}
+
+.title-ak {
+    font-weight: 600;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.form-group {
+    padding: 0 5vw;
+}
+
+.judulform {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 800;
+    text-align: center;
+  }
+
+.form-control {
+    border: solid black;
+    border-radius: 0;
+    border-width: 1.5px;
 }

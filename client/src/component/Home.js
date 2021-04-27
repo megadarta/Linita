@@ -5,16 +5,6 @@ import KartuCerita from './KartuCerita';
 function Home() {
     return (
         <div id="top">
-<<<<<<< HEAD
-        <div class="row container-fluid konten-atas">
-            <div class="col">
-                <div class="konten-kiri">
-                    <div class="background"></div>
-                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                        <div div class="carousel-inner">
-                            <div class="carousel-item active">
-                            <img class="d-block w-100" src="asset/slide01.png" alt="First slide"/>
-=======
         <div className="row container-fluid konten-atas">
             <div className="col-lg-6 contents">
                 <div className="konten-kiri d-flex justify-content-lg-end align-items-center">
@@ -23,7 +13,6 @@ function Home() {
                         <div className="carousel-inner">
                             <div className="carousel-item active">
                             <img className="d-block w-100" src="asset/slide01.png" alt="First slide"/>
->>>>>>> e6d1f53e6581f7d6273d2525f0244211a6debc73
                             </div>
                             <div className="carousel-item">
                             <img className="d-block0 w-100" src="asset/slide03.png" alt="Second slide"/>
