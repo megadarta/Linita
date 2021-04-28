@@ -2,11 +2,15 @@ import { useState } from 'react';
 import '../css/TulisCerita.css';
 import ModalCerita from './ModalCerita.js';
 import { server } from '../server.js';
+import { useHistory } from 'react-router';
+import { Redirect } from 'react-router-dom';
 
 function TulisCerita(props) {
+    const history = useHistory();
     const [judul, setJudul] = useState();
     const [cerita, setCerita] = useState();
     const [anonim, setAnonim] = useState(true);
+    const [submitedStory, setSubmitedStory] = useState(false);
 
     function tuliscerita(e){
         e.preventDefault();
@@ -29,22 +33,27 @@ function TulisCerita(props) {
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data);
+            setSubmitedStory(true);
             props.setLoading(false);
         });
     }
+
+    if(submitedStory) {
+       return <Redirect to={`/user/${props.autentikasi.user._id}`}></Redirect> 
+    }
+
     return (
-        <div className="d-flex flex-column align-items-center">
+        <div className="d-flex flex-column align-items-center mb-5">
         <form onSubmit={tuliscerita}>
             {
                 props.autentikasi.user?.fullname === '' &&
                     <ModalCerita setAutentikasi={props.setAutentikasi} setLoading={props.setLoading} />
             }
             <div>
-                <input type="text" onChange={e => setJudul(e.target.value)} class="form-control text-judul shadow-none" placeholder="JUDUL..."></input>
+                <input type="text" onChange={e => setJudul(e.target.value)} className="form-control text-judul shadow-none" placeholder="JUDUL..." required></input>
             </div>
             <div>
-                <textarea type="text" onChange={e => setCerita(e.target.value)} class="form-control mt-4 text-isi shadow-none" placeholder="Tulis Cerita Anda"></textarea>
+                <textarea type="text" onChange={e => setCerita(e.target.value)} className="form-control mt-4 text-isi shadow-none" placeholder="Tulis Cerita Anda" required></textarea>
             </div>
 
             <div className="mt-4 mb-2 garis-buat-cerita">
@@ -53,13 +62,13 @@ function TulisCerita(props) {
 
             <div className="d-flex justify-content-start flex-column pilihan-anonim"> 
                 <div className="div-judul-anonim"><p className="judul-anonim">IZINKAN ORANG LAIN MENGETAHUI NAMA ANDA*</p></div>
-                <div class="form-check">
-                    <input class="form-check-input radio-anonim" onChange={e => setAnonim(false)} name="exampleRadios"  type="radio" value="option1" checked={anonim==false}></input>
-                    <label class="form-check-label check-anonim" for="exampleRadios1">Ya, izinkan.</label>
+                <div className="form-check">
+                    <input className="form-check-input radio-anonim" onChange={e => setAnonim(false)} name="exampleRadios"  type="radio" value="option1" checked={anonim==false}></input>
+                    <label className="form-check-label check-anonim" htmlFor="exampleRadios1">Ya, izinkan.</label>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input radio-anonim" onChange={e => setAnonim(true)}  name="exampleRadios"  type="radio" value="option2" checked={anonim==true}></input>
-                    <label class="form-check-label check-anonim" for="exampleRadios1">Tidak diizinkan, samarkan nama saya.</label>
+                <div className="form-check">
+                    <input className="form-check-input radio-anonim" onChange={e => setAnonim(true)}  name="exampleRadios"  type="radio" value="option2" checked={anonim==true}></input>
+                    <label className="form-check-label check-anonim" htmlFor="exampleRadios1">Tidak diizinkan, samarkan nama saya.</label>
                 </div>
             </div>
 

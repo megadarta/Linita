@@ -2,6 +2,12 @@
     padding: 100px 200px;
 }
 
+.vote {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+}
+
 .title-cerita {
     font-family: 'Bebas Neue';
     font-size: 60px;
@@ -38,6 +44,10 @@
     border-top-color: black;
     border-radius: 50%;
     animation: button-likeload-spinner 1s ease infinite;
+}
+
+.trigger-hidden {
+    cursor: pointer;
 }
 
 .btn-comment {
@@ -81,4 +91,8 @@
 
 .komentar {
     border-bottom: 1px solid #737373;
+}
+
+.cerita-load {
+    min-height: 60vh;
 }

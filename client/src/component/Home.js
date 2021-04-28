@@ -5,10 +5,20 @@ import BannerBeraksi from './BannerBeraksi';
 import KartuArtikel3 from './KartuArtikel3';
 import KartuArtikel2 from './KartuArtikel2';
 import KartuArtikel1 from './KartuArtikel1';
+import { useEffect, useState } from 'react';
+import { server } from '../server.js';
 
 function Home() {
+    const [topStories, setTopStories] = useState([]);
+
+    useEffect(() => {
+        fetch(server + 'story/top-three')
+        .then(res => res.json())
+        .then(data => setTopStories(data));
+    }, []);
+
     return (
-        <div id="top">
+        <div id="top" className="mb-5">
         <div className="row container-fluid konten-atas">
             <div className="col-lg-6 contents">
                 <div className="konten-kiri d-flex justify-content-lg-end align-items-center">
@@ -35,10 +45,10 @@ function Home() {
                 <div className="main-banner header-text">
                     <div className="konten-home">
                         <div className="animate__animated animate__fadeIn animate__delay-1s">
-                            <h2 className="judul-home">LOREM IPSUM</h2>
+                            <h2 className="judul-home">Tunjukkan Aksi Peduli Sesama</h2>
                         </div>
                         <div className="animate__animated animate__fadeIn animate__delay-2s">
-                            <p className="desc-home">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed justo dui, ornare in diam a, lobortis sollicitudin nulla. Vestibulum gravida fermentum magna, nec rutrum elit ullamcorper quis. Vivamus in nisl in ipsum dictum varius. Aliquam vel velit nunc.</p>
+                            <p className="desc-home">Jangan jadikan pelecehan hal yang biasa, sebagai wanita kita harus menjaga diri dan  saling memberikan semangat kepada orang lain. Mari bersatu memberantas kejahatan seksual.</p>
                             <a className="text text-home" href="/stories">LIHAT CERITA MEREKA 
                             <img className="icon-arrow" width="30px" height="auto" src="asset/right-arrow.svg"/></a>
                         </div>
@@ -49,12 +59,9 @@ function Home() {
             <div className="custom-card-cerita flex-column">
                     <div className="container-fluid">
                         <div className="row justify-content-center">
-                            <KartuCerita />
-
-                            <KartuCerita />
-                            
-                            <KartuCerita />
-                            
+                            {
+                                topStories.map((story, index) => <KartuCerita story={story} key={index} />)
+                            }
                         </div>
                     </div>
             </div>
@@ -73,7 +80,7 @@ function Home() {
             
         </section>
         <section className="section-testimoni">
-            <Testimoni />
+            {/* <Testimoni /> */}
         </section>
         </div>
 

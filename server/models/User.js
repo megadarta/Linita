@@ -7,6 +7,8 @@ class User extends Model {
         super(userSchema, 'User');
     }
 
+    getOneById = async (id) => await this.Model.findById(id).populate('stories');
+
     create = async (document) => {
         try {
             document.password = this.encryptPassword(document.password);
@@ -35,6 +37,38 @@ class User extends Model {
         const foundUser = await this.Model.findById(userID);
 
         foundUser.likes.set(storyID, storyID);
+
+        return await foundUser.save();
+    }
+
+    addLikedComment = async (userID, commentID) => {
+        const foundUser = await this.Model.findById(userID);
+
+        foundUser.likedComments.set(commentID, commentID);
+
+        return await foundUser.save();
+    }
+
+    removeLikedComment = async (userID, commentID) => {
+        const foundUser = await this.Model.findById(userID);
+
+        foundUser.likedComments.delete(commentID);
+
+        return await foundUser.save();
+    }
+
+    addDislikedComment = async (userID, commentID) => {
+        const foundUser = await this.Model.findById(userID);
+
+        foundUser.dislikedComments.set(commentID, commentID);
+
+        return await foundUser.save();
+    }
+
+    removeDislikedComment = async (userID, commentID) => {
+        const foundUser = await this.Model.findById(userID);
+
+        foundUser.dislikedComments.delete(commentID);
 
         return await foundUser.save();
     }

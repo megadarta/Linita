@@ -60,6 +60,12 @@ class StoryController {
 
         res.json({ story: unlikedStory, user: { auth: true, user: unlikingUser } });
     }
+
+    static topThree = async (req, res) => {
+        const stories = await story.topThree();
+
+        res.json(stories);
+    }
 }
 
 module.exports = StoryController;

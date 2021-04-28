@@ -1,0 +1,16 @@
+.profile-stories {
+    min-height: 35vh;
+}
+
+.profile-story {
+    border: 2px solid black;
+}
+
+.story-link {
+    text-decoration: none;
+    color: black;
+}
+
+.story-link:hover {
+    color: black;
+}

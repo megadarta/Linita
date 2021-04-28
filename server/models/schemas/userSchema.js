@@ -23,6 +23,11 @@ const userSchema = new Schema({
         of: { type: Schema.Types.ObjectId, ref: 'Comment' },
         default: {}
     },
+    dislikedComments: {
+        type: Map,
+        of: { type: Schema.Types.ObjectId, ref: 'Comment' },
+        default: {}
+    },
     comments: { 
         type: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
         default: []

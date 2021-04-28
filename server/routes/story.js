@@ -7,6 +7,8 @@ const story = () => {
 
     router.get('/view/:id', StoryController.view);
 
+    router.get('/top-three', StoryController.topThree);
+
     router.post('/create', StoryController.create);
     
     router.put('/like', StoryController.like);

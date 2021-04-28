@@ -52,6 +52,14 @@ class UserController {
         res.json(foundAuthor);
     }
 
+    static getUser = async (req, res) => {
+        const { userID } = req.params;
+
+        const foundUser = await user.getOneById(userID);
+
+        res.json(foundUser);
+    }
+
     static logout = async (req, res) => {
         await req.logout();
 
