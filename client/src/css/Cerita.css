@@ -46,6 +46,10 @@
     animation: button-likeload-spinner 1s ease infinite;
 }
 
+.trigger-hidden {
+    cursor: pointer;
+}
+
 .btn-comment {
     position: relative;
 }

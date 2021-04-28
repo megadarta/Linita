@@ -8,6 +8,7 @@ function Login(props) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState();
   const history = useHistory();
 
   function login(e){
@@ -23,13 +24,21 @@ function Login(props) {
         body: JSON.stringify({email, password})
       })
       .then(response => {
-        return response.json(); 
+        if(response.status == 401) {
+          throw new Error('Email atau password yang anda masukkan salah');
+        } else {
+          return response.json();
+        } 
       })
       .then(data => {
         props.setAutentikasi(data);
         history.push('/');
         props.setLoading(false);
       })
+      .catch(e => { 
+        setError(e.message);
+        props.setLoading(false); 
+      });
     }
   }
 
@@ -41,6 +50,7 @@ function Login(props) {
         <div className="classlogo text-center my-3 mb-5">
           <a href="/"><img src="/asset/logo-dark.png" className="logo-login"></img></a>
         </div>
+        <div className="text-center"><small style={{ color: 'red' }}>{ error }</small></div>
         <form  onSubmit={login}  method="post" className="login-form mb-3">
           <div className="form-floating mb-3">
             <input onChange={e => setEmail(e.target.value)} type="email" name="email" className="form-control custom-input shadow-none" id="email" placeholder="name@example.com" />

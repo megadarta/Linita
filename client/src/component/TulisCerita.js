@@ -2,8 +2,10 @@ import { useState } from 'react';
 import '../css/TulisCerita.css';
 import ModalCerita from './ModalCerita.js';
 import { server } from '../server.js';
+import { useHistory } from 'react-router';
 
 function TulisCerita(props) {
+    const history = useHistory();
     const [judul, setJudul] = useState();
     const [cerita, setCerita] = useState();
     const [anonim, setAnonim] = useState(true);
@@ -29,7 +31,7 @@ function TulisCerita(props) {
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data);
+            history.push('/stories');
             props.setLoading(false);
         });
     }
@@ -47,9 +49,6 @@ function TulisCerita(props) {
                 <textarea type="text" onChange={e => setCerita(e.target.value)} class="form-control mt-4 text-isi shadow-none" placeholder="Tulis Cerita Anda" required></textarea>
             </div>
 
-            {/* <div className="garis-buat-cerita"> */}
-                {/* <hr className="baris-batas"/> */}
-            {/* </div> */}
             <div className="mt-4 mb-2 garis-buat-cerita">
                
             </div>

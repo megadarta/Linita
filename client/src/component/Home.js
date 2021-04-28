@@ -45,10 +45,10 @@ function Home() {
                 <div className="main-banner header-text">
                     <div className="konten-home">
                         <div className="animate__animated animate__fadeIn animate__delay-1s">
-                            <h2 className="judul-home">LOREM IPSUM</h2>
+                            <h2 className="judul-home">Tunjukkan Aksi Peduli Sesama</h2>
                         </div>
                         <div className="animate__animated animate__fadeIn animate__delay-2s">
-                            <p className="desc-home">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed justo dui, ornare in diam a, lobortis sollicitudin nulla. Vestibulum gravida fermentum magna, nec rutrum elit ullamcorper quis. Vivamus in nisl in ipsum dictum varius. Aliquam vel velit nunc.</p>
+                            <p className="desc-home">Jangan jadikan pelecehan hal yang biasa, sebagai wanita kita harus menjaga diri dan  saling memberikan semangat kepada orang lain. Mari bersatu memberantas kejahatan seksual.</p>
                             <a className="text text-home" href="/stories">LIHAT CERITA MEREKA 
                             <img className="icon-arrow" width="30px" height="auto" src="asset/right-arrow.svg"/></a>
                         </div>

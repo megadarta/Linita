@@ -14,7 +14,7 @@ function Register(props) {
   
   function register(e) {
     e.preventDefault();
-    if (conPassword == password) {
+    if (conPassword == password && !props.loading) {
       props.setLoading(true);
       fetch(server + 'register', {
         method: 'POST',
@@ -67,13 +67,11 @@ function Register(props) {
                 : <span className="show-hide-password" onClick={(e) => { setShowconfirmationPass(true) }}><i className="far fa-eye-slash"></i></span>
             }
           </div>
-          <button type="submit" className="btn my-5 button-register">REGISTER</button>
+          <button type="submit" className={"btn my-5 button-register " + (props.loading && "button--loading") }><span style={{visibility: props.loading ? 'hidden' : undefined}}>REGISTER</span></button>
         </form>
 
         <small id="regis" className="form-text text-muted">Sudah punya akun ?</small><a href="login" className="regis-register"> Login </a><br></br>
       </div>
-
-
     </div>
 
   );

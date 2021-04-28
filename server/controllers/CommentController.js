@@ -52,9 +52,9 @@ class CommentController {
 
         const upvotedComment = await comment.decrementLikes(commentID);
 
-        const likingUser = await user.addDislikedComment(userID, commentID);
+        const dislikingUser = await user.addDislikedComment(userID, commentID);
 
-        res.json({ comment: upvotedComment, user: { auth: true, user: likingUser } });
+        res.json({ comment: upvotedComment, user: { auth: true, user: dislikingUser } });
     }
 }
 

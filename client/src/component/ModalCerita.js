@@ -38,14 +38,14 @@ const ModalCerita = (props) => {
     }
 
     return (
-        <div>
+        <div style={{ position: 'relative' }}>
             <div className={"modal fade" + (showModal && "show d-block")} id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-scrollable modal-l">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <button type="button" className="button-close" data-bs-dismiss="modal" aria-label="Close" onClick={e => setShowModal(false)}>kembali</button>
+                            <a href="/stories" className="back d-flex align-items-center"><img src="/asset/back-button.svg" width="15" height="15" className="me-2"></img></a>
+                            <h3 className="judul modal-title mx-auto" id="exampleModalLabel">ATURAN DAN KETENTUAN CERITA</h3>
                         </div>
-                        <h3 className="judul modal-title" id="exampleModalLabel">ATURAN DAN KETENTUAN CERITA</h3>
                         <div className="modal-body">
                         <div class="modal-wrap" >
                         <div class="title-ak">I. Ketentuan Umum Bagi Pengguna :</div>

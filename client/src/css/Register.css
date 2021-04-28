@@ -15,6 +15,7 @@
 	width: 350px;
 }
 .button-register{
+    position: relative;
     background-color: #EC6F00;
     color: white;
     width: 350px;

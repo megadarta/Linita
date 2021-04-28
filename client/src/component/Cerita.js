@@ -11,6 +11,7 @@ const Story = (props) => {
     const [story, setStory] = useState({ content: '', title: '', anonimity: true });
     const [author, setAuthor] = useState(null);
     const [comments, setComments] = useState([]);
+    const [showHiddenComments, setShowHiddenComments] = useState({})
 
     const [comentInput, setCommentInput] = useState(null);
 
@@ -142,6 +143,30 @@ const Story = (props) => {
         })
     }
 
+    const downvoteComment = (e) => {
+        e.preventDefault();
+
+        const commentID = e.target.id;
+
+        fetch(server + 'comment/downvote', {
+            method: "PUT",
+            credentials: "include",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ commentID  })
+        })
+        .then(res => res.json())
+        .then(data => {
+            fetch(server + 'comment/' + id)
+            .then(res => res.json())
+            .then(data => {
+                setComments(data);
+            });
+            props.setAutentikasi(data.user);
+        })
+    }
+
     const isUser = (e) => {
         if(!props.autentikasi.auth) {
             history.push('/login');
@@ -220,14 +245,25 @@ const Story = (props) => {
                         return (
                             <div className ="py-3 komentar" key={index}>
                                 <b>{ comment.user.username }</b>
-                                <div>{ comment.content }</div>
-                                <div className="d-flex align-items-center">
-                                    <img className="vote" src={ props.autentikasi.user?.likedComments[comment._id] ?  "/asset/upvote-active.svg" : "/asset/upvote.svg"} id={comment._id} onClick={upvoteComment}></img>
-                                    <img className="vote" src="/asset/downvote.svg"></img>
-                                    <small className="text-muted">{ comment.likes } points</small>
-                                    <small className="text-muted mx-1">.</small>
-                                    <small className="text-muted">{ moment(comment.created_at).fromNow() }</small>
-                                </div>
+                                {
+                                    comment.likes <= -3 && !showHiddenComments[comment._id]
+                                    ? 
+                                        <div><i>Komentar ini disembunyikan karena dianggap terlalu kontroversial.</i><b className="trigger-hidden" onClick={(e) => setShowHiddenComments({...showHiddenComments, [comment._id]: true })}> Tampilkan</b></div>
+                                    :
+                                    <div>
+                                        <div>{ comment.content }</div>
+                                        <div className="d-flex align-items-center">
+                                            <img className="vote" src={ props.autentikasi.user?.likedComments[comment._id] ?  "/asset/upvote-active.svg" : "/asset/upvote.svg"} id={comment._id} onClick={upvoteComment}></img>
+                                            <small className="text-muted mx-1">{ comment.likes }</small>
+                                            <img className="vote" src={ props.autentikasi.user?.dislikedComments[comment._id] ?  "/asset/downvote-active.svg" : "/asset/downvote.svg"} id={comment._id} onClick={downvoteComment}></img>
+                                            <small className="text-muted mx-1">.</small>
+                                            <small className="text-muted">{ moment(comment.created_at).fromNow() }</small>
+                                            <small className="text-muted mx-1">.</small>
+                                            { comment.likes <= -3 && <small className="text-muted trigger-hidden" onClick={(e) => setShowHiddenComments({...showHiddenComments, [comment._id]: false })}>sembunyikan</small> }
+                                        </div>
+                                    </div>
+                                }
+                                
                             </div>
                         )
                     })
