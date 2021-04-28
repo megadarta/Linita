@@ -16,7 +16,7 @@
     position: relative;
     padding: 0 0;
     width: 100vw;
-    height: 706px;
+    height: 806px;
     background-color: #000000;
   }
   
@@ -43,6 +43,7 @@
     color: black;
     padding-left: 0px;
     letter-spacing: 7%;
+    text-decoration: none;
   }
   .text-home:hover {
     color: rgb(80, 80, 80);
