@@ -32,9 +32,10 @@
   }
 
   .konten-home {
-    margin-left: 10vw;
+    width: 40vw;
+    /* margin-left: 10vw;
     margin-right: 2vw;
-    margin-top: 13vw;
+    margin-top: 13vw; */
   }
 
   .text-home {
@@ -56,9 +57,12 @@
 
 @media (max-width: 992px) {
   .custom-carousel {
-    width: 300px;
     position: absolute;
     right: auto;
+  }
+
+  .judul-home {
+    font-size: 4rem;
   }
 
   .background {
@@ -72,6 +76,13 @@
   .konten-atas {
     margin: 0;
     padding: 0;
+  }
+
+  .konten-home {
+    width: auto;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    margin-top: 30px;
   }
 
   .contents {

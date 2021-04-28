@@ -15,6 +15,8 @@ const story = () => {
 
     router.put('/unlike', StoryController.unLike);
 
+    router.delete('/delete', StoryController.delete);
+
     return router;
 }
 

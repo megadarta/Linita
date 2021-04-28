@@ -15,10 +15,9 @@
 }
 
 .card-artikel{
+    height: 100%;
     border: 2px solid black;
     width: 15rem;
-    height: 300px;
-    margin: 20px 12px 0px 12px;
     padding: 0px;
 }
   
@@ -28,10 +27,29 @@
 }
 .card-artikelhref{
     text-decoration: none;
-    width: 20rem;
     color: black;
 }
 .card-artikelhref:hover{
     text-decoration: none;
     color: black;
 } 
+
+.artikel-card {
+    width: 18rem;
+    color: black;
+    text-decoration: none;
+    border-radius: 0;
+    padding: 0;
+}
+
+.artikel-card:hover {
+    color: black;
+}
+
+.artikel-card .card-img-top {
+    border-radius: 0;
+}
+
+.artikel-card .card-body {
+    padding: 25px;
+}

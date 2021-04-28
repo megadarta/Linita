@@ -66,6 +66,18 @@ class StoryController {
 
         res.json(stories);
     }
+
+    static delete = async (req, res) => {
+        const { storyID } = req.body;
+
+        const userID = req.user._id;
+        
+        story.delete(storyID);
+
+        await user.deleteStory(userID, storyID);
+
+        res.redirect('/');
+    }
 }
 
 module.exports = StoryController;

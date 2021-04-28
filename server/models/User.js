@@ -101,6 +101,8 @@ class User extends Model {
         return updatedUser;
     }
 
+    deleteStory = async (userID, storyID) => await this.Model.findByIdAndUpdate(userID, { $pull: { stories: storyID }}, { new: true });
+
     encryptPassword(password) {
         const hash = bcrypt.hashSync(password, 10);
 

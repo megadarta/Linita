@@ -48,7 +48,7 @@ function Navbar(props) {
                         
                             {   props.loading
                                 ?
-                                    <button type="button" className="btn btn-outline-secondary btn-login button--loading"><div className="p-0 m-0" style={{ visibility: 'hidden' }}>Login</div></button>
+                                    <button type="button" className="btn btn-outline-secondary btn-login button--loading nav-link"><div className="p-0 m-0" style={{ visibility: 'hidden' }}>Login</div></button>
                                 : 
                                     props.autentikasi.auth == true 
                                     ? 
@@ -67,7 +67,7 @@ function Navbar(props) {
                                     </li>
                                     :
                                     <li className="nav-item"> 
-                                        <a href="/login"><button type="button" className="btn btn-outline-secondary btn-login">LOGIN</button></a>
+                                        <a href="/login"><button type="button" className="btn btn-outline-secondary btn-login nav-link">LOGIN</button></a>
                                     </li>
                             }
                     </ul>

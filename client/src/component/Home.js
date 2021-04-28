@@ -41,7 +41,7 @@ function Home() {
                     </div>
             </div>
             </div>
-            <div className="col-lg-6 contents">
+            <div className="col-lg-6 contents d-lg-flex justify-content-end align-items-center">
                 <div className="main-banner header-text">
                     <div className="konten-home">
                         <div className="animate__animated animate__fadeIn animate__delay-1s">
@@ -71,7 +71,7 @@ function Home() {
         <section className="section-artikel d-flex flex-column align-items-center">
             <div className="artikel-home mt-4">ARTIKEL</div>
             <div className="container-fluid">
-            <div className="row kartikel-home justify-content-center">
+            <div className="row kartikel-home justify-content-evenly">
                 <KartuArtikel3 />
                 <KartuArtikel2 />
                 <KartuArtikel1 />

@@ -5,11 +5,10 @@ import KartuArtikel1 from './KartuArtikel1.js';
 
 function ListArtikel() {
     return (
-        <div className="custom-listartikel d-flex flex-column align-items-center">
-            <h1><b>BACA ARTIKEL</b></h1>
+        <div className="custom-listartikel">
             <div className="custom-card-artikel flex-column">
-                <div className="container-fluid">
-                    <div className="row justify-content-center">
+                <div className="container">
+                    <div className="row justify-content-evenly">
                         <KartuArtikel3 />
                         <KartuArtikel2 />
                         <KartuArtikel1 />

@@ -37,6 +37,8 @@ class Story extends Model {
         { $push: { comments: commentID }}, //add story's comment
         { new: true } 
     );
+
+    delete = async (storyID) => await this.Model.findByIdAndDelete(storyID);
 }
 
 module.exports = Story;

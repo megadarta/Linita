@@ -1,5 +1,13 @@
+.profile-body {
+    min-height: 60vh;
+}
+
 .profile-stories {
     min-height: 35vh;
+}
+
+.btn-edit, .btn-delete {
+    cursor: pointer;
 }
 
 .profile-story {

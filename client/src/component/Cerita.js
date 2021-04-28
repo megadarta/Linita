@@ -233,10 +233,12 @@ const Story = (props) => {
             <div className="artikel-section">
                 <div className="d-flex justify-content-between align-items-center">
                     <div>
-                        <h6 className="m-0">Cerita oleh { story.anonimity ? 'Anonim' : author?.fullname }</h6>
-                        <small>Dibuat pada <span className="tanggal-cerita">{ moment(story.created_at).format('LLLL') }</span></small>
+                        <h6 className="m-0 text-author">Cerita oleh { story.anonimity ? 'Anonim' : author?.fullname }</h6>
+                        <small className="text-date">Dibuat pada <span className="tanggal-cerita">{ moment(story.created_at).format('LLLL') }</span></small>
                     </div>
-                    <img src="/asset/share1.svg"></img>
+                    <a href={"https://www.facebook.com/sharer/sharer.php?u=" + window.location.href} target="_blank">
+                        <img src="/asset/share1.svg" className="btn-share"></img>
+                    </a>
                 </div>
                 <h1 className="title-cerita  mt-3 mb-5">{ story.title }</h1>
                 <article className="body-cerita">
@@ -251,31 +253,31 @@ const Story = (props) => {
                                 <button className={"btn btn-like shadow-none p-0 m-0" + (loadLike ? " button--likeload" : '')} onClick={unlikeStory}>
                                     <div className="d-flex align-items-center like-button py-1 px-3">
                                         <img src="/asset/like1.svg"></img>
-                                        <b className="px-3" style={{visibility: loadLike ? 'hidden' : undefined}}>LIKE</b>
-                                        <small><b className="jumlah-like p-1">{ story.likes }</b></small>
+                                        <b className="px-3 d-none d-sm-inline" style={{visibility: loadLike ? 'hidden' : undefined}}>LIKE</b>
+                                        <small className="ps-2 ps-sm-0"><b className="jumlah-like p-1">{ story.likes }</b></small>
                                     </div>
                                 </button> 
                             :
                                 <button className={"btn btn-like shadow-none p-0 m-0" + (loadLike ? " button--likeload" : '')} onClick={likeStory}>
                                     <div className="d-flex align-items-center like-button py-1 px-3">
                                         <img src="/asset/unlike1.svg"></img>
-                                        <b className="px-3" style={{visibility: loadLike ? 'hidden' : undefined}}>LIKE</b>
-                                        <small><b className="jumlah-like p-1">{ story.likes }</b></small>
+                                        <b className="px-3 d-none d-sm-inline" style={{visibility: loadLike ? 'hidden' : undefined}}>LIKE</b>
+                                        <small className="ps-2 ps-sm-0"><b className="jumlah-like p-1">{ story.likes }</b></small>
                                     </div>
                                 </button>
                         :
                             <a href="/login">
                                 <button className={"btn btn-like shadow-none p-0 m-0" + (loadLike ? " button--likeload" : '')} >
                                     <div className="d-flex align-items-center like-button py-1 px-3">
-                                        <img src="/asset/unlike1.svg"></img>
-                                        <b className="px-3" style={{visibility: loadLike ? 'hidden' : undefined}}>LIKE</b>
-                                        <small><b className="jumlah-like p-1">{ story.likes }</b></small>
+                                        <img src="/asset/unlike1.svg" ></img>
+                                        <b className="px-3 d-none d-sm-inline" style={{visibility: loadLike ? 'hidden' : undefined}}>LIKE</b>
+                                        <small className="ps-2 ps-sm-0"><b className="jumlah-like p-1 ">{ story.likes }</b></small>
                                     </div>
                                 </button>
                             </a>
                     }
                     
-                    <img src="/asset/share1.svg"></img>
+                    <img src="/asset/share1.svg" className="btn-share"></img>
                 </div>
             </div>
 
@@ -298,7 +300,7 @@ const Story = (props) => {
                                 {
                                     comment.likes <= -3 && !showHiddenComments[comment._id]
                                     ? 
-                                        <div><i>Komentar ini disembunyikan karena dianggap terlalu kontroversial.</i><b className="trigger-hidden" onClick={(e) => setShowHiddenComments({...showHiddenComments, [comment._id]: true })}> Tampilkan</b></div>
+                                        <div><i>Komentar ini disembunyikan karena respon yang negatif.</i><b className="trigger-hidden" onClick={(e) => setShowHiddenComments({...showHiddenComments, [comment._id]: true })}> Tampilkan</b></div>
                                     :
                                     <div>
                                         <div>{ comment.content }</div>
@@ -320,8 +322,14 @@ const Story = (props) => {
                                             }
                                             <small className="text-muted mx-1">.</small>
                                             <small className="text-muted">{ moment(comment.created_at).fromNow() }</small>
-                                            <small className="text-muted mx-1">.</small>
-                                            { comment.likes <= -3 && <small className="text-muted trigger-hidden" onClick={(e) => setShowHiddenComments({...showHiddenComments, [comment._id]: false })}>sembunyikan</small> }
+                                           
+                                            { comment.likes <= -3 
+                                            && 
+                                                <div>
+                                                    <small className="text-muted mx-1">.</small>
+                                                    <small className="text-muted trigger-hidden" onClick={(e) => setShowHiddenComments({...showHiddenComments, [comment._id]: false })}>sembunyikan</small> 
+                                                </div>
+                                            }
                                         </div>
                                     </div>
                                 }

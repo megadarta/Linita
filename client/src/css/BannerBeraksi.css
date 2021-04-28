@@ -11,14 +11,13 @@
 .text-beraksi{
     color: white;
     font-size: 15px;
-    padding: 50px 200px 0px 200px;
+    padding: 30px 7vw;
     text-align: center;
 }
 .button-beraksi{
     color: white;
     background-color: black;
     border: 1px solid white;
-    padding: 5px 100px 5px 100px;   
-    margin-bottom: 50px; 
-    margin-top: 30px;
+    padding: 5px 100px 5px 100px;  
+    margin-bottom: 30px; 
 }

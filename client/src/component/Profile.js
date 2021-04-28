@@ -2,19 +2,54 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { server } from '../server.js';
 import moment from 'moment';
+import PreLoader from './PreLoader';
 import '../css/Profile.css';
 
 const Profile = (props) => {
     const { id } = useParams();
     const [user, setUser] = useState();
+    const [hasStories, setHasStories] = useState(true);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetch(server + 'user/' + id)
         .then(res => res.json())
-        .then(data => { 
+        .then(data => {
+            console.log(data.stories.length);
+            if(data.stories.length === 0) setHasStories(false) 
             setUser(data); 
+            setLoading(false);
         });
-    }, [])
+    }, []);
+
+    const deleteStory = (e) => {
+        e.preventDefault();
+
+        const storyID = e.currentTarget.id;
+       
+        fetch(server + 'story/delete', {
+            method: 'DELETE',
+            headers: {
+                "Content-Type": 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({ storyID })
+        })
+        .then(res => res.json())
+        .then(data => { 
+            if(data.user.stories.length === 0) setHasStories(false) 
+            setUser(data.user); 
+        });
+    }
+
+    if(loading) {
+        return(
+            <div className="profile-body">
+                <PreLoader />
+            </div>
+        )
+    }
+
     return (
         <div className="profile-body container py-5">
             <div className="d-flex align-items-center">
@@ -26,25 +61,29 @@ const Profile = (props) => {
                 </div>
             </div>
             <div className="profile-stories">
-                <h3 className="mt-5"> Stories </h3>
+                <h3 className="mt-5"> Cerita </h3>
                 <hr></hr>
                 {
-                    user?.stories.map((story, index) => {
-                        return (
-                            <div key={index} className="profile-story p-3 d-flex align-items-center justify-content-between"> 
-                                <a href={`/story/view/${story._id}`} className="story-link">
-                                    <h3>{story.title }</h3>
-                                    <small> { moment(story.created_at).format('LLLL') } </small>
-                                </a>
-                                { props.autentikasi.user?._id === id &&
-                                <div className="d-flex">
-                                    <i className="fas fa-edit mx-5"></i>
-                                    <i className="fa fa-trash" aria-hidden="true"></i>
+                    hasStories
+                    ?
+                        user?.stories.map((story, index) => {
+                            return (
+                                <div key={index} className="profile-story p-3 d-flex align-items-center justify-content-between"> 
+                                    <a href={`/story/view/${story._id}`} className="story-link">
+                                        <h3>{story.title }</h3>
+                                        <small> { moment(story.created_at).format('LLLL') } </small>
+                                    </a>
+                                    { props.autentikasi.user?._id === id &&
+                                    <div className="d-flex">
+                                        <i className="fas fa-edit btn-edit mx-5"></i>
+                                        <span onClick={deleteStory} id={story._id}><i  className="fa fa-trash btn-delete" aria-hidden="true"></i></span>
+                                    </div>
+                                    }
                                 </div>
-                                }
-                            </div>
-                        );
-                    }) 
+                            );
+                        })
+                    :
+                        <h3 className="text-muted text-center">Tidak ada cerita</h3>
                 }
             </div>
         </div>

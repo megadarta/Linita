@@ -1,5 +1,5 @@
 .artikel-section {
-    padding: 100px 200px;
+    padding: 100px 15vw;
 }
 
 .vote {
@@ -71,7 +71,7 @@
 
 .custom-komentar {
     background-color: #F4F4F4;
-    padding: 0 200px;
+    padding: 0 15vw;
     width: 100%;
 }
 
@@ -95,4 +95,41 @@
 
 .cerita-load {
     min-height: 60vh;
+}
+
+@media(max-width: 992px) {
+    .title-cerita {
+        font-size: 40px;
+    }
+}
+
+@media(max-width: 576px) {
+    .title-cerita {
+        font-size: 20px;
+    }
+
+    .artikel-section {
+        padding: 50px 5vw;
+    }
+
+    .custom-komentar {
+        padding: 0 5vw;
+    }
+
+    .btn-share {
+        width: 20px;
+        height: 20px;
+    }
+
+    .text-author {
+        font-size: 12px;
+    }
+
+    .text-date {
+        font-size: 10px;
+    }
+
+    .body-cerita {
+        font-size: 12px;
+    }
 }
