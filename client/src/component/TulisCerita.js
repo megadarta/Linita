@@ -47,9 +47,6 @@ function TulisCerita(props) {
                 <textarea type="text" onChange={e => setCerita(e.target.value)} class="form-control mt-4 text-isi shadow-none" placeholder="Tulis Cerita Anda"></textarea>
             </div>
 
-            <div className="garis-buat-cerita">
-                <hr className="baris-batas"/>
-            </div>
             <div className="mt-4 mb-2 garis-buat-cerita">
                
             </div>
