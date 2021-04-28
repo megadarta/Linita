@@ -29,16 +29,16 @@ function Psikolog() {
           {/* title */}
           <div className={ isIntersect ? "animate__animated animate__fadeIn animate__slow animate__delay-1s" : undefined }>
             <h1 className="judul-konten">
-              KONSULTASI GRATIS DAN MUDAH <br />
-              DENGAN ORANG YANG BERPENGALAMAN.
+              TUNJUKKAN RASA PEDULI <br />
+              DENGAN CARA DONASI
             </h1>
           </div>
 
           {/* description */}
           <div className={ isIntersect ? "animate__animated animate__fadeIn animate__slow animate__delay-2s" : undefined }>
-            <p className="psikolog-desc">Apabila anda cemas, depresi, trauma, histeria atau tekanan psikologis yang mengganggu. Jangan takut ataupun ragu  segera minta bantuan dan pendampingan dengan konsultasi bersama orang yang berpengalaman.</p>
-            <a href="https://api.whatsapp.com/send?phone=+6285546697238" target="_blank">
-              <button type="button" className="btn btn-color button-psikolog shadow-none">KONSULTASI</button>
+            <p className="psikolog-desc">Seluruh resiko telah ditanggung korban, kita tidak bisa merasakan sepenuhnya apa yang dirasakan oleh korban. Namun kita bisa memberikan dukungan kepada mereka. Ayo tunjukkan dukunganmu melalui donasi.</p>
+            <a href="http://www.indonesiauntukkemanusiaan.org/site/donasi" target="_blank">
+              <button type="button" className="btn btn-color button-psikolog shadow-none">DONASI</button>
             </a>
           </div>
         </div>
