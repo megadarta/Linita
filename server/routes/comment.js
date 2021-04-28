@@ -7,8 +7,12 @@ const comment = () => {
 
     router.put('/upvote', CommentController.upvote);
 
+    router.put('/unupvote', CommentController.unupvote);
+
     router.put('/downvote', CommentController.downvote);
-    
+
+    router.put('/undownvote', CommentController.undownvote);
+
     router.get('/:storyId', CommentController.storyComments);
     
     return router;

@@ -7,6 +7,8 @@ const root = () => {
 
     router.get('/author/:storyID', UserController.getAuthor);
 
+    router.get('/user/:userID', UserController.getUser);
+    
     router.post('/register', UserController.register);
 
     router.post('/login', UserController.authenticateLocal(), UserController.checkAuthentication);

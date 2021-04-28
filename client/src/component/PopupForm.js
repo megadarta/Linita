@@ -2,8 +2,8 @@
 
 function PopupForm() {
     return (
-	<div class="section full-height">
-        <input class="modal-btn" type="checkbox" id="modal-btn" name="modal-btn"/>
+	<div className="section full-height">
+        <input className="modal-btn" type="checkbox" id="modal-btn" name="modal-btn"/>
             <label for="modal-btn">TULIS CERITA</label>
                 <div class="modal overflow-auto">	
                 <div class="container PopUp">

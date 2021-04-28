@@ -92,3 +92,7 @@
 .komentar {
     border-bottom: 1px solid #737373;
 }
+
+.cerita-load {
+    min-height: 60vh;
+}

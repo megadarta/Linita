@@ -18,7 +18,7 @@ function Home() {
     }, []);
 
     return (
-        <div id="top">
+        <div id="top" className="mb-5">
         <div className="row container-fluid konten-atas">
             <div className="col-lg-6 contents">
                 <div className="konten-kiri d-flex justify-content-lg-end align-items-center">
@@ -80,7 +80,7 @@ function Home() {
             
         </section>
         <section className="section-testimoni">
-            <Testimoni />
+            {/* <Testimoni /> */}
         </section>
         </div>
 

@@ -47,8 +47,8 @@ const ModalCerita = (props) => {
                             <h3 className="judul modal-title mx-auto" id="exampleModalLabel">ATURAN DAN KETENTUAN CERITA</h3>
                         </div>
                         <div className="modal-body">
-                        <div class="modal-wrap" >
-                        <div class="title-ak">I. Ketentuan Umum Bagi Pengguna :</div>
+                        <div className="modal-wrap" >
+                        <div className="title-ak">I. Ketentuan Umum Bagi Pengguna :</div>
                         <div>
                         <ol className="deskripsi-modal" type="1"><li>Pengguna dengan ini menyatakan bahwa pengguna adalah subjek hukum yang cakap dan mampu untuk mengikatkan diri dalam perjanjian.</li>
                             <li>Setiap pengguna sepakat untuk tidak menyebarluaskan berita atau informasi yang tidak benar (hoaks) di dalam platform Linita.</li>
@@ -73,12 +73,12 @@ const ModalCerita = (props) => {
                         </div>
                         <div className="modal-footer flex-column align-items-stretch">
                             <form onSubmit={submit} className="form-custom d-flex flex-column">
-                                <div class="form-group">
-                                    <label className="judulform form-label" for="InputName" >NAMA LENGKAP*</label><br></br>
+                                <div className="form-group">
+                                    <label className="judulform form-label" htmlFor="InputName" >NAMA LENGKAP*</label><br></br>
                                     <input type="text" onChange={e => setNama(e.target.value)} className="form-control" id="InputName" placeholder="Nama lengkap sesuai KK / KTP" required></input>
                                     </div>
-                                <div class="form-group">
-                                    <label className="judulform form-label" for="InputNIK" >NIK*</label><br></br>
+                                <div className="form-group">
+                                    <label className="judulform form-label" htmlFor="InputNIK" >NIK*</label><br></br>
                                     <input type="text" onChange={e => setNik(e.target.value)} className="form-control" id="InputNIK" placeholder="NIK sesuai KK / KTP" required></input>
                                 </div>
                                 <small className="error-text align-self-center">*{ error }</small>

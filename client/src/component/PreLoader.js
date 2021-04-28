@@ -2,10 +2,10 @@ import '../css/PreLoader.css';
 
 const PreLoader = () => {
     return (
-        <div class="container preloader">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="loader"></div>
+        <div className="container preloader">
+            <div className="row">
+                <div className="col-md-12">
+                    <div className="loader"></div>
                 </div>
             </div>
         </div>

@@ -167,6 +167,54 @@ const Story = (props) => {
         })
     }
 
+    const unupvoteComment = (e) => {
+        e.preventDefault();
+
+        const commentID = e.target.id;
+
+        fetch(server + 'comment/unupvote', {
+            method: "PUT",
+            credentials: "include",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ commentID  })
+        })
+        .then(res => res.json())
+        .then(data => {
+            fetch(server + 'comment/' + id)
+            .then(res => res.json())
+            .then(data => {
+                setComments(data);
+            });
+            props.setAutentikasi(data.user);
+        })
+    }
+
+    const undownvoteComment = (e) => {
+        e.preventDefault();
+
+        const commentID = e.target.id;
+
+        fetch(server + 'comment/undownvote', {
+            method: "PUT",
+            credentials: "include",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ commentID  })
+        })
+        .then(res => res.json())
+        .then(data => {
+            fetch(server + 'comment/' + id)
+            .then(res => res.json())
+            .then(data => {
+                setComments(data);
+            });
+            props.setAutentikasi(data.user);
+        })
+    }
+
     const isUser = (e) => {
         if(!props.autentikasi.auth) {
             history.push('/login');
@@ -175,7 +223,9 @@ const Story = (props) => {
 
     if(loadingAuthor || loadingComments || loadingStory) {
         return (
-            <PreLoader />
+            <div className="cerita-load">
+                <PreLoader />
+            </div>
         )
     }
     return (
@@ -232,7 +282,7 @@ const Story = (props) => {
             <div className="custom-komentar d-flex flex-column">
                 <form onSubmit={submitComment} className="py-4 komentar-box d-flex flex-column">
                     <div>
-                        { props.autentikasi.auth && <label for="komentar" className="form-label"><small>Komentar sebagai <b>{props.autentikasi.user?.username}</b></small></label> }
+                        { props.autentikasi.auth && <label htmlFor="komentar" className="form-label"><small>Komentar sebagai <b>{props.autentikasi.user?.username}</b></small></label> }
                         <textarea className="form-control shadow-none" id="komentar" rows="3" placeholder="Apa yang anda pikirkan?" ref={commentRef} onChange={(e) => setCommentInput(e.target.value)} onFocus={isUser} required></textarea>
                     </div>
                     <button type="submit" className={ "btn btn-black btn-comment shadow-none align-self-end mt-3 " + ( loadComment && 'button--loading' )}>
@@ -253,9 +303,21 @@ const Story = (props) => {
                                     <div>
                                         <div>{ comment.content }</div>
                                         <div className="d-flex align-items-center">
-                                            <img className="vote" src={ props.autentikasi.user?.likedComments[comment._id] ?  "/asset/upvote-active.svg" : "/asset/upvote.svg"} id={comment._id} onClick={upvoteComment}></img>
-                                            <small className="text-muted mx-1">{ comment.likes }</small>
-                                            <img className="vote" src={ props.autentikasi.user?.dislikedComments[comment._id] ?  "/asset/downvote-active.svg" : "/asset/downvote.svg"} id={comment._id} onClick={downvoteComment}></img>
+                                            {
+                                                props.autentikasi.auth 
+                                                ?
+                                                    <div>
+                                                        <img className="vote" src={ props.autentikasi.user?.likedComments[comment._id] ?  "/asset/upvote-active.svg" : "/asset/upvote.svg"} id={comment._id} onClick={ props.autentikasi.user?.likedComments[comment._id] ? unupvoteComment : upvoteComment}></img>
+                                                        <small className="text-muted mx-1">{ comment.likes }</small>
+                                                        <img className="vote" src={ props.autentikasi.user?.dislikedComments[comment._id] ?  "/asset/downvote-active.svg" : "/asset/downvote.svg"} id={comment._id} onClick={ props.autentikasi.user?.dislikedComments[comment._id] ? undownvoteComment : downvoteComment}></img>
+                                                    </div>
+                                                :
+                                                    <div>
+                                                        <a href="/login"><img className="vote" src="/asset/upvote.svg" id={comment._id} ></img></a>
+                                                        <small className="text-muted mx-1">{ comment.likes }</small>
+                                                        <a href="/login"><img className="vote" src="/asset/downvote.svg" id={comment._id} ></img></a>
+                                                    </div>
+                                            }
                                             <small className="text-muted mx-1">.</small>
                                             <small className="text-muted">{ moment(comment.created_at).fromNow() }</small>
                                             <small className="text-muted mx-1">.</small>
