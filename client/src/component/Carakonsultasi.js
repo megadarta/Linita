@@ -24,40 +24,40 @@ function Carakonsultasi() {
             ref={elementRef}
         >
             <div className="text-center mb-5">
-                <h3>Kelebihan Konsultasi Online</h3>
+                <h3>Cara Donasi</h3>
             </div>
 
             <div className={ isIntersect ? "animate__animated animate__fadeInUp animate__delay-2s" : undefined }>
                 <div className="container-fluid">
                     <div className="row justify-content-center">
                         <div className="card card-konsul">
-                            <img className="card-img-top img-card-konsultasi" loading="lazy" src="./asset/location.png" alt="Card image cap"></img>
+                            <img className="card-img-top img-card-konsultasi" loading="lazy" src="./asset/click.png" alt="Card image cap"></img>
                             <div className="card-body">
-                                <p className="card-text text-card-konsul text-center">Kamu bisa melakukan konseling di mana saja kamu berada.</p>
+                                <p className="card-text text-card-konsul text-center">1. Klik button "DONASI"</p>
                             </div>
                         </div>
                         <div className="card card-konsul">
-                            <img className="card-img-top img-card-konsultasi" loading="lazy" src="./asset/clock.png" alt="Card image cap"></img>
+                            <img className="card-img-top img-card-konsultasi" loading="lazy" src="./asset/tick.png" alt="Card image cap"></img>
                             <div className="card-body">
-                                <p className="card-text text-card-konsul text-center">Waktu layanan konsultasi yang fleksibel.</p>
+                                <p className="card-text text-card-konsul text-center">2. Pilih tujuan donasi </p>
                             </div>
                         </div>
                         <div className="card card-konsul">
                             <img className="card-img-top img-card-konsultasi" loading="lazy" src="./asset/verified.png" alt="Card image cap"></img>
                             <div className="card-body">
-                                <p className="card-text text-card-konsul text-center">Layanan konsultasi dengan psikolog atau psikiater berkompeten dan berpengalaman.</p>
+                                <p className="card-text text-card-konsul text-center">3. Isi form data diri dan kelengkapan berkas donasi</p>
                             </div>
                         </div>
                         <div className="card card-konsul">
-                            <img className="card-img-top img-card-konsultasi" loading="lazy" src="./asset/problem-solving.png" alt="Card image cap"></img>
+                            <img className="card-img-top img-card-konsultasi" loading="lazy" src="./asset/paper-plane.png" alt="Card image cap"></img>
                             <div className="card-body">
-                                <p className="card-text text-card-konsul text-center">Membantu menyelesaikan masalahmu dengan solusi yang solutif.</p>
+                                <p className="card-text text-card-konsul text-center">4. Klik button "send"</p>
                             </div>
                         </div>
                         <div className="card card-konsul">
-                            <img className="card-img-top img-card-konsultasi" loading="lazy" src="./asset/heartbeat.png" alt="Card image cap"></img>
+                            <img className="card-img-top img-card-konsultasi" loading="lazy" src="./asset/mail.png" alt="Card image cap"></img>
                             <div className="card-body">
-                                <p className="card-text text-card-konsul text-center">DIjamin anda akan jauh merasa lebih baik secara mental.</p>
+                                <p className="card-text text-card-konsul text-center">5. Informasi lebih lanjut melalui email/nomor hp</p>
                             </div>
                         </div>
                     </div>
