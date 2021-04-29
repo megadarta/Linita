@@ -9,7 +9,7 @@ class Comment extends Model {
     getAllFromStory = async (storyID) => await this.Model.find(
         { story: storyID })
     .populate('user')
-    .sort({ 'created_at': 'desc' });
+    .sort({ 'likes': 'desc' });
 
     create = async (body) => {
         const document = this.makeDocument(body);

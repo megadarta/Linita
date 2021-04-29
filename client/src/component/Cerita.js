@@ -9,9 +9,12 @@ import moment from 'moment';
 const Story = (props) => {
     const history = useHistory();
 
+    const [liked, setLiked] = useState(false);
+    const [stateLikedComments, setStateLikedComments] = useState(null);
+    const [stateDislikedComments, setStateDislikedComments] = useState(null);
     const [story, setStory] = useState({ content: '', title: '', anonimity: true });
     const [author, setAuthor] = useState(null);
-    const [comments, setComments] = useState([]);
+    const [comments, setComments] = useState({});
     const [showHiddenComments, setShowHiddenComments] = useState({})
 
     const [comentInput, setCommentInput] = useState(null);
@@ -48,6 +51,18 @@ const Story = (props) => {
         });
     }, []);
 
+    useEffect(() => {
+        if(props.autentikasi.user?.likes[id]) setLiked(true);
+        else {
+            setLiked(false);
+        }
+    },[props.autentikasi]);
+
+    useEffect(() => {
+        setStateLikedComments(props.autentikasi.user?.likedComments);
+        setStateDislikedComments(props.autentikasi.user?.dislikedComments);
+    }, [props.autentikasi])
+
     const submitComment = (e) => {
         e.preventDefault();
         const body = {
@@ -80,8 +95,11 @@ const Story = (props) => {
 
     const likeStory = (e) => {
         e.preventDefault();
-        if(!loadLike) {
-            setLoadLike(true);
+        setLiked(true);
+        setStory({...story, likes: story.likes + 1});
+
+        // if(!loadLike) {
+        //     setLoadLike(true);
             fetch(server + 'story/like', {
                 method: "PUT",
                 credentials: "include",
@@ -90,19 +108,23 @@ const Story = (props) => {
                 },
                 body: JSON.stringify({ storyID: id })
             })
-            .then(res => res.json())
-            .then(data => {
-                setStory(data.story);
-                props.setAutentikasi(data.user);
-                setLoadLike(false);
-            })
-        }
+            // .then(res => res.json())
+            // .then(data => {
+            //     setStory(data.story);
+            //     props.setAutentikasi(data.user);
+            //     setLoadLike(false);
+            // })
+        // }
     }
 
     const unlikeStory = (e) => {
         e.preventDefault();
-        if(!loadLike) {
-            setLoadLike(true);
+
+        setLiked(false);
+        setStory({...story, likes: story.likes - 1});
+
+        // if(!loadLike) {
+        //     setLoadLike(true);
             fetch(server + 'story/unlike', {
                 method: "PUT",
                 credentials: "include",
@@ -111,19 +133,28 @@ const Story = (props) => {
                 },
                 body: JSON.stringify({ storyID: id })
             })
-            .then(res => res.json())
-            .then(data => {
-                setStory(data.story);
-                props.setAutentikasi(data.user);
-                setLoadLike(false);
-            })
-        }
+            // .then(res => res.json())
+            // .then(data => {
+            //     setStory(data.story);
+            //     props.setAutentikasi(data.user);
+            //     setLoadLike(false);
+            // })
+        // }
     }
 
     const upvoteComment = (e) => {
         e.preventDefault();
 
         const commentID = e.target.id;
+
+        setStateLikedComments({...stateLikedComments, [commentID]: commentID});
+
+        if(stateDislikedComments[commentID]) {
+            setStateDislikedComments({...stateDislikedComments, [commentID]: undefined});
+            setComments({ ...comments, [commentID]: { ...comments[commentID], likes: comments[commentID].likes + 2 } })
+        } else {
+            setComments({ ...comments, [commentID]: { ...comments[commentID], likes: comments[commentID].likes + 1 } })
+        }
 
         fetch(server + 'comment/upvote', {
             method: "PUT",
@@ -133,21 +164,30 @@ const Story = (props) => {
             },
             body: JSON.stringify({ commentID  })
         })
-        .then(res => res.json())
-        .then(data => {
-            fetch(server + 'comment/' + id)
-            .then(res => res.json())
-            .then(data => {
-                setComments(data);
-            });
-            props.setAutentikasi(data.user);
-        })
+        // .then(res => res.json())
+        // .then(data => {
+        //     fetch(server + 'comment/' + id)
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         setComments(data);
+        //     });
+        //     props.setAutentikasi(data.user);
+        // })
     }
 
     const downvoteComment = (e) => {
         e.preventDefault();
 
         const commentID = e.target.id;
+
+        setStateDislikedComments({...stateDislikedComments, [commentID]: commentID});
+
+        if(stateLikedComments[commentID]) {
+            setStateLikedComments({...stateLikedComments, [commentID]: undefined});
+            setComments({ ...comments, [commentID]: { ...comments[commentID], likes: comments[commentID].likes - 2 } })
+        } else {
+            setComments({ ...comments, [commentID]: { ...comments[commentID], likes: comments[commentID].likes - 1 } })
+        }
 
         fetch(server + 'comment/downvote', {
             method: "PUT",
@@ -157,21 +197,25 @@ const Story = (props) => {
             },
             body: JSON.stringify({ commentID  })
         })
-        .then(res => res.json())
-        .then(data => {
-            fetch(server + 'comment/' + id)
-            .then(res => res.json())
-            .then(data => {
-                setComments(data);
-            });
-            props.setAutentikasi(data.user);
-        })
+        // .then(res => res.json())
+        // .then(data => {
+        //     fetch(server + 'comment/' + id)
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         setComments(data);
+        //     });
+        //     props.setAutentikasi(data.user);
+        // })
     }
 
     const unupvoteComment = (e) => {
         e.preventDefault();
 
         const commentID = e.target.id;
+
+        setStateLikedComments({...stateLikedComments, [commentID]: undefined});
+
+        setComments({ ...comments, [commentID]: { ...comments[commentID], likes: comments[commentID].likes - 1 } })
 
         fetch(server + 'comment/unupvote', {
             method: "PUT",
@@ -181,21 +225,25 @@ const Story = (props) => {
             },
             body: JSON.stringify({ commentID  })
         })
-        .then(res => res.json())
-        .then(data => {
-            fetch(server + 'comment/' + id)
-            .then(res => res.json())
-            .then(data => {
-                setComments(data);
-            });
-            props.setAutentikasi(data.user);
-        })
+        // .then(res => res.json())
+        // .then(data => {
+        //     fetch(server + 'comment/' + id)
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         setComments(data);
+        //     });
+        //     props.setAutentikasi(data.user);
+        // })
     }
 
     const undownvoteComment = (e) => {
         e.preventDefault();
 
         const commentID = e.target.id;
+
+        setStateDislikedComments({...stateDislikedComments, [commentID]: undefined});
+
+        setComments({ ...comments, [commentID]: { ...comments[commentID], likes: comments[commentID].likes + 1 } })
 
         fetch(server + 'comment/undownvote', {
             method: "PUT",
@@ -205,15 +253,15 @@ const Story = (props) => {
             },
             body: JSON.stringify({ commentID  })
         })
-        .then(res => res.json())
-        .then(data => {
-            fetch(server + 'comment/' + id)
-            .then(res => res.json())
-            .then(data => {
-                setComments(data);
-            });
-            props.setAutentikasi(data.user);
-        })
+        // .then(res => res.json())
+        // .then(data => {
+        //     fetch(server + 'comment/' + id)
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         setComments(data);
+        //     });
+        //     props.setAutentikasi(data.user);
+        // })
     }
 
     const isUser = (e) => {
@@ -249,7 +297,7 @@ const Story = (props) => {
                     {
                         props.autentikasi.auth 
                         ?
-                            props.autentikasi.user?.likes[id]
+                            liked 
                             ? 
                                 <button className={"btn btn-like shadow-none p-0 m-0" + (loadLike ? " button--likeload" : '')} onClick={unlikeStory}>
                                     <div className="d-flex align-items-center like-button py-1 px-3">
@@ -294,41 +342,42 @@ const Story = (props) => {
                 </form>
                 
                 {
-                    comments.map((comment, index) => {
+                    Object.keys(comments).map((comment, index) => {
+                        console.log(comment);
                         return (
                             <div className ="py-3 komentar" key={index}>
-                                <b>{ comment.user.username }</b>
+                                <b>{ comments[comment].user.username }</b>
                                 {
-                                    comment.likes <= -3 && !showHiddenComments[comment._id]
+                                    comments[comment].likes <= -3 && !showHiddenComments[comments[comment]._id]
                                     ? 
-                                        <div><i>Komentar ini disembunyikan karena respon yang negatif.</i><b className="trigger-hidden" onClick={(e) => setShowHiddenComments({...showHiddenComments, [comment._id]: true })}> Tampilkan</b></div>
+                                        <div><i>Komentar ini disembunyikan karena respon yang negatif.</i><b className="trigger-hidden" onClick={(e) => setShowHiddenComments({...showHiddenComments, [comments[comment]._id]: true })}> Tampilkan</b></div>
                                     :
                                     <div>
-                                        <div>{ comment.content }</div>
+                                        <div>{ comments[comment].content }</div>
                                         <div className="d-flex align-items-center">
                                             {
-                                                props.autentikasi.auth 
+                                                props.autentikasi.auth && stateLikedComments && stateDislikedComments
                                                 ?
                                                     <div>
-                                                        <img className="vote" src={ props.autentikasi.user?.likedComments[comment._id] ?  "/asset/upvote-active.svg" : "/asset/upvote.svg"} id={comment._id} onClick={ props.autentikasi.user?.likedComments[comment._id] ? unupvoteComment : upvoteComment}></img>
-                                                        <small className="text-muted mx-1">{ comment.likes }</small>
-                                                        <img className="vote" src={ props.autentikasi.user?.dislikedComments[comment._id] ?  "/asset/downvote-active.svg" : "/asset/downvote.svg"} id={comment._id} onClick={ props.autentikasi.user?.dislikedComments[comment._id] ? undownvoteComment : downvoteComment}></img>
+                                                        <img className="vote" src={ stateLikedComments[comments[comment]._id] ?  "/asset/upvote-active.svg" : "/asset/upvote.svg"} id={comments[comment]._id} onClick={ stateLikedComments[comments[comment]._id] ? unupvoteComment : upvoteComment}></img>
+                                                        <small className="text-muted mx-1">{ comments[comment].likes }</small>
+                                                        <img className="vote" src={ stateDislikedComments[comments[comment]._id] ?  "/asset/downvote-active.svg" : "/asset/downvote.svg"} id={comments[comment]._id} onClick={ stateDislikedComments[comments[comment]._id] ? undownvoteComment : downvoteComment}></img>
                                                     </div>
                                                 :
                                                     <div>
-                                                        <a href="/login"><img className="vote" src="/asset/upvote.svg" id={comment._id} ></img></a>
-                                                        <small className="text-muted mx-1">{ comment.likes }</small>
-                                                        <a href="/login"><img className="vote" src="/asset/downvote.svg" id={comment._id} ></img></a>
+                                                        <a href="/login"><img className="vote" src="/asset/upvote.svg" id={comments[comment]._id} ></img></a>
+                                                        <small className="text-muted mx-1">{ comments[comment].likes }</small>
+                                                        <a href="/login"><img className="vote" src="/asset/downvote.svg" id={comments[comment]._id} ></img></a>
                                                     </div>
                                             }
                                             <small className="text-muted mx-1">.</small>
-                                            <small className="text-muted">{ moment(comment.created_at).fromNow() }</small>
+                                            <small className="text-muted">{ moment(comments[comment].created_at).fromNow() }</small>
                                            
-                                            { comment.likes <= -3 
+                                            { comments[comment].likes <= -3 
                                             && 
                                                 <div>
                                                     <small className="text-muted mx-1">.</small>
-                                                    <small className="text-muted trigger-hidden" onClick={(e) => setShowHiddenComments({...showHiddenComments, [comment._id]: false })}>sembunyikan</small> 
+                                                    <small className="text-muted trigger-hidden" onClick={(e) => setShowHiddenComments({...showHiddenComments, [comments[comment]._id]: false })}>sembunyikan</small> 
                                                 </div>
                                             }
                                         </div>

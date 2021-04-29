@@ -38,27 +38,31 @@ class StoryController {
         res.json({ story: postedStory, user: postingUser });
     }
 
-    static like = async (req, res) => {
+    static like = (req, res) => {
         const { storyID } = req.body;
         const userID = req.user._id;
 
-        const likedStory = await story.giveLike(storyID);
+        const likedStory = story.giveLike(storyID);
 
-        const likingUser = await user.addLikedStory(userID, storyID);
+        const likingUser = user.addLikedStory(userID, storyID);
 
-        res.json({ story: likedStory, user: { auth: true, user: likingUser } });
+        res.json({message: 'success'});
+
+        // res.json({ story: likedStory, user: { auth: true, user: likingUser } });
     }
 
-    static unLike = async (req, res) =>  {
+    static unLike = (req, res) =>  {
         const { storyID } = req.body;
 
         const userID = req.user._id;
 
-        const unlikedStory = await story.removeLike(storyID);
+        const unlikedStory = story.removeLike(storyID);
 
-        const unlikingUser = await user.removeLikedStory(userID, storyID)
+        const unlikingUser = user.removeLikedStory(userID, storyID);
 
-        res.json({ story: unlikedStory, user: { auth: true, user: unlikingUser } });
+        res.json({message: 'success'});
+
+        // res.json({ story: unlikedStory, user: { auth: true, user: unlikingUser } });
     }
 
     static topThree = async (req, res) => {

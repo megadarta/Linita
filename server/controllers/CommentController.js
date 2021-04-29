@@ -30,7 +30,13 @@ class CommentController {
         const { storyId } = req.params; 
         const comments = await comment.getAllFromStory(storyId);
 
-        res.json(comments);
+        let commentsObj = {};
+
+        comments.forEach(element => {
+            commentsObj[element._id] = element;
+        });
+
+        res.json(commentsObj);
     }
 
     static upvote = async (req, res) => {
@@ -45,10 +51,12 @@ class CommentController {
         if(likingUser.dislikedComments.get(commentID)) { 
             upvotedComment = comment.incrementLikes(commentID);
 
-            likingUser = await user.removeDislikedComment(userID, commentID); 
-        }
+            likingUser = user.removeDislikedComment(userID, commentID); 
+        }   
 
-        res.json({ user: { auth: true, user: likingUser } });
+        res.json({ message: 'success' });
+
+        // res.json({ user: { auth: true, user: likingUser } });
     }
 
     static unupvote = async (req, res) => {
@@ -58,9 +66,10 @@ class CommentController {
 
         const unupvotedComment = comment.decrementLikes(commentID);
 
-        const unlikingUser = await user.removeLikedComment(userID, commentID);
+        const unlikingUser = user.removeLikedComment(userID, commentID);
 
-        res.json({ user: { auth: true, user: unlikingUser } });
+        res.json({ message: 'success' });
+        // res.json({ user: { auth: true, user: unlikingUser } });
     }
 
     static downvote = async (req, res) => {
@@ -75,22 +84,25 @@ class CommentController {
         if(dislikingUser.likedComments.get(commentID)) { 
             downvotedComment = comment.decrementLikes(commentID);
 
-            dislikingUser = await user.removeLikedComment(userID, commentID); 
+            dislikingUser = user.removeLikedComment(userID, commentID); 
         }
 
-        res.json({ user: { auth: true, user: dislikingUser } });
+        res.json({ message: 'success' });
+
+        // res.json({ user: { auth: true, user: dislikingUser } });
     }
 
-    static undownvote = async (req, res) => {
+    static undownvote = (req, res) => {
         const { commentID } = req.body;
 
         const userID = req.user;
 
         const undownvotedComment = comment.incrementLikes(commentID);
 
-        const undislikingUser = await user.removeDislikedComment(userID, commentID);
+        const undislikingUser = user.removeDislikedComment(userID, commentID);
 
-        res.json({ user: { auth: true, user: undislikingUser } });
+        res.json({ message: 'success' });
+        // res.json({ user: { auth: true, user: undislikingUser } });
     }
 }
 
