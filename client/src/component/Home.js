@@ -26,16 +26,16 @@ function Home() {
                     <div id="carouselExampleSlidesOnly" className="animate__animated animate__fadeInUp animate__delay-2s carousel custom-carousel slide carousel-fade" data-bs-pause="false" data-bs-ride="carousel">
                         <div className="carousel-inner">
                             <div className="carousel-item active">
-                            <img className="d-block w-100" src="asset/slide01.png" alt="First slide"/>
+                            <img className="d-block w-100" src="asset/slide01.jpeg" alt="First slide"/>
                             </div>
                             <div className="carousel-item">
-                            <img className="d-block0 w-100" src="asset/slide03.png" alt="Second slide"/>
+                            <img className="d-block0 w-100" src="asset/slide03.jpeg" alt="Second slide"/>
                             </div>
                             <div className="carousel-item">
-                            <img className="d-block w-100" src="asset/slide02.png" alt="Third slide"/>
+                            <img className="d-block w-100" src="asset/slide02.jpeg" alt="Third slide"/>
                             </div>
                             <div className="carousel-item">
-                            <img className="d-block w-100" src="asset/slide04.png" alt="Fourth slide"/>
+                            <img className="d-block w-100" src="asset/slide04.jpeg" alt="Fourth slide"/>
                             </div>
                         </div>
                     </div>

@@ -1,29 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.7b2aa564.chunk.css",
-    "main.js": "/static/js/main.97e71e1d.chunk.js",
-    "main.js.map": "/static/js/main.97e71e1d.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.d3b6a5b7.js",
-    "runtime-main.js.map": "/static/js/runtime-main.d3b6a5b7.js.map",
+    "main.css": "/static/css/main.02355f07.chunk.css",
+    "main.js": "/static/js/main.099d4304.chunk.js",
+    "main.js.map": "/static/js/main.099d4304.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.09fef60c.js",
+    "runtime-main.js.map": "/static/js/runtime-main.09fef60c.js.map",
     "static/css/2.a1596f27.chunk.css": "/static/css/2.a1596f27.chunk.css",
-    "static/js/2.5b255946.chunk.js": "/static/js/2.5b255946.chunk.js",
-    "static/js/2.5b255946.chunk.js.map": "/static/js/2.5b255946.chunk.js.map",
-    "static/js/3.ec8bbc72.chunk.js": "/static/js/3.ec8bbc72.chunk.js",
-    "static/js/3.ec8bbc72.chunk.js.map": "/static/js/3.ec8bbc72.chunk.js.map",
+    "static/js/2.b27fc637.chunk.js": "/static/js/2.b27fc637.chunk.js",
+    "static/js/2.b27fc637.chunk.js.map": "/static/js/2.b27fc637.chunk.js.map",
+    "static/js/3.4e4aed53.chunk.js": "/static/js/3.4e4aed53.chunk.js",
+    "static/js/3.4e4aed53.chunk.js.map": "/static/js/3.4e4aed53.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.a1596f27.chunk.css.map": "/static/css/2.a1596f27.chunk.css.map",
-    "static/css/main.7b2aa564.chunk.css.map": "/static/css/main.7b2aa564.chunk.css.map",
-    "static/js/2.5b255946.chunk.js.LICENSE.txt": "/static/js/2.5b255946.chunk.js.LICENSE.txt",
+    "static/css/main.02355f07.chunk.css.map": "/static/css/main.02355f07.chunk.css.map",
+    "static/js/2.b27fc637.chunk.js.LICENSE.txt": "/static/js/2.b27fc637.chunk.js.LICENSE.txt",
     "static/media/BannerCerita.css": "/static/media/mobile-lapor.27579f7e.png",
     "static/media/Psikolog.css": "/static/media/mobile-konsul.58a9e5c4.png",
-    "static/media/Lapor.css": "/static/media/GambarPsikolog.4d723fcb.png",
-    "static/media/Testimoni.css": "/static/media/testimonials-bg.b5a6189e.jpg"
+    "static/media/Lapor.css": "/static/media/GambarPsikolog.4d723fcb.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.d3b6a5b7.js",
+    "static/js/runtime-main.09fef60c.js",
     "static/css/2.a1596f27.chunk.css",
-    "static/js/2.5b255946.chunk.js",
-    "static/css/main.7b2aa564.chunk.css",
-    "static/js/main.97e71e1d.chunk.js"
+    "static/js/2.b27fc637.chunk.js",
+    "static/css/main.02355f07.chunk.css",
+    "static/js/main.099d4304.chunk.js"
   ]
 }
