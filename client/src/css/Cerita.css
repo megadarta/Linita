@@ -2,6 +2,9 @@
     padding: 100px 15vw;
 }
 
+.cerita-load {
+    min-height: 50vh;
+}
 .vote {
     cursor: pointer;
     width: 15px;

@@ -37,8 +37,14 @@ const Profile = (props) => {
         })
         .then(res => res.json())
         .then(data => { 
-            if(data.user.stories.length === 0) setHasStories(false) 
-            setUser(data.user); 
+            fetch(server + 'user/' + id)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data.stories.length);
+                if(data.stories.length === 0) setHasStories(false) 
+                setUser(data); 
+                setLoading(false);
+            });
         });
     }
 
@@ -52,7 +58,7 @@ const Profile = (props) => {
 
     return (
         <div className="profile-body container py-5">
-            <div className="d-flex align-items-center">
+            <div className="d-flex flex-column flex-md-row align-items-center">
                 <img src="/asset/Linita-IconOnly.svg" width="150" height="150"></img>
                 <div>
                     <h1>{ user?.username }</h1>
@@ -68,15 +74,14 @@ const Profile = (props) => {
                     ?
                         user?.stories.map((story, index) => {
                             return (
-                                <div key={index} className="profile-story p-3 d-flex flex-column flex-md-row align-items-center justify-content-between"> 
+                                <div key={index} className="profile-story mt-5 p-3 d-flex flex-column flex-md-row align-items-center justify-content-between"> 
                                     <a href={`/story/view/${story._id}`} className="story-link">
                                         <h3>{story.title }</h3>
                                         <small> { moment(story.created_at).format('LLLL') } </small>
                                     </a>
                                     { props.autentikasi.user?._id === id &&
                                     <div className="d-flex align-items-center mt-3 mt-md-0">
-                                        <i className="fas fa-edit btn-edit me-3 mx-md-5"></i>
-                                        <span onClick={deleteStory} id={story._id} className="ms-3 ms-md-0"><i  className="fa fa-trash btn-delete" aria-hidden="true"></i></span>
+                                        <span onClick={deleteStory} id={story._id} className="mx-4"><i  className="fa fa-trash btn-delete" aria-hidden="true"></i></span>
                                     </div>
                                     }
                                 </div>

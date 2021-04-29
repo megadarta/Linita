@@ -29,6 +29,7 @@ import momentId from 'moment/locale/id';
 import Artikel2 from './component/Artikel2.js';
 import Artikel3 from './component/Artikel3';
 import Profile from './component/Profile';
+import TulisArtikel from './component/TulisArtikel';
 moment().locale('id', momentId);
 
 function App() {
@@ -97,6 +98,12 @@ function App() {
             <ListArtikel />
             <Footer />
           </Route>
+          <Route path="/article/view/:articleID">
+            <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
+            <Artikel1 />
+            <ListArtikel />
+            <Footer />
+          </Route>
           <Route path="/artikel1">
             <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
             <Artikel1 />
@@ -119,6 +126,9 @@ function App() {
             <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
             <Profile autentikasi={autentikasi}/>
             <Footer />
+          </Route>
+          <Route path="/admin/article/add">
+            <TulisArtikel />
           </Route>
         </Switch>
       </Router>

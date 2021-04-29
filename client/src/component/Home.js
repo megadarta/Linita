@@ -1,5 +1,5 @@
 import '../css/Home.css';
-import Testimoni from './Testimoni';
+import ListArtikel from './ListArtikel';
 import KartuCerita from './KartuCerita';
 import BannerBeraksi from './BannerBeraksi';
 import KartuArtikel3 from './KartuArtikel3';
@@ -71,11 +71,7 @@ function Home() {
         <section className="section-artikel d-flex flex-column align-items-center">
             <div className="artikel-home mt-4">ARTIKEL</div>
             <div className="container-fluid">
-            <div className="row kartikel-home justify-content-evenly">
-                <KartuArtikel3 />
-                <KartuArtikel2 />
-                <KartuArtikel1 />
-            </div>
+                <ListArtikel />
             </div>
             
         </section>

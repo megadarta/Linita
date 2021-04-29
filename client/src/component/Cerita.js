@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { useHistory, useParams } from 'react-router';
 import { server } from '../server.js';
 import PreLoader from './PreLoader';
-import { FacebookShareButton } from 'react-share';
 import '../css/Cerita.css';
 import moment from 'moment';
 
@@ -285,9 +284,6 @@ const Story = (props) => {
                         <h6 className="m-0 text-author">Cerita oleh { story.anonimity ? 'Anonim' : author?.fullname }</h6>
                         <small className="text-date">Dibuat pada <span className="tanggal-cerita">{ moment(story.created_at).format('LLLL') }</span></small>
                     </div>
-                    <a href={"https://www.facebook.com/sharer/sharer.php?u=" + window.location.href} target="_blank">
-                        <img src="/asset/share1.svg" className="btn-share"></img>
-                    </a>
                 </div>
                 <h1 className="title-cerita  mt-3 mb-5">{ story.title }</h1>
                 <article className="body-cerita">
@@ -326,7 +322,6 @@ const Story = (props) => {
                             </a>
                     }
                     
-                    <img src="/asset/share1.svg" className="btn-share"></img>
                 </div>
             </div>
 
