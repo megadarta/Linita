@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useHistory, useParams } from 'react-router';
 import { server } from '../server.js';
 import PreLoader from './PreLoader';
+import { FacebookShareButton } from 'react-share';
 import '../css/Cerita.css';
 import moment from 'moment';
 
