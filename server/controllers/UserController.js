@@ -21,6 +21,14 @@ class UserController {
         }
 
         try {
+            const foundUserEmail = await user.getOne({ email });
+
+            if(foundUserEmail) return res.status(401).json({ error: true, message: "Email telah terdaftar, coba daftarkan email yang lain"});
+
+            const foundUserUsername = await user.getOne({ username });
+
+            if(foundUserUsername) return res.status(401).json({ error: true, message: "Username telah terdaftar, coba daftarkan username yang lain"});
+
             const createdUser = await user.create(document);
 
             //Save registered user to session

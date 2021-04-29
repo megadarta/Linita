@@ -4,6 +4,7 @@ import {server} from '../server.js';
 import { useHistory } from 'react-router';
 
 function Register(props) {
+  const [error, setError] = useState();
   const [email, setEmail] = useState();
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
@@ -24,10 +25,16 @@ function Register(props) {
         credentials: "include",
         body: JSON.stringify({ username, email, password})
       })
-      .then(response => response.json())
+      .then(response => { 
+        return response.json() 
+      })
       .then(data => {
-        props.setAutentikasi(data);
-        history.push('/');
+        if(data.error) { 
+          setError(data.message); 
+        } else {
+          props.setAutentikasi(data);
+          history.push('/');
+        }
         props.setLoading(false);
       })
     }
@@ -35,10 +42,13 @@ function Register(props) {
 
   return (
     <div className="custom-register d-flex justify-content-center">
-      <div className="align-self-center ">
+      <div className="align-self-center register-body">
         <h3 className="text-center">Buat Akun</h3>
-        <div className="classlogo text-center my-3 mb-5">
+        <div className="classlogo text-center my-4 mb-5">
           <a href="/"><img src="/asset/logo-dark.png" className="logo-login"></img></a>
+        </div>
+        <div className="d-flex justify-content-center">
+          <div className="error-msg"><small style={{ color: 'red' }}>{ error }</small></div>
         </div>
         <form method="post" action="" onSubmit={register} className="register-form mb-3">
           <div className="form-floating mb-3">

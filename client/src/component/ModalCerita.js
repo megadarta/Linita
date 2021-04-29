@@ -7,6 +7,8 @@ const ModalCerita = (props) => {
     const [nama, setNama] = useState();
     const [nik, setNik] = useState();
     const [error, setError] = useState(null);
+    const [loadingSubmit, setLoadingSubmit] = useState(false);
+
     function submit(e) {
         e.preventDefault();
 
@@ -15,26 +17,27 @@ const ModalCerita = (props) => {
             return;
         }
 
-        props.setLoading(true);
-        const body = {
-            fullname: nama,
-            nik
-        };
+        if(!loadingSubmit) {
+            setLoadingSubmit(true);
+            const body = {
+                fullname: nama,
+                nik
+            };
 
-        fetch(server + 'add-detail', {
-            method: "PUT",
-            credentials: 'include',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(body)
-        })
-        .then(response => response.json())
-        .then(data => {
-            props.setAutentikasi(data);
-            setShowModal(false);
-            props.setLoading(false);
-        });
+            fetch(server + 'add-detail', {
+                method: "PUT",
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(body)
+            })
+            .then(response => response.json())
+            .then(data => {
+                setShowModal(false);
+                setLoadingSubmit(false);
+            });
+        }
     }
 
     return (
@@ -72,7 +75,7 @@ const ModalCerita = (props) => {
                     </div>	
                         </div>
                         <div className="modal-footer flex-column align-items-stretch">
-                            <form onSubmit={submit} className="form-custom d-flex flex-column">
+                            <form className="form-custom d-flex flex-column">
                                 <div className="form-group">
                                     <label className="judulform form-label" htmlFor="InputName" >NAMA LENGKAP*</label><br></br>
                                     <input type="text" onChange={e => setNama(e.target.value)} className="form-control" id="InputName" placeholder="Nama lengkap sesuai KK / KTP" required></input>
@@ -81,8 +84,8 @@ const ModalCerita = (props) => {
                                     <label className="judulform form-label" htmlFor="InputNIK" >NIK*</label><br></br>
                                     <input type="text" onChange={e => setNik(e.target.value)} className="form-control" id="InputNIK" placeholder="NIK sesuai KK / KTP" required></input>
                                 </div>
-                                <small className="error-text align-self-center">*{ error }</small>
-                                <input type="submit" className="btn btn-color btn-rules mb-4 mt-5" onClick={submit} value="SUBMIT"></input> 
+                                { error && <small className="error-text align-self-center">{'*' + error }</small> }
+                                <button type="submit" className={"btn btn-color btn-rules mb-4 mt-5 " + (loadingSubmit && 'button--loading')} onClick={submit} ><span style={{ visibility: loadingSubmit && 'hidden' }}>Submit</span></button> 
                             </form>
                         </div>
                     </div>

@@ -88,7 +88,7 @@ function App() {
           </Route>
           <Route path="/story/add">
             <Navbar autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
-            <TulisCerita autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} />
+            <TulisCerita autentikasi={autentikasi} setAutentikasi={setAutentikasi} setLoading={setLoading} loading={loading} />
             <Footer />
           </Route>
           <Route path="/articles">

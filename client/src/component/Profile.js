@@ -68,15 +68,15 @@ const Profile = (props) => {
                     ?
                         user?.stories.map((story, index) => {
                             return (
-                                <div key={index} className="profile-story p-3 d-flex align-items-center justify-content-between"> 
+                                <div key={index} className="profile-story p-3 d-flex flex-column flex-md-row align-items-center justify-content-between"> 
                                     <a href={`/story/view/${story._id}`} className="story-link">
                                         <h3>{story.title }</h3>
                                         <small> { moment(story.created_at).format('LLLL') } </small>
                                     </a>
                                     { props.autentikasi.user?._id === id &&
-                                    <div className="d-flex">
-                                        <i className="fas fa-edit btn-edit mx-5"></i>
-                                        <span onClick={deleteStory} id={story._id}><i  className="fa fa-trash btn-delete" aria-hidden="true"></i></span>
+                                    <div className="d-flex align-items-center mt-3 mt-md-0">
+                                        <i className="fas fa-edit btn-edit me-3 mx-md-5"></i>
+                                        <span onClick={deleteStory} id={story._id} className="ms-3 ms-md-0"><i  className="fa fa-trash btn-delete" aria-hidden="true"></i></span>
                                     </div>
                                     }
                                 </div>

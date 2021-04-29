@@ -6,7 +6,7 @@ import { useHistory } from 'react-router';
 import { Redirect } from 'react-router-dom';
 
 function TulisCerita(props) {
-    const history = useHistory();
+    const [loadingKirim, setLoadingKirim] = useState(false);
     const [judul, setJudul] = useState();
     const [cerita, setCerita] = useState();
     const [anonim, setAnonim] = useState(true);
@@ -15,27 +15,29 @@ function TulisCerita(props) {
     function tuliscerita(e){
         e.preventDefault();
 
-        const body = {
-            title: judul,
-            content: cerita,
-            anonimity: anonim
-        };
+        if(!loadingKirim) {
+            setLoadingKirim(true);
 
-        props.setLoading(true);
+            const body = {
+                title: judul,
+                content: cerita,
+                anonimity: anonim
+            };
 
-        fetch(server + 'story/create', {
-            method: "POST",
-            credentials: 'include',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(body)
-        })
-        .then(response => response.json())
-        .then(data => {
-            setSubmitedStory(true);
-            props.setLoading(false);
-        });
+            fetch(server + 'story/create', {
+                method: "POST",
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(body)
+            })
+            .then(response => response.json())
+            .then(data => {
+                setSubmitedStory(true);
+                setLoadingKirim(false);
+            });
+        }
     }
 
     if(submitedStory) {
@@ -74,7 +76,7 @@ function TulisCerita(props) {
 
            
             <div className="d-flex justify-content-center btn-tulis-cerita mt-3">
-                <button type="submit" className="btn btn-kirim shadow-none">Kirim</button>
+                <button type="submit" className={"btn btn-kirim shadow-none " + (loadingKirim && 'button--loading')}><span style={{ visibility: loadingKirim && 'hidden' }}>Kirim</span></button>
             </div>
         </form>
         </div>

@@ -4,6 +4,11 @@
     color: red;
 }
 
+.btn-rules {
+    position: relative;
+    border-radius: 0;
+}
+
 .modal {
     background-color: rgba(0, 0, 0, 0.7);
 }
