@@ -26,3 +26,9 @@
 .isi-artikel{
     white-space: pre-wrap;
 }
+
+@media(max-width: 576px) {
+    .judul-artikel {
+        font-size: 20px;
+    }
+}
