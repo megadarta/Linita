@@ -1,65 +1,29 @@
 {
   "files": {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 20151001f6c16924f411aadb1a27a2f89d9a90c6
-    "main.css": "/static/css/main.c32569ba.chunk.css",
-    "main.js": "/static/js/main.709f65da.chunk.js",
-    "main.js.map": "/static/js/main.709f65da.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.2947d4c6.js",
-    "runtime-main.js.map": "/static/js/runtime-main.2947d4c6.js.map",
-<<<<<<< HEAD
-=======
-=======
-    "main.css": "/static/css/main.46ef6f8f.chunk.css",
-    "main.js": "/static/js/main.6763d36f.chunk.js",
-    "main.js.map": "/static/js/main.6763d36f.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.1e118cd2.js",
-    "runtime-main.js.map": "/static/js/runtime-main.1e118cd2.js.map",
->>>>>>> 0270d1b3997bf2325b7139e4a8b4d0ee4cf3f880
->>>>>>> 20151001f6c16924f411aadb1a27a2f89d9a90c6
+    "main.css": "/static/css/main.7b2aa564.chunk.css",
+    "main.js": "/static/js/main.97e71e1d.chunk.js",
+    "main.js.map": "/static/js/main.97e71e1d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d3b6a5b7.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d3b6a5b7.js.map",
     "static/css/2.a1596f27.chunk.css": "/static/css/2.a1596f27.chunk.css",
-    "static/js/2.502c4499.chunk.js": "/static/js/2.502c4499.chunk.js",
-    "static/js/2.502c4499.chunk.js.map": "/static/js/2.502c4499.chunk.js.map",
-    "static/js/3.5c3c09e1.chunk.js": "/static/js/3.5c3c09e1.chunk.js",
-    "static/js/3.5c3c09e1.chunk.js.map": "/static/js/3.5c3c09e1.chunk.js.map",
+    "static/js/2.5b255946.chunk.js": "/static/js/2.5b255946.chunk.js",
+    "static/js/2.5b255946.chunk.js.map": "/static/js/2.5b255946.chunk.js.map",
+    "static/js/3.ec8bbc72.chunk.js": "/static/js/3.ec8bbc72.chunk.js",
+    "static/js/3.ec8bbc72.chunk.js.map": "/static/js/3.ec8bbc72.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.a1596f27.chunk.css.map": "/static/css/2.a1596f27.chunk.css.map",
-<<<<<<< HEAD
-    "static/css/main.c32569ba.chunk.css.map": "/static/css/main.c32569ba.chunk.css.map",
-=======
-<<<<<<< HEAD
-    "static/css/main.c32569ba.chunk.css.map": "/static/css/main.c32569ba.chunk.css.map",
-=======
-    "static/css/main.46ef6f8f.chunk.css.map": "/static/css/main.46ef6f8f.chunk.css.map",
->>>>>>> 0270d1b3997bf2325b7139e4a8b4d0ee4cf3f880
->>>>>>> 20151001f6c16924f411aadb1a27a2f89d9a90c6
-    "static/js/2.502c4499.chunk.js.LICENSE.txt": "/static/js/2.502c4499.chunk.js.LICENSE.txt",
+    "static/css/main.7b2aa564.chunk.css.map": "/static/css/main.7b2aa564.chunk.css.map",
+    "static/js/2.5b255946.chunk.js.LICENSE.txt": "/static/js/2.5b255946.chunk.js.LICENSE.txt",
     "static/media/BannerCerita.css": "/static/media/mobile-lapor.27579f7e.png",
     "static/media/Psikolog.css": "/static/media/mobile-konsul.58a9e5c4.png",
-    "static/media/Liststory.css": "/static/media/GambarPsikolog.4d723fcb.png"
+    "static/media/Lapor.css": "/static/media/GambarPsikolog.4d723fcb.png",
+    "static/media/Testimoni.css": "/static/media/testimonials-bg.b5a6189e.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.1e118cd2.js",
+    "static/js/runtime-main.d3b6a5b7.js",
     "static/css/2.a1596f27.chunk.css",
-    "static/js/2.502c4499.chunk.js",
-<<<<<<< HEAD
-    "static/css/main.dc08ce46.chunk.css",
-    "static/js/main.df03cecc.chunk.js"
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "static/css/main.c32569ba.chunk.css",
-    "static/js/main.709f65da.chunk.js"
-=======
-    "static/css/main.dc08ce46.chunk.css",
-    "static/js/main.df03cecc.chunk.js"
->>>>>>> f0c27f4d31768c522a83de6bcb96e357a7b5fb6a
-=======
-    "static/css/main.46ef6f8f.chunk.css",
-    "static/js/main.6763d36f.chunk.js"
->>>>>>> 0270d1b3997bf2325b7139e4a8b4d0ee4cf3f880
->>>>>>> 20151001f6c16924f411aadb1a27a2f89d9a90c6
+    "static/js/2.5b255946.chunk.js",
+    "static/css/main.7b2aa564.chunk.css",
+    "static/js/main.97e71e1d.chunk.js"
   ]
 }
